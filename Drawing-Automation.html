@@ -1,0 +1,338 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Drawing Automation | Jared Bunch</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;800&family=Playfair+Display:wght@700;900&display=swap" rel="stylesheet">
+    <style>
+        body { font-family: 'Inter', sans-serif; scroll-behavior: smooth; }
+        h1, h2, h3 { font-family: 'Playfair Display', serif; }
+        .zoom-cursor { cursor: zoom-in; }
+    </style>
+</head>
+<body class="bg-white text-slate-900 leading-relaxed">
+
+    <nav class="sticky top-0 z-50 bg-white/80 backdrop-blur-md border-b border-slate-100 p-4">
+        <div class="max-w-5xl mx-auto flex justify-between">
+            <a href="index.html" class="text-xs font-black uppercase tracking-widest text-slate-400 hover:text-black transition">&larr; Back to Portfolio</a>
+            <a href="https://www.linkedin.com/in/jaredabunch" target="_blank" class="text-slate-400 hover:text-blue-600 transition">LinkedIn</a>
+        </div>
+    </nav>
+
+    <header class="max-w-4xl mx-auto px-6 pt-24 pb-16">
+        <span class="text-emerald-600 font-black tracking-widest uppercase text-xs">Case Study</span>
+        <h1 class="text-5xl md:text-7xl font-black mt-6 mb-8 tracking-tight">Drawing Automation</h1>
+        <p class="text-2xl text-slate-500 font-light text-balance">I helped engineers save time by automating the creation of technical drawings and paperwork.</p>
+    </header>
+
+    <section class="bg-slate-50 py-20 border-y border-slate-100">
+        <div class="max-w-5xl mx-auto px-6 grid grid-cols-1 md:grid-cols-3 gap-12 text-sm">
+            <div>
+                <h4 class="font-black uppercase text-slate-400 mb-4">The Challenge</h4>
+                <p class="text-slate-700 leading-relaxed">Engineers were spending almost half their time on manual drafting tasks. It was a huge bottleneck and left a lot of room for mistakes.</p>
+            </div>
+            <div>
+                <h4 class="font-black uppercase text-slate-400 mb-4">My Role</h4>
+                <p class="text-slate-700 leading-relaxed">I was the UX Lead. I joined a team that had already been working for six months and helped them refocus on the user needs.</p>
+            </div>
+            <div>
+                <h4 class="font-black uppercase text-slate-400 mb-4">The Result</h4>
+                <p class="text-slate-700 leading-relaxed">We saved engineers about 40% of their time so they could focus on more important work.</p>
+            </div>
+        </div>
+    </section>
+
+    <article class="max-w-4xl mx-auto px-6 py-32 space-y-40">
+
+        <section>
+            <h2 class="text-4xl font-bold mb-8 text-balance">Getting started: The engagement plan</h2>
+            <div class="space-y-6 text-xl text-slate-600">
+                <p>When I joined this project, the team was already moving fast. My first job was to figure out how I could help without slowing them down while simultaneously building and executing a user engagement plan and conducting an audit of the work that had been done prior to my engagement.</p>
+                <p>The user engagement plan would show how we would talk to customers and test our ideas. This helped the engineering team see that design was there to help them win.</p>
+                <ul class="mt-8 space-y-4">
+        <li class="flex gap-3 items-start">
+            <span class="text-slate-400">&rarr;</span>
+            <p><strong class="text-slate-900">Recruit and Engage Lighthouse Customers:</strong> Lighthouse customers are key customers, who are identified with the assistance of product management, that will commit to giving us regular feedback and testing the feature during the development process.</p>
+        </li>
+        <li class="flex gap-3 items-start">
+            <span class="text-slate-400">&rarr;</span>
+            <p><strong class="text-slate-900">Create a Private Slack Channel:</strong> To facilitate easy, frequent communication with the lighthouse customers, I created a private slack channel which included those customers and some key internal stakeholders.</p>
+        </li>
+        <li class="flex gap-3 items-start">
+            <span class="text-slate-400">&rarr;</span>
+            <p><strong class="text-slate-900">Develop, Distribute, and Analyze Surveys:</strong> I developed, distributed, and analyzed the results from surveys on multiple platforms.  For sensitive information, I used our Beta Forum as those users were already under NDA.  For broader reach on topics that weren't as sensitive, I leverage our public forums and Qualtrics.</p>
+        </li>
+        <li class="flex gap-3 items-start">
+            <span class="text-slate-400">&rarr;</span>
+            <p><strong class="text-slate-900">Discussion Facilitation:</strong> I engaged users on our beta forums by starting and participating in conversations related to the project.</p>
+        </li>
+                </li>
+        <li class="flex gap-3 items-start">
+            <span class="text-slate-400">&rarr;</span>
+            <p><strong class="text-slate-900">Hands-On Testing:</strong> I developed a plan which included data sets and tutorials to engage users in hands-on testing.  I worked with stakeholders to ensure all areas they wanted to see feedback on would be covered.</p>
+        </li>
+    </ul>
+            </div>
+        </section>
+
+        <section>
+            <h2 class="text-4xl font-bold mb-8 text-balance">Knowing the team: Stakeholder mapping</h2>
+            <p class="text-xl text-slate-600 mb-12">I built a stakeholder map to keep track of everyone involved. It helped us understand who needed to see our progress and who could help us make the big decisions.</p>
+            <div class="rounded-3xl bg-transparent aspect-video flex items-center justify-center overflow-hidden group">
+                <img src="assets/stakeholder-map.jpg" alt="Stakeholder Map" class="object-contain w-full h-full zoom-cursor transition duration-500 group-hover:scale-105" onclick="openLightbox(this)">
+            </div>
+        </section>
+
+        <section>
+            <h2 class="text-4xl font-bold mb-8 text-balance">Catching up: The Heuristic Audit</h2>
+            <p class="text-xl text-slate-600 mb-12">Since the project had been running for six months without a designer, I started with a full audit of the work they had done so far. The following are just a few of the items that I identified:</p>
+            
+            <div class="space-y-32">
+                <div>
+                    <h3 class="text-3xl font-bold mb-8 italic text-balance">Issue 1: Cognitive Load</h3>
+                    <p class="text-xl text-slate-600 mb-12 max-w-2xl">The original settings interface would be overwhelming to engineers with too many options. I simplified the view to focus only on the information required for users to achieve their desired results.</p>
+                    
+                    <div class="grid grid-cols-1 md:grid-cols-2 gap-12">
+                        <div class="space-y-4">
+                            <span class="text-xs font-black uppercase tracking-widest text-red-500 ml-2">Before</span>
+                            <div class="rounded-3xl bg-transparent aspect-square overflow-hidden group shadow-lg">
+                                <img src="assets/audit-issue-1-before.jpg" alt="Settings UI Before" class="object-contain w-full h-full zoom-cursor transition duration-500 group-hover:scale-105" onclick="openLightbox(this)">
+                            </div>
+                            <p class="text-sm text-slate-500 italic">Cluttered interface with irrelevant data points.</p>
+                        </div>
+                        <div class="space-y-4">
+                            <span class="text-xs font-black uppercase tracking-widest text-emerald-600 ml-2">After</span>
+                            <div class="rounded-3xl bg-transparent aspect-square overflow-hidden group shadow-lg">
+                                <img src="assets/audit-issue-1-after.jpg" alt="Settings UI After" class="object-contain w-full h-full zoom-cursor transition duration-500 group-hover:scale-105" onclick="openLightbox(this)">
+                            </div>
+                            <p class="text-sm text-slate-500 italic">Streamlined view focusing on only what is relevant.</p>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="grid grid-cols-1 md:grid-cols-2 gap-12 items-center border-t border-slate-100 pt-20">
+                    <div class="order-2 md:order-1">
+                        <h3 class="text-2xl font-bold mb-4 italic">Issue 2: Lack of Transparency</h3>
+                        <p class="text-slate-600">There was no indication as to how many sheets the "automatic" option would generate.  We exposed the sheet count in the UI to promote transparency and to help set the users expectations for what would be created. This was one of several places where transparency was needed for this project.</p>
+                    </div>
+                    <div class="rounded-3xl bg-transparent aspect-square overflow-hidden order-1 md:order-2 group">
+                        <img src="assets/audit-issue-2.jpg" alt="Adding Transparency" class="object-contain w-full h-full zoom-cursor" onclick="openLightbox(this)">
+                    </div>
+                </div>
+
+                <div class="grid grid-cols-1 md:grid-cols-2 gap-12 items-center border-t border-slate-100 pt-20">
+                    <div class="rounded-3xl bg-transparent aspect-square overflow-hidden group">
+                        <img src="assets/audit-issue-3.jpg" alt="Missing Dimensions" class="object-contain w-full h-full zoom-cursor" onclick="openLightbox(this)">
+                    </div>
+                    <div>
+                        <h3 class="text-2xl font-bold mb-4 italic">Issue 3: Inaccurate Results</h3>
+                        <p class="text-slate-600">I found that the drawings generated were missing critical dimensions. Upon further investigation, we found that the missing dimensions were due to a limit on the number of dimensions that would be generated.  We consulted with customers and adjusted the default limit as well as exposed this so it could be adjusted if ever encountered in the future. </p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section>
+            <h2 class="text-4xl font-bold mb-8 text-balance">The solution: High Fidelity Prototyping</h2>
+            <p class="text-xl text-slate-600 mb-12">I built an interactive prototype to show how the automation engine would feel. This allowed us to test our ideas before more time went into development.</p>
+            <div class="rounded-[2.5rem] bg-slate-900 aspect-video flex items-center justify-center overflow-hidden group shadow-2xl">
+                <img src="assets/drawing-automation-prototype.gif" alt="Drawing Automation Prototype" class="object-contain w-full h-full zoom-cursor transition duration-500 group-hover:scale-105" onclick="openLightbox(this)">
+            </div>
+        </section>
+
+        <section class="bg-slate-50 p-12 md:p-20 rounded-[3rem]">
+            <h2 class="text-4xl font-bold mb-12 text-slate-800">What our users said</h2>
+            <div class="grid grid-cols-1 md:grid-cols-2 gap-12">
+                <div class="space-y-8">
+                    <blockquote class="text-2xl font-light italic text-slate-600 border-l-4 border-emerald-500 pl-8">
+                        "That's really awesome news; we were waiting for something like this for a long time. Great job to all of you!"
+                    </blockquote>
+                    <blockquote class="text-2xl font-light italic text-slate-600 border-l-4 border-emerald-500 pl-8">
+                        "I am irrationally excited for this. Already installed and started to play with it! Way to go team!"
+                    </blockquote>
+                                        <blockquote class="text-2xl font-light italic text-slate-600 border-l-4 border-emerald-500 pl-8">
+                        "Hey there, I did a little test run on the features. The thing looks quite promising!"
+                    </blockquote>
+                                        <blockquote class="text-2xl font-light italic text-slate-600 border-l-4 border-emerald-500 pl-8">
+                        "I can't wait! This is FANTABULOUS features!!"
+                    </blockquote>
+                </div>
+                <div class="text-lg text-slate-500 space-y-6">
+                    <p>The feedback was overwhelmingly positive, engineers were excited because we were solving real problems they faced every day. During the limited hands-on time we were able to provide for this project, there were some key things mentioned by the customers:</p>
+                        <ul class="space-y-8 max-w-2xl">
+        <li class="flex gap-4 items-start">
+            <span class="text-emerald-500 text-2xl font-bold">&rarr;</span>
+            <div>
+                <p class="text-slate-600">Customers encountered designs where they were not fully documented (there were sheets missing that they expected).</p>
+            </div>
+        </li>
+        <li class="flex gap-4 items-start">
+            <span class="text-emerald-500 text-2xl font-bold">&rarr;</span>
+            <div>
+                <p class="text-slate-600">Customers voiced concerns about performance.</p>
+            </div>
+        </li>
+        <li class="flex gap-4 items-start">
+            <span class="text-emerald-500 text-2xl font-bold">&rarr;</span>
+            <div>
+                <p class="text-slate-600">Customers requested to pre-select their dimension recipes based upon sheet type ahead of generation.</p>
+            </div>
+        </li>
+    </ul>
+                </div>
+            </div>
+        </section>
+
+        <section>
+            <h2 class="text-4xl font-bold mb-12">One year later: The impact</h2>
+            <div class="grid grid-cols-1 md:grid-cols-1 gap-8 text-center">
+                <div class="bg-black text-white p-12 rounded-[2rem] shadow-2xl">
+                    <span class="text-6xl font-black italic text-emerald-400">356,000</span>
+                    <p class="mt-4 uppercase tracking-[0.2em] font-bold text-xs opacity-70">2D drawings generated containing:</p>
+                </div>
+            </div>
+        </section>
+                <section>
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-8 text-center">
+                <div class="bg-slate-50 p-12 rounded-[2rem]">
+                    <span class="text-6xl font-black italic text-slate-900">1.46 Million</span>
+                    <p class="mt-4 uppercase tracking-[0.2em] font-bold text-xs text-slate-500">Sheets created</p>
+                </div>
+                                <div class="bg-slate-50 p-12 rounded-[2rem]">
+                    <span class="text-6xl font-black italic text-slate-900">3.40 Million</span>
+                    <p class="mt-4 uppercase tracking-[0.2em] font-bold text-xs text-slate-500">Views created</p>
+                </div>
+                                <div class="bg-slate-50 p-12 rounded-[2rem]">
+                    <span class="text-6xl font-black italic text-slate-900">10.84 Million</span>
+                    <p class="mt-4 uppercase tracking-[0.2em] font-bold text-xs text-slate-500">Dimensions applied</p>
+                </div>
+            </div>
+        </section>
+<section class="mt-40">
+    <h2 class="text-4xl font-bold mb-8 italic text-balance text-slate-800">Hurdles we cleared along the way</h2>
+    <p class="text-xl text-slate-600 mb-12">Building a tool this complex is never a straight line. These were some of the biggest challenges we had to navigate to get the project across the finish line.</p>
+    
+    <ul class="space-y-8 max-w-2xl">
+        <li class="flex gap-4 items-start">
+            <span class="text-emerald-500 text-2xl font-bold">&rarr;</span>
+            <div>
+                <h4 class="font-bold text-lg text-slate-900">Technical Debt</h4>
+                <p class="text-slate-600">We had to build on top of an older system that was not originally designed for this kind of automation. This required creative problem solving to keep the interface fast and reliable.</p>
+            </div>
+        </li>
+        <li class="flex gap-4 items-start">
+            <span class="text-emerald-500 text-2xl font-bold">&rarr;</span>
+            <div>
+                <h4 class="font-bold text-lg text-slate-900">Team Alignment</h4>
+                <p class="text-slate-600">Joining a project six months in meant I had to quickly build trust with an engineering team used to working without a designer. I focused on showing them how UX could help them reach their goals faster.</p>
+            </div>
+        </li>
+        <li class="flex gap-4 items-start">
+            <span class="text-emerald-500 text-2xl font-bold">&rarr;</span>
+            <div>
+                <h4 class="font-bold text-lg text-slate-900">Complex Rules</h4>
+                <p class="text-slate-600">Technical drawings have very strict legal and safety requirements. We had to make sure our automation never skipped a critical check while still making the process feel easy for the user.</p>
+            </div>
+        </li>
+                <li class="flex gap-4 items-start">
+            <span class="text-emerald-500 text-2xl font-bold">&rarr;</span>
+            <div>
+                <h4 class="font-bold text-lg text-slate-900">Leadership vs. Customer Expectations</h4>
+                <p class="text-slate-600">There was a mismatch in what leadership wanted us to deliver and what the customers were ready for.</p>
+            </div>
+        </li>
+    </ul>
+</section>
+        <section class="mt-40">
+    <h2 class="text-4xl font-bold mb-8 italic text-slate-800">Final thoughts</h2>
+    <div class="text-xl text-slate-600 space-y-8 max-w-2xl">
+        <p>This project taught me a lot about leading from within a team that was already moving fast. I learned that even when you join late, good design can still make a massive difference.</p>
+        
+        <p>While the results show that people are using the new tools, I know that command usage doesn't always mean a customer is happy. We have since started a new initiative to measure actual satisfaction, but to truly understand the full life of a document, we still need to make deeper changes to how the software is built.</p>
+
+        <h3 class="text-2xl font-bold text-slate-900 mt-12 mb-4">Bridging the trust gap</h3>
+        <p>The biggest hurdle was a gap between what the business wanted to build and what the customers were actually ready for. My research showed that users didn't trust the automation to do the job perfectly yet. They weren't ready for a "black box" solution.</p>
+        
+        <p>I worked with the product manager on a plan to roll the features out in stages. The goal was to build trust by showing users how the individual automations worked before giving them a single, push button solution.</p>
+
+        <p>When I presented this to the stakeholders, there were a lot of different opinions. In the end, the leadership decided to stick with the original plan. We took a "disagree and commit" approach, and I focused on helping the team deliver the first version to our customers on time. It was a great reminder that my role is to provide the evidence and a clear path forward, even if the final decision goes in a different direction.</p>
+    </div>
+</section>
+    </article>
+
+    <footer class="bg-slate-900 text-white py-32 text-center">
+        <h3 class="text-4xl font-bold mb-8 italic">Let's build clarity.</h3>
+        <p class="text-slate-400 mb-12 max-w-lg mx-auto">I am available to discuss how I use these strategies to solve complex problems for large companies.</p>
+        <div class="flex flex-col md:flex-row justify-center items-center gap-12">
+            <a href="mailto:jared.bunch@outlook.com" class="text-2xl font-black border-b-4 border-slate-700 hover:border-emerald-500 transition pb-2">jared.bunch@outlook.com</a>
+            <a href="https://www.linkedin.com/in/jaredabunch" target="_blank" class="text-2xl font-black border-b-4 border-slate-700 hover:border-emerald-500 transition pb-2">LinkedIn</a>
+        </div>
+    </footer>
+
+<div id="lightboxModal" class="fixed inset-0 z-[100] hidden bg-slate-900/95 backdrop-blur-md flex items-center justify-center p-4 md:p-12 cursor-pointer" onclick="closeLightbox()">
+        <div class="relative max-w-6xl w-full h-full flex flex-col items-center justify-center">
+            
+            <img id="lightboxImage" src="" alt="" class="hidden max-w-full max-h-[80vh] object-contain shadow-2xl rounded-lg">
+            
+            <video id="lightboxVideo" controls autoplay loop muted class="hidden max-w-full max-h-[80vh] object-contain shadow-2xl rounded-lg">
+                <source src="" type="video/mp4">
+            </video>
+
+            <div id="lightboxCaption" class="mt-6 text-white text-lg font-medium text-center max-w-2xl bg-slate-800/50 px-6 py-2 rounded-full backdrop-blur-sm">
+                </div>
+
+            <button class="absolute top-0 right-0 text-white text-5xl font-light hover:text-slate-300 transition p-4">&times;</button>
+        </div>
+    </div>
+
+   <script>
+        function openLightbox(element) {
+            const modal = document.getElementById('lightboxModal');
+            const lbImg = document.getElementById('lightboxImage');
+            const lbVideo = document.getElementById('lightboxVideo');
+            const lbCaption = document.getElementById('lightboxCaption');
+            
+            // Reset state
+            lbImg.classList.add('hidden');
+            lbVideo.classList.add('hidden');
+            lbVideo.pause();
+            lbVideo.src = "";
+            lbCaption.innerText = "";
+
+            if (element.tagName === 'IMG') {
+                lbImg.src = element.src;
+                lbImg.classList.remove('hidden');
+                // Pulls caption from the img alt text
+                lbCaption.innerText = element.alt || "Design Artifact";
+            } else if (element.tagName === 'VIDEO') {
+                const videoSource = element.querySelector('source').src;
+                lbVideo.src = videoSource;
+                lbVideo.classList.remove('hidden');
+                lbVideo.load();
+                lbVideo.play();
+                // Pulls caption from the video's alt attribute
+                lbCaption.innerText = element.getAttribute('alt') || "Interaction Study";
+            }
+            
+            modal.classList.remove('hidden');
+            document.body.style.overflow = 'hidden'; 
+        }
+
+        function closeLightbox() {
+            const modal = document.getElementById('lightboxModal');
+            const lbVideo = document.getElementById('lightboxVideo');
+            modal.classList.add('hidden');
+            lbVideo.pause();
+            lbVideo.src = ""; 
+            document.body.style.overflow = 'auto';
+        }
+
+        // Close on 'Esc' key
+        document.addEventListener('keydown', (e) => {
+            if (e.key === 'Escape') closeLightbox();
+        });
+    </script>
+</body>
+</html>

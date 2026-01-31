@@ -1,0 +1,121 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Leadership & Coaching | Jared Bunch</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;800&family=Playfair+Display:wght@700;900&display=swap" rel="stylesheet">
+    <style>
+        body { font-family: 'Inter', sans-serif; scroll-behavior: smooth; }
+        h1, h2, h3 { font-family: 'Playfair Display', serif; }
+        .zoom-cursor { cursor: zoom-in; }
+    </style>
+</head>
+<body class="bg-white text-slate-900 leading-relaxed">
+
+    <nav class="sticky top-0 z-50 bg-white/80 backdrop-blur-md border-b border-slate-100 p-4">
+        <div class="max-w-5xl mx-auto flex justify-between">
+            <a href="index.html" class="text-xs font-black uppercase tracking-widest text-slate-400 hover:text-black transition">&larr; Back to Portfolio</a>
+            <a href="https://www.linkedin.com/in/jaredabunch" target="_blank" class="text-slate-400 hover:text-blue-600 transition">LinkedIn</a>
+        </div>
+    </nav>
+
+    <header class="max-w-4xl mx-auto px-6 pt-24 pb-16">
+        <span class="text-emerald-600 font-black tracking-widest uppercase text-xs">Leadership Philosophy</span>
+        <h1 class="text-5xl md:text-7xl font-black mt-6 mb-8 tracking-tight italic text-slate-900">Leading with Intention.</h1>
+        <p class="text-2xl text-slate-500 font-light text-balance leading-relaxed">
+            I use my 20 years of experience to help designers find their voice and help businesses find their path.
+        </p>
+    </header>
+
+    <article class="max-w-4xl mx-auto px-6 py-20 space-y-32">
+        
+        <section>
+            <h2 class="text-4xl font-bold mb-8">The Coaching Mindset</h2>
+            <div class="text-xl text-slate-600 space-y-6">
+                <p>
+                    I treat leadership like I treat coaching softball here in Michigan: my job is to get the hurdles out of the way so the team can perform at their best. I believe a Principal Designer should be a multiplier who makes everyone around them more effective.
+                </p>
+                <p>
+                    This means creating a space where it is safe to try new things and learn from mistakes. When a team feels supported, they take the kind of creative risks that lead to real innovation.
+                </p>
+            </div>
+        </section>
+
+        <section class="grid grid-cols-1 md:grid-cols-2 gap-16 items-start">
+            <div>
+                <h3 class="text-3xl font-bold mb-6 italic">From Craft to Impact</h3>
+                <p class="text-lg text-slate-600 mb-6">
+                    Mentorship is more than just reviewing Figma files. I help designers move beyond just completing tasks so they can become true strategic partners. 
+                </p>
+                <ul class="space-y-4 text-slate-600">
+                    <li class="flex gap-3">
+                        <span class="text-emerald-500 font-bold">&rarr;</span>
+                        <p>Connecting design choices to business goals.</p>
+                    </li>
+                    <li class="flex gap-3">
+                        <span class="text-emerald-500 font-bold">&rarr;</span>
+                        <p>Building the confidence to present to executive leadership.</p>
+                    </li>
+                    <li class="flex gap-3">
+                        <span class="text-emerald-500 font-bold">&rarr;</span>
+                        <p>Navigating the complex politics of global engineering teams.</p>
+                    </li>
+                </ul>
+            </div>
+            <div class="rounded-3xl bg-slate-50 aspect-square flex items-center justify-center overflow-hidden border border-slate-100 shadow-sm group">
+                <img src="assets/mentorship-artifact.jpg" alt="Mentorship Framework" class="object-contain w-full h-full zoom-cursor transition duration-500 group-hover:scale-105" onclick="openLightbox(this)">
+            </div>
+        </section>
+
+        <section>
+            <h2 class="text-3xl font-bold mb-8 italic">The Bridge to Business</h2>
+            <div class="text-xl text-slate-600 space-y-6">
+                <p>
+                    Part of my role is helping executives and product leaders understand the "Why" behind design. By showing how user needs drive product success, I make sure design has a seat at the table from the very start of the project.
+                </p>
+                <p>
+                    I translate complex user research into clear strategy that de-risks the product roadmap and aligns the entire team on a unified vision.
+                </p>
+            </div>
+        </section>
+
+    </article>
+
+    <footer class="bg-slate-900 text-white py-32 text-center mt-40">
+        <h3 class="text-4xl font-bold mb-8 italic">Let's build a stronger team.</h3>
+        <p class="text-slate-400 mb-12 max-w-lg mx-auto px-6">I love helping organizations grow their design maturity and build better products.</p>
+        <div class="flex flex-col md:flex-row justify-center items-center gap-12">
+            <a href="mailto:jared.bunch@outlook.com" class="text-2xl font-black border-b-4 border-slate-700 hover:border-emerald-500 transition pb-2">jared.bunch@outlook.com</a>
+            <a href="https://www.linkedin.com/in/jaredabunch" target="_blank" class="text-2xl font-black border-b-4 border-slate-700 hover:border-emerald-500 transition pb-2">LinkedIn</a>
+        </div>
+    </footer>
+
+    <div id="lightboxModal" class="fixed inset-0 z-[100] hidden bg-slate-900/95 backdrop-blur-md flex items-center justify-center p-4 md:p-12 cursor-pointer" onclick="closeLightbox()">
+        <div class="relative max-w-6xl w-full h-full flex flex-col items-center justify-center">
+            <img id="lightboxImage" src="" alt="" class="max-w-full max-h-[80vh] object-contain shadow-2xl rounded-lg">
+            <div id="lightboxCaption" class="mt-6 text-white text-lg font-medium text-center max-w-2xl bg-slate-800/50 px-6 py-2 rounded-full backdrop-blur-sm"></div>
+            <button class="absolute top-0 right-0 text-white text-5xl font-light hover:text-slate-300 transition p-4">&times;</button>
+        </div>
+    </div>
+
+    <script>
+        function openLightbox(element) {
+            const modal = document.getElementById('lightboxModal');
+            const lbImg = document.getElementById('lightboxImage');
+            const lbCaption = document.getElementById('lightboxCaption');
+            lbImg.src = element.src;
+            lbCaption.innerText = element.alt || "Leadership Artifact";
+            modal.classList.remove('hidden');
+            document.body.style.overflow = 'hidden'; 
+        }
+        function closeLightbox() {
+            const modal = document.getElementById('lightboxModal');
+            modal.classList.add('hidden');
+            document.body.style.overflow = 'auto';
+        }
+    </script>
+
+</body>
+</html>
