@@ -10,36 +10,85 @@
         body { font-family: 'Inter', sans-serif; scroll-behavior: smooth; }
         h1, h2, h3 { font-family: 'Playfair Display', serif; }
         .zoom-cursor { cursor: zoom-in; }
+        
+        .nav-link { position: relative; transition: all 0.3s ease; }
+        .nav-link.active { color: #000; font-weight: 800; }
+        .nav-link.active::before {
+            content: "";
+            position: absolute;
+            left: -1.5rem; top: 0; bottom: 0; width: 3px;
+            background-color: #10b981; border-radius: 0 4px 4px 0;
+        }
+
+        @keyframes etherealReveal {
+            0% { opacity: 0; filter: blur(30px) brightness(1.5); transform: scale(0.95) translateY(10px); }
+            100% { opacity: 1; filter: blur(0) brightness(1); transform: scale(1) translateY(0); }
+        }
+        .animate-reveal { opacity: 0; transition: opacity 0.5s ease; }
+        .is-visible { animation: etherealReveal 2s cubic-bezier(0.22, 1, 0.36, 1) forwards; }
     </style>
 </head>
 <body class="bg-white text-slate-900 leading-relaxed">
 
     <nav class="sticky top-0 z-50 bg-white/80 backdrop-blur-md border-b border-slate-100 p-4">
-        <div class="max-w-6xl mx-auto flex justify-between items-center">
-            <a href="index.html" class="text-xs font-black uppercase tracking-widest text-slate-400 hover:text-black transition">&larr; Back to Portfolio</a>
+        <div class="max-w-7xl mx-auto flex justify-between items-center">
+            <a href="index.html" class="text-xs font-black uppercase tracking-widest text-slate-400 hover:text-black transition">← Back to Portfolio</a>
             <a href="https://www.linkedin.com/in/jaredabunch" target="_blank" class="text-slate-400 hover:text-blue-600 transition">LinkedIn</a>
         </div>
     </nav>
 
     <header class="max-w-4xl mx-auto px-6 pt-24 pb-16">
         <span class="text-emerald-600 font-black tracking-widest uppercase text-xs">Product Concept &bull; R&D</span>
-        <h1 class="text-5xl md:text-7xl font-black mt-6 mb-8 tracking-tight italic text-slate-900">Fair Play Lineup</h1>
-        <p class="text-2xl text-slate-500 font-light leading-relaxed">
-            I applied my enterprise design experience to solve the common issues of youth sports. This is a mobile tool built to manage rotations, safety, and fairness in real time.
-        </p>
+        <h1 class="text-5xl md:text-7xl font-black mt-6 mb-8 tracking-tight italic">Fair Play Lineup</h1>
+        <p class="text-2xl text-slate-500 font-light text-balance">I applied my enterprise design experience to solve the common issues of youth sports with a tool to assist them in building their lineups, ensuring fairness, and adherance to league rules.</p>
     </header>
 
-    <section class="max-w-6xl mx-auto px-6 mb-32">
-        <div class="bg-slate-900 rounded-[3rem] p-12 md:p-20 border border-slate-800 shadow-2xl">
+    <section class="max-w-4xl mx-auto px-6 mb-12">
+        <div class="bg-emerald-50 border border-emerald-100 rounded-2xl p-6 flex items-start gap-4 shadow-sm">
+            <div class="w-10 h-10 rounded-full bg-emerald-500/10 flex items-center justify-center flex-shrink-0">
+                <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="#10b981" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M12 2a10 10 0 1 0 10 10H12V2z"/><path d="M12 12L2.1 12.3"/><path d="M12 2a10 10 0 0 1 10 10h-10V2z"/><path d="M12 12l9.2 4.9"/><path d="M12 12l-5.2 8.5"/></svg>
+            </div>
+            <div>
+                <h4 class="text-emerald-900 font-bold text-sm uppercase tracking-tight mb-1">R&D Note: AI-Assisted Iteration</h4>
+                <p class="text-emerald-700 text-sm leading-relaxed">
+                    This project represents a <strong>rapid, first-iteration concept</strong> developed in partnership with AI (Figma Make). I utilized Figma Make to accelerate the translation of complex logic into a high-fidelity interactive prototype.
+                </p>
+            </div>
+        </div>
+    </section>
+
+    <section class="bg-slate-50 py-16 border-y border-slate-100">
+        <div class="max-w-5xl mx-auto px-6 grid grid-cols-1 md:grid-cols-4 gap-8 text-sm">
+            <div>
+                <h4 class="font-black uppercase text-slate-400 mb-4">The Challenge</h4>
+                <p class="text-slate-700 leading-relaxed">Volunteer coaches struggle to balance coaching/teaching with the demands of managing a live game. They are concerned with fairness and adherence to league rules.</p>
+            </div>
+            <div>
+                <h4 class="font-black uppercase text-slate-400 mb-4">My Role</h4>
+                <p class="text-slate-700 leading-relaxed">Sole Designer. I defined the logic layer, IA, and used AI to accelerate high-fidelity prototyping.</p>
+            </div>
+            <div>
+                <h4 class="font-black uppercase text-slate-400 mb-4">AI Partnership</h4>
+                <p class="text-slate-700 leading-relaxed">Using Figma Make as a design partner, I quickly built the UI scaffolding that fit my logic constraints. Before starting, I already knew many of the challenges, but I also used AI to help brainstorm and explore the problem space.</p>
+            </div>
+            <div>
+                <h4 class="font-black uppercase text-slate-400 mb-4">The Result</h4>
+                <p class="text-slate-700 leading-relaxed">A constraint-based tool that automates fair rotations, ensures adherance to league rules, and provides transparent post-game reporting.</p>
+            </div>
+        </div>
+    </section>
+
+    <section class="max-w-6xl mx-auto px-6 mt-12 mb-16">
+        <div class="bg-slate-900 rounded-[3rem] p-12 md:p-20 border border-slate-800 shadow-2xl overflow-hidden relative group">
             <div class="flex flex-col md:flex-row gap-16 items-center">
                 <div class="flex-1 text-white">
-                    <h2 class="text-4xl font-bold mb-6 italic">The Full Workflow.</h2>
+                    <h2 class="text-4xl font-bold mb-6 italic">The First Iteration</h2>
                     <p class="text-slate-400 text-lg mb-8 leading-relaxed">
-                        This walkthrough demonstrates the end-to-end flow of the app. I focused on a "zero friction" transition between setup and game time, ensuring the system does the heavy lifting so the coach can stay focused on the field.
+                        This demonstrates many of the core interactions, but is not a polished final product. I focused on building the logic layer and used AI to quickly scaffold the UI, which is why you may see some inconsistencies in visual design.
                     </p>
                 </div>
-                <div class="w-full md:w-80 aspect-[9/19.5] relative rounded-2xl overflow-hidden border-4 border-slate-700 shadow-2xl">
-                    <video autoplay loop muted playsinline onclick="openLightbox(this)" class="w-full h-full object-cover zoom-cursor" alt="A quick look at the prototype.">
+                <div class="w-full md:w-80 aspect-[9/19.5] relative rounded-2xl overflow-hidden border-4 border-slate-700 shadow-2xl bg-black">
+                    <video id="heroVideo" autoplay loop muted playsinline onclick="openLightbox(this)" class="w-full h-full object-cover zoom-cursor" alt="Full Prototype Walkthrough">
                         <source src="assets/full-prototype-walkthrough.mp4" type="video/mp4">
                     </video>
                 </div>
@@ -47,229 +96,364 @@
         </div>
     </section>
 
-    <main class="max-w-6xl mx-auto px-6 space-y-40 pb-40">
+    <div class="max-w-7xl mx-auto px-6 py-24 flex flex-col lg:flex-row gap-16">
+        <aside class="hidden lg:block w-64 flex-shrink-0">
+            <nav class="sticky top-32 self-start border-r border-slate-100 pr-8">
+                <h4 class="text-xs font-black uppercase tracking-widest text-slate-900 mb-8">Process</h4>
+                <ul class="space-y-6 text-sm font-medium">
+                    <li><a href="#context" class="nav-link text-slate-400 hover:text-black block">Phase 1: Discovery & Target</a></li>
+                    <li><a href="#rules" class="nav-link text-slate-400 hover:text-black block">Phase 2: Establishing the Logic</a></li>
+                    <li><a href="#volatile" class="nav-link text-slate-400 hover:text-black block">Phase 3: Managing the Lineup</a></li>
+                    <li><a href="#lineup" class="nav-link text-slate-400 hover:text-black block">Phase 4: Reducing Cognitive Load</a></li>
+                    <li><a href="#reporting" class="nav-link text-slate-400 hover:text-black block">Phase 5: Closing the Loop</a></li>
+                    <li><a href="#growth" class="nav-link text-slate-400 hover:text-black block">Reflections & Roadmap</a></li>
+                </ul>
+            </nav>
+        </aside>
+        
+        <article class="flex-grow max-w-4xl space-y-24">
+            <section id="context" class="space-y-12">
+                <header>
+                    <span class="text-emerald-600 font-bold uppercase text-xs tracking-widest">Phase 1</span>
+                    <h2 class="text-4xl font-bold mt-4 mb-8 text-balance">Discovery & Target</h2>
+                </header>
 
-        <section id="process" class="space-y-16">
-            <div class="max-w-3xl">
-                <h2 class="text-4xl font-bold italic mb-6">Our Target</h2>
-                <p class="text-xl text-slate-600">
-Meet Kristin, she represents out target user.  Across the country, most recreational leagues are made up of volunteer coaches. These coaches have their hands full trying to balance their full time jobs and the duties of coaching. Thay are busy teaching the kids and often can be unaware that they aren't adhering to the playing time rules for their league or simply miss things during games.</p>
-            </div>
-            <div class="grid grid-cols-1 md:grid-cols-1 gap-8">
-                <img src="assets/Persona.png" alt="Meet Kristin, she represents our target user." class="rounded-2xl border border-slate-100 shadow-sm zoom-cursor w-full h-auto" onclick="openLightbox(this)">
-            </div>
-        </section>
-
-        <section id="rules" class="space-y-16">
-            <div class="max-w-3xl">
-                <h2 class="text-4xl font-bold italic mb-6">01. Constraint Based Logic</h2>
-                <p class="text-xl text-slate-600">
-                    I treated league rules as a logic layer rather than just a settings page. By establishing system constraints early, I de-risked the entire game experience, preventing illegal rotations before they even happen.
-                </p>
-            </div>
-            <div class="max-w-5xl mx-auto rounded-3xl bg-slate-50 overflow-hidden border border-slate-100 shadow-lg">
-                <video autoplay loop muted playsinline onclick="openLightbox(this)" class="w-full aspect-video object-cover zoom-cursor" alt="A look at the Rules tab.">
-                    <source src="assets/fairplaylineup-ipadmini-tab-rules.mp4" type="video/mp4">
-                </video>
-            </div>
-            <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
-                <img src="assets/rules-ui-1.png" alt="Playing Time and Fairness Rules" class="rounded-2xl border border-slate-100 shadow-sm zoom-cursor w-full h-auto" onclick="openLightbox(this)">
-                <img src="assets/rules-ui-2.png" alt="Safety & Qualification Rule, Position-Specific Limits" class="rounded-2xl border border-slate-100 shadow-sm zoom-cursor w-full h-auto" onclick="openLightbox(this)">
-                <img src="assets/rules-ui-3.png" alt="Strategic Preferences" class="rounded-2xl border border-slate-100 shadow-sm zoom-cursor w-full h-auto" onclick="openLightbox(this)">
-            </div>
-        </section>
-
-        <section id="roster" class="space-y-16">
-            <div class="max-w-3xl">
-                <h2 class="text-4xl font-bold italic mb-6">02. Managing Volatile Data</h2>
-                <p class="text-xl text-slate-600">
-                    Rosters in youth sports are highly dynamic. I designed the roster system to handle last-minute absences and state changes gracefully, allowing the coach to update the active lineup without breaking the underlying math.
-                </p>
-            </div>
-            <div class="max-w-5xl mx-auto rounded-3xl bg-slate-50 overflow-hidden border border-slate-100 shadow-lg">
-                <video autoplay loop muted playsinline onclick="openLightbox(this)" class="w-full aspect-video object-cover zoom-cursor" alt="Setting Up the Roster">
-                    <source src="assets/fairplaylineup-ipadmini-tab-roster.mp4" type="video/mp4">
-                </video>
-            </div>
-            <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
-                <img src="assets/roster-ui-1.png" alt="An Overview of the Roster and Options" class="rounded-2xl border border-slate-100 shadow-sm zoom-cursor w-full h-auto" onclick="openLightbox(this)">
-                <img src="assets/roster-ui-2.png" alt="Adding a Player to the Roster" class="rounded-2xl border border-slate-100 shadow-sm zoom-cursor w-full h-auto" onclick="openLightbox(this)">
-                <img src="assets/roster-ui-3.png" alt="Editing an Existing Player" class="rounded-2xl border border-slate-100 shadow-sm zoom-cursor w-full h-auto" onclick="openLightbox(this)">
-            </div>
-        </section>
-
-        <section id="lineup" class="space-y-16 bg-slate-50 -mx-6 md:-mx-12 px-6 md:px-12 py-24 rounded-[3rem] border border-slate-100">
-            <div class="max-w-6xl mx-auto">
-                <div class="max-w-3xl mb-16">
-                    <h2 class="text-4xl font-bold italic mb-6">03. Reducing Cognitive Load</h2>
-                    <p class="text-xl text-slate-600">
-                        The live game is where the "Fast Math" happens. I utilized a drag-and-drop pattern (also added click n place for smaller screens) with real-time heuristic feedback, ensuring that the interface does the thinking so the coach can stay present in the game.
-                    </p>
+                <div class="pt-8 pb-12 border-t border-slate-100">
+                    <h3 class="text-2xl font-bold mb-4">The Target User</h3>
+                    <p class="text-slate-600 text-lg mb-8">Meet Kristin and Keith. They represent the volunteer coaches who are managing lineups and trying to ensure they adhere to league rules. These coaches have their hands full trying to balance their full time jobs and the duties of coaching. They are busy teaching the kids the game, and often can be unaware on game days that they aren't adhering to the playing time rules for their league or simply miss things during all the chaos.</p>
+                    
+                    <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+                        <img src="assets/persona-kristin.png" alt="Persona: Kristin" class="rounded-[2rem] border border-slate-100 shadow-sm zoom-cursor w-full h-auto" onclick="openLightbox(this)">
+                        <img src="assets/persona-keith.png" alt="Persona: Keith" class="rounded-[2rem] border border-slate-100 shadow-sm zoom-cursor w-full h-auto" onclick="openLightbox(this)">
+                    </div>
                 </div>
-                <div class="max-w-5xl mx-auto rounded-3xl bg-white overflow-hidden border border-slate-200 shadow-lg mb-16">
-                    <video autoplay loop muted playsinline onclick="openLightbox(this)" class="w-full aspect-video object-cover zoom-cursor" alt="A Look at Setting the Lineup">
-                        <source src="assets/fairplaylineup-ipadmini-tab-lineup.mp4" type="video/mp4">
-                    </video>
-                </div>
-                <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
-                    <img src="assets/lineup-ui-1.png" alt="Looking at the Lineup Options" class="rounded-2xl border border-slate-100 shadow-sm zoom-cursor w-full h-auto" onclick="openLightbox(this)">
-                    <img src="assets/lineup-ui-2.png" alt="The Player Card with Assignments" class="rounded-2xl border border-slate-100 shadow-sm zoom-cursor w-full h-auto" onclick="openLightbox(this)">
-                    <img src="assets/lineup-ui-3.png" alt="Emergency Substitution" class="rounded-2xl border border-slate-100 shadow-sm zoom-cursor w-full h-auto" onclick="openLightbox(this)">
-                </div>
-            </div>
-        </section>
 
-        <section id="report" class="space-y-16">
-            <div class="max-w-3xl">
-                <h2 class="text-4xl font-bold italic mb-6">04. Closing the Loop</h2>
-                <p class="text-xl text-slate-600">
-                    Design doesn't end when the game does. I created post-game reports that verify compliance with fairness rules and highlight player development, providing a transparent record for leagues and parents.
-                </p>
-            </div>
-            <div class="max-w-5xl mx-auto rounded-3xl bg-slate-50 overflow-hidden border border-slate-100 shadow-lg">
-                <video autoplay loop muted playsinline onclick="openLightbox(this)" class="w-full aspect-video object-cover zoom-cursor" alt="The Report Tab">
-                    <source src="assets/fairplaylineup-ipadmini-tab-report.mp4" type="video/mp4">
-                </video>
-            </div>
-            <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
-                <img src="assets/report-ui-1.png" alt="Game Report and Absent Players" class="rounded-2xl border border-slate-100 shadow-sm zoom-cursor w-full h-auto" onclick="openLightbox(this)">
-                <img src="assets/report-ui-2.png" alt="Player Breakdown and Report Sharing" class="rounded-2xl border border-slate-100 shadow-sm zoom-cursor w-full h-auto" onclick="openLightbox(this)">
-            </div>
-        </section>
+                <div class="pt-16 border-t border-slate-100">
+                    <h3 class="text-2xl font-bold mb-4">Validation Roadmap</h3>
+                    <p class="text-slate-600 text-lg mb-8">Again, this is a quick, first iteration of an idea that I have to solve a real-world problem, one that I personally experienced, I have not done any research yet. This would be my high-level plan when I do.</p>
+                    <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+                        <div class="bg-slate-50 p-8 rounded-[2rem] border border-slate-100 group hover:bg-white transition-colors">
+                            <h4 class="text-sm font-black uppercase text-slate-900 mb-2">5+ Inquiries</h4>
+                            <p class="text-xs text-slate-500">Interview coaches and have moderated feedback sessions where the coaches are hands-on with the proposed solution.</p>
+                        </div>
+                        <div class="bg-slate-50 p-8 rounded-[2rem] border border-slate-100 group hover:bg-white transition-colors">
+                            <h4 class="text-sm font-black uppercase text-slate-900 mb-2">Surveys</h4>
+                            <p class="text-xs text-slate-500">Quantifying rule variations across different regions.</p>
+                        </div>
+                        <div class="bg-slate-50 p-8 rounded-[2rem] border border-slate-100 group hover:bg-white transition-colors">
+                            <h4 class="text-sm font-black uppercase text-slate-900 mb-2">League Rules Audit</h4>
+                            <p class="text-xs text-slate-500">Identify initial markets/leagues and verify that constraint logic meets all targeted requirements.</p>
+                        </div>
+                    </div>
+                </div>
+            </section>
 
-<section id="growth" class="space-y-12 py-24 border-t border-slate-100">
-    <div class="max-w-3xl">
-        <h2 class="text-4xl font-bold italic mb-8">Reflections & Roadmap</h2>
-        <div class="space-y-12 text-lg text-slate-600">
+            <section id="rules" class="space-y-16">
+                <header>
+                    <span class="text-emerald-600 font-bold uppercase text-xs tracking-widest">Phase 2</span>
+                    <h2 class="text-4xl font-bold mt-4 mb-8 text-balance">Establishing Logic</h2>
+                </header>
+
+                <div class="space-y-8">
+                    <h3 class="text-2xl font-bold">Constraint Based Logic</h3>
+                    <p class="text-slate-600 text-lg">I saw league rules as part of the logic behind the game, not just a list of settings. Setting up system constraints early helped me avoid problems later and stopped illegal rotations before they could occur</p>
+                    
+                    <div class="rounded-[2.5rem] bg-slate-900 aspect-video flex items-center justify-center overflow-hidden shadow-2xl">
+                        <video autoplay loop muted playsinline onclick="openLightbox(this)" class="w-full h-full object-cover zoom-cursor">
+                            <source src="assets/fairplaylineup-ipadmini-tab-rules.mp4" type="video/mp4">
+                        </video>
+                    </div>
+
+                    <div class="grid grid-cols-1 md:grid-cols-3 gap-6">
+                        <img src="assets/rules-ui-1.png" alt="Playing Time & Fairness Rules" class="rounded-2xl border border-slate-100 shadow-sm zoom-cursor" onclick="openLightbox(this)">
+                        <img src="assets/rules-ui-2.png" alt="Safety Rules & Limits" class="rounded-2xl border border-slate-100 shadow-sm zoom-cursor" onclick="openLightbox(this)">
+                        <img src="assets/rules-ui-3.png" alt="AI & Preferences" class="rounded-2xl border border-slate-100 shadow-sm zoom-cursor" onclick="openLightbox(this)">
+                    </div>
+                </div>
+
+                <div class="pt-16 border-t border-slate-100">
+                    <div class="grid grid-cols-1 lg:grid-cols-12 gap-16 items-start">
+                        <div class="lg:col-span-4 space-y-6">
+                            <h3 class="text-2xl font-bold">The Logic Prompt</h3>
+                            <p class="text-slate-600 text-sm">I started with a blank canvas and focused on giving the AI system rules instead of worrying about how it looked. First, I gave it an initial prompt. Then, I kept adding, changing, or removing prompts until I got the result you see here.</p>
+                            <div class="bg-emerald-50 p-6 rounded-2xl border border-emerald-100 text-xs text-emerald-700 font-medium">
+                                • Rules based logic and limitations for lineup<br>
+                                • High-contrast outdoor legibility<br>
+                                • Customization
+                            </div>
+                        </div>
+                        <div class="lg:col-span-8">
+                            <div class="bg-slate-900 rounded-[2.5rem] p-8 md:p-12 shadow-xl border border-slate-800">
+                                <h4 class="text-emerald-400 font-mono text-xs mb-6">// Input to Figma Make</h4>
+                                <div class="space-y-4 font-mono text-sm text-slate-300 leading-relaxed">
+                                    <p>"Design a mobile interface where coaches can define their roster and then build a lineup for softball based off of their roster. Drag n drop placement as well as click interactions should be supported."</p>
+                                    <p>"We will have a customizable rules section that will be editable by coaches and used/checked when the lineups are built. Some rules to start with are: number of inning limit for position and bench, player must play minimum 2 inngins in the field, optional rule that only qualified players can be placed at pitcher and catcher positions, no player should sit on the bench for 2 consecutive innings."</p>
+                                    <p>"This will be used in bright sunlight, so we will need a high-contrast option the user can toggle on/off to increase visibility in these scenarios."</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+ <section id="volatile" class="space-y-16 pt-16 border-t border-slate-100">
+                <header>
+                    <span class="text-emerald-600 font-bold uppercase text-xs tracking-widest">Phase 3</span>
+                    <h2 class="text-4xl font-bold mt-4 mb-8 text-balance">Managing the Lineup</h2>
+                </header>
+
+                <div class="space-y-12">
+                    <p class="text-xl text-slate-600">Youth sports rosters often change quickly. I built the roster system so coaches can easily handle last-minute absences or changes, and have information about their players at their fingertips.</p>
+                    
+                    <div class="space-y-8">
+                        <div class="rounded-[2.5rem] bg-slate-900 aspect-video flex items-center justify-center overflow-hidden shadow-2xl">
+                            <video autoplay loop muted playsinline onclick="openLightbox(this)" class="w-full h-full object-cover zoom-cursor" alt="Setting up the roster and dealing with absences.">
+                                <source src="assets/fairplaylineup-ipadmini-tab-roster.mp4" type="video/mp4">
+                            </video>
+                        </div>
+
+                        <div class="grid grid-cols-1 md:grid-cols-3 gap-6">
+                            <div class="space-y-4">
+                                <img src="assets/roster-ui-1.png" alt="Marking Absence" class="rounded-2xl border border-slate-100 shadow-sm zoom-cursor w-full" onclick="openLightbox(this)">
+                                <p class="text-xs text-slate-500 px-2 italic">Marking a player as absent mid-game.</p>
+                            </div>
+                            <div class="space-y-4">
+                                <img src="assets/roster-ui-2.png" alt="Engine Recalculation" class="rounded-2xl border border-slate-100 shadow-sm zoom-cursor w-full" onclick="openLightbox(this)">
+                                <p class="text-xs text-slate-500 px-2 italic">Adding a player to the roster.</p>
+                            </div>
+                            <div class="space-y-4">
+                                <img src="assets/roster-ui-3.png" alt="Updated Lineup View" class="rounded-2xl border border-slate-100 shadow-sm zoom-cursor w-full" onclick="openLightbox(this)">
+                                <p class="text-xs text-slate-500 px-2 italic">Editing a rostered player.</p>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="bg-slate-50 p-8 md:p-12 rounded-[2.5rem] border border-slate-100">
+                        <h3 class="text-2xl font-bold mb-6">The Lineup</h3>
+                        <p class="text-slate-600 leading-relaxed">
+                            At a glance, the coach can see their players qualifications, who has strong arms and what positions they have currently been assigned to and for what inning.
+                        </p>
+                    </div>
+                </div>
+            </section>
+
+ <section id="lineup" class="space-y-16 pt-16 border-t border-slate-100">
+                <header>
+                    <span class="text-emerald-600 font-bold uppercase text-xs tracking-widest">Phase 4</span>
+                    <h2 class="text-4xl font-bold mt-4 mb-8 text-balance">Reducing Cognitive Load</h2>
+                </header>
+
+                <div class="space-y-12">
+                    <p class="text-xl text-slate-600">Quick changes take place during the live game. I designed it with a drag-and-drop system and real-time feedback, so coaches can quickly make changes while still following league rules. During iteration, I also added a click-click workflow to limit the scrolling.  However, I am still not happy with where this is currently and will continue iterating on the behavior and layout to ensure the best user experience.</p>
+                    
+                    <div class="rounded-[2.5rem] bg-white aspect-video flex items-center justify-center overflow-hidden shadow-xl border border-slate-200">
+                        <video autoplay loop muted playsinline onclick="openLightbox(this)" class="w-full h-full object-cover zoom-cursor" alt="Lineup Management">
+                            <source src="assets/fairplaylineup-ipadmini-tab-lineup.mp4" type="video/mp4">
+                        </video>
+                    </div>
+
+                    <div class="grid grid-cols-1 md:grid-cols-3 gap-6">
+                        <div class="space-y-4">
+                            <img src="assets/lineup-ui-1.png" alt="Lineup Options" class="rounded-2xl border border-slate-100 shadow-sm zoom-cursor w-full" onclick="openLightbox(this)">
+                            <p class="text-xs text-slate-500 px-2 italic">Intuitive drag-and-drop for position changes.</p>
+                        </div>
+                        <div class="space-y-4">
+                            <img src="assets/lineup-ui-2.png" alt="Player Cards" class="rounded-2xl border border-slate-100 shadow-sm zoom-cursor w-full" onclick="openLightbox(this)">
+                            <p class="text-xs text-slate-500 px-2 italic">A look at the player cards and player designations.</p>
+                        </div>
+                        <div class="space-y-4">
+                            <img src="assets/lineup-ui-3.png" alt="Emergency Substitution" class="rounded-2xl border border-slate-100 shadow-sm zoom-cursor w-full" onclick="openLightbox(this)">
+                            <p class="text-xs text-slate-500 px-2 italic">Handling emergency substitutions.</p>
+                        </div>
+                    </div>
+
+                    <div class="bg-slate-900 rounded-[2.5rem] p-8 md:p-12 text-white border border-slate-800 shadow-xl">
+                        <div class="max-w-2xl">
+                            <h3 class="text-2xl font-bold mb-4">Designing for the Unknown</h3>
+                            <p class="text-slate-400 leading-relaxed">
+                           I built a system that can handle unexpected changes during a game. My goal was to help coaches adapt quickly to last-minute changes, without breaking the rules or creating unfair situations for players.
+                            </p>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+ <section id="reporting" class="space-y-16 pt-16 border-t border-slate-100">
+                <header>
+                    <span class="text-emerald-600 font-bold uppercase text-xs tracking-widest">Phase 5</span>
+                    <h2 class="text-4xl font-bold mt-4 mb-8 text-balance">Closing the Loop</h2>
+                </header>
+
+                <div class="space-y-12">
+                    <p class="text-xl text-slate-600">Post-game reports verify compliance and highlight player development. This transparency builds trust with parents and ensures the league's fair-play mission is actually being met.</p>
+                    
+                    <div class="rounded-[2.5rem] bg-slate-50 aspect-video flex items-center justify-center overflow-hidden border border-slate-100 shadow-sm">
+                        <video autoplay loop muted playsinline onclick="openLightbox(this)" class="w-full h-full object-cover zoom-cursor" alt="Post-Game Reporting">
+                            <source src="assets/fairplaylineup-ipadmini-tab-report.mp4" type="video/mp4">
+                        </video>
+                    </div>
+
+                    <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+                        <div class="space-y-4">
+                            <img src="assets/report-ui-1.png" alt="Game Overview" class="rounded-2xl border border-slate-100 shadow-sm zoom-cursor w-full" onclick="openLightbox(this)">
+                            <p class="text-xs text-slate-500 px-2 italic">An overview of game compliance.</p>
+                        </div>
+                        <div class="space-y-4">
+                            <img src="assets/report-ui-2.png" alt="Player Breakdown and Report Sharing" class="rounded-2xl border border-slate-100 shadow-sm zoom-cursor w-full" onclick="openLightbox(this)">
+                            <p class="text-xs text-slate-500 px-2 italic">A look at where each player played and when, as well as report sharing options.</p>
+                        </div>
+                    </div>
+
+                    <div class="bg-emerald-50 p-8 md:p-12 rounded-[2.5rem] border border-emerald-100">
+                        <h3 class="text-2xl font-bold text-emerald-900 mb-4">Building Accountability</h3>
+                        <p class="text-emerald-800 leading-relaxed">
+                            By providing a data-backed record of every inning played, the app transforms a potentially emotional conversation with a parent into a factual one. It moves the coach from "guessing" to "knowing," fulfilling the primary goal of the Fair Play Engine.
+                        </p>
+                    </div>
+                </div>
+            </section>
+
+     <section id="growth" class="py-16 bg-slate-50 rounded-[3rem] px-12 border border-slate-100">
+                <header class="mb-12">
+                    <span class="text-emerald-600 font-bold uppercase text-xs tracking-widest">Retrospective</span>
+                    <h2 class="text-4xl font-bold mt-4 italic">Reflections & Roadmap</h2>
+                </header>
+                <div class="space-y-12 text-lg text-slate-600">
             <p>
                 While the first iteration of <strong>Fair Play Lineup</strong> successfully handles the core logic of rotations, I have already identified several opportunities to deepen the product experience. My focus for the next version is to move from a standalone tool to a connected ecosystem.
             </p>
 
             <div>
-                <h4 class="text-slate-900 font-bold mb-6 italic text-xl underline decoration-emerald-500/30 underline-offset-8">Iterative Insights</h4>
-                <ul class="space-y-6 text-slate-500 italic">
-                    <li>&rarr; <strong>Account Persistence:</strong> Building a secure account layer is a priority to allow coaches to save data and access their rosters across different devices.</li>
-                    <li>&rarr; <strong>Interaction Refinement:</strong> I am evaluating the tactile friction of player assignments to ensure the UI is even more forgiving during initial lineup creation and mid-game chaos.</li>
-                    <li>&rarr; <strong>Environmental Testing:</strong> I plan to conduct outdoor "field tests" to fine-tune the color contrast and ensure maximum legibility in direct sunlight.</li>
-                </ul>
-            </div>
+                <div class="space-y-12">
+                    <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
+                        <div class="bg-white p-8 rounded-[2rem] shadow-sm border border-slate-200">
+                            <h4 class="text-slate-900 font-bold mb-4 italic">The AI Advantage</h4>
+                            <p class="text-sm text-slate-600 leading-relaxed mb-6">By utilizing AI for the initial UI scaffolding, I was able to dedicate my time to the high-level logic and information architecture. This shifted the focus from "how does this button look" to "how does this engine think."</p>
+                            <ul class="space-y-2 text-xs text-emerald-600 font-bold uppercase tracking-tight">
+                                <li>→ 40% faster prototyping speed</li>
+                                <li>→ Immediate translation of logic to UI</li>
+                                <li>→ Rapid exploration of high-contrast themes</li>
+                            </ul>
+                        </div>
+                        <div class="bg-white p-8 rounded-[2rem] shadow-sm border border-slate-200">
+                            <h4 class="text-slate-900 font-bold mb-4 italic">Technical Hurdles</h4>
+                            <p class="text-sm text-slate-600 leading-relaxed">The biggest challenge was the 'Game-Time Pivot.' Designing a system that remains compliant while a coach is frantically removing players required a robust constraint-based architecture that feels invisible to the user.</p>
+                        </div>
+                    </div>
 
-            <div class="bg-slate-50 p-8 md:p-12 rounded-[3rem] border border-slate-100">
-                <h4 class="text-slate-900 font-bold mb-8 italic text-xl">Future Considerations</h4>
+                    <div class="pt-8 border-t border-slate-200">
+                        <h3 class="text-2xl font-bold mb-8">What's Next?</h3>
+                        <div class="grid grid-cols-1 md:grid-cols-3 gap-6">
+                            <div class="space-y-2">
+                                <h5 class="font-bold text-slate-900">Account Persistence</h5>
+                                <p class="text-xs text-slate-500">Developing a way for league officials to push pre-verified rosters and rules directly to a coach's account to reduce setup time.</p>
+                            </div>
+                            <div class="space-y-2">
+                                <h5 class="font-bold text-slate-900">AI Integration</h5>
+                                <p class="text-xs text-slate-500">Develop AI features to help coaches build lineups according to defensive and/or offensive performance metrics.</p>
+                            </div>
+                            <div class="space-y-2">
+                                <h5 class="font-bold text-slate-900">Offline Reliability</h5>
+                                <p class="text-xs text-slate-500">Ensuring the local database syncs flawlessly even in parks with zero cellular reception, a common pain point for Keith.</p>
+                            </div>
+                        </div>
+                        <div class="bg-slate-50 p-8 md:p-12 rounded-[3rem] border border-slate-100">
                 <div class="grid grid-cols-1 md:grid-cols-2 gap-10">
                     <ul class="space-y-6 text-sm">
                         <li class="flex gap-4">
-                            <span class="text-emerald-500 font-bold">&rarr;</span>
+                            <span class="text-emerald-500 font-bold">→</span>
                             <span><strong>Season Support:</strong> Moving beyond single games to track player development, playing time, positions played, and attendance over an entire year.</span>
                         </li>
                         <li class="flex gap-4">
-                            <span class="text-emerald-500 font-bold">&rarr;</span>
+                            <span class="text-emerald-500 font-bold">→</span>
                             <span><strong>Multi-Coach Sync:</strong> Enabling real-time updates so assistants and head coaches stay in perfect alignment.</span>
                         </li>
                         <li class="flex gap-4">
-                            <span class="text-emerald-500 font-bold">&rarr;</span>
+                            <span class="text-emerald-500 font-bold">→</span>
                             <span><strong>Centralized Rules:</strong> Allowing leagues to set global fairness rules that teams automatically adopt.</span>
                         </li>
                     </ul>
                     <ul class="space-y-6 text-sm">
                         <li class="flex gap-4">
-                            <span class="text-emerald-500 font-bold">&rarr;</span>
-                            <span><strong>Coaches Notes:</strong> A place for private observations that can be toggled on or off during parent reporting.</span>
+                            <span class="text-emerald-500 font-bold">→</span>
+                            <span><strong>Coaches Notes:</strong> A place for private observations on player development that can be toggled on or off during parent reporting.</span>
                         </li>
                         <li class="flex gap-4">
-                            <span class="text-emerald-500 font-bold">&rarr;</span>
+                            <span class="text-emerald-500 font-bold">→</span>
                             <span><strong>League Integration:</strong> Automating the "paperwork" by syncing directly with league roster databases.</span>
                         </li>
                         <li class="flex gap-4">
-                            <span class="text-emerald-500 font-bold">&rarr;</span>
+                            <span class="text-emerald-500 font-bold">→</span>
                             <span><strong>Performance Data:</strong> Integrating with scoring apps to help older age groups balance performance with fair play.</span>
                         </li>
                     </ul>
                 </div>
             </div>
-        </div>
+                    </div>
+                </div>
+            </section>
+        </article>
     </div>
-</section>
 
-    </main>
-
-    <footer class="bg-slate-900 text-white py-32 text-center mt-40">
+    <footer class="bg-slate-900 text-white py-32 text-center">
         <h3 class="text-4xl font-bold mb-8 italic">Clarity in Every Context.</h3>
         <p class="text-slate-400 mb-12 max-w-lg mx-auto px-6">Whether it is industrial software or a youth sports tool, my goal is always to find the clarity within the complexity.</p>
         <div class="flex flex-col md:flex-row justify-center items-center gap-12">
             <a href="mailto:jared.bunch@outlook.com" class="text-2xl font-black border-b-4 border-slate-700 hover:border-emerald-500 transition pb-2">jared.bunch@outlook.com</a>
-            <a href="https://www.linkedin.com/in/jaredabunch" target="_blank" class="text-2xl font-black border-b-4 border-slate-700 hover:border-emerald-500 transition pb-2">LinkedIn</a>
         </div>
     </footer>
 
-    <div id="lightboxModal" class="fixed inset-0 z-[100] hidden bg-slate-900/95 backdrop-blur-md flex items-center justify-center p-4 md:p-12 cursor-default">
-        <button onclick="closeLightbox()" class="absolute top-6 right-6 text-white text-5xl font-light hover:text-slate-300 transition z-[110]">&times;</button>
-        <button onclick="changeSlide(-1)" class="absolute left-4 top-1/2 -translate-y-1/2 text-white/50 hover:text-white text-6xl font-thin transition p-4 z-[110]">&lsaquo;</button>
-        <button onclick="changeSlide(1)" class="absolute right-4 top-1/2 -translate-y-1/2 text-white/50 hover:text-white text-6xl font-thin transition p-4 z-[110]">&rsaquo;</button>
-        <div class="relative max-w-6xl w-full h-full flex flex-col items-center justify-center" onclick="event.stopPropagation()">
-            <div id="lightboxContent" class="max-w-full max-h-[80vh] flex items-center justify-center"></div>
-            <div id="lightboxCaption" class="mt-6 text-white text-lg font-medium text-center max-w-2xl bg-slate-800/50 px-6 py-2 rounded-full backdrop-blur-sm"></div>
+    <div id="lightboxModal" class="fixed inset-0 z-[100] hidden bg-slate-900/95 backdrop-blur-md flex items-center justify-center p-4 md:p-12" onclick="closeLightbox()">
+        <div class="relative max-w-6xl w-full h-full flex flex-col items-center justify-center">
+            <img id="lightboxImage" src="" alt="" class="hidden max-w-full max-h-[80vh] object-contain shadow-2xl rounded-lg">
+            <video id="lightboxVideo" controls autoplay loop muted class="hidden max-w-full max-h-[80vh] object-contain shadow-2xl rounded-lg">
+                <source src="" type="video/mp4">
+            </video>
+            <div id="lightboxCaption" class="mt-6 text-white text-lg font-medium text-center bg-slate-800/50 px-6 py-2 rounded-full backdrop-blur-sm"></div>
+            <button class="absolute top-0 right-0 text-white text-5xl font-light p-4">&times;</button>
         </div>
     </div>
 
     <script>
-        let currentIndex = 0;
-        let galleryItems = [];
+        window.addEventListener('DOMContentLoaded', () => {
+            const observerOptions = { root: null, rootMargin: '-20% 0% -70% 0%', threshold: 0 };
+            const observer = new IntersectionObserver((entries) => {
+                entries.forEach((entry) => {
+                    const id = entry.target.getAttribute('id');
+                    const navLink = document.querySelector(`.nav-link[href="#${id}"]`);
+                    if (entry.isIntersecting) {
+                        document.querySelectorAll('.nav-link').forEach(link => link.classList.remove('active'));
+                        navLink?.classList.add('active');
+                    }
+                });
+            }, observerOptions);
+            document.querySelectorAll('section[id]').forEach((section) => { observer.observe(section); });
+        });
 
         function openLightbox(element) {
-            galleryItems = Array.from(document.querySelectorAll('.zoom-cursor'));
-            currentIndex = galleryItems.indexOf(element);
-            renderLightboxContent();
             const modal = document.getElementById('lightboxModal');
-            modal.classList.remove('hidden');
-            document.body.style.overflow = 'hidden'; 
-            document.addEventListener('keydown', handleKeyPress);
-        }
-
-        function renderLightboxContent() {
-            const contentArea = document.getElementById('lightboxContent');
+            const lbImg = document.getElementById('lightboxImage');
+            const lbVid = document.getElementById('lightboxVideo');
             const lbCaption = document.getElementById('lightboxCaption');
-            const element = galleryItems[currentIndex];
-            contentArea.innerHTML = ''; 
-
-            if (element.tagName === 'VIDEO') {
-                const video = document.createElement('video');
-                video.src = element.src || element.querySelector('source').src;
-                video.autoplay = true;
-                video.loop = true;
-                video.controls = true;
-                video.className = 'max-w-full max-h-[80vh] rounded-lg shadow-2xl';
-                contentArea.appendChild(video);
-            } else {
-                const img = document.createElement('img');
-                img.src = element.src;
-                img.className = 'max-w-full max-h-[80vh] object-contain rounded-lg shadow-2xl';
-                contentArea.appendChild(img);
+            lbImg.classList.add('hidden'); lbVid.classList.add('hidden');
+            if (element.tagName === 'IMG') {
+                lbImg.src = element.src; lbImg.classList.remove('hidden');
+                lbCaption.innerText = element.alt || "Design Artifact";
+            } else if (element.tagName === 'VIDEO') {
+                const source = element.querySelector('source') ? element.querySelector('source').src : element.src;
+                lbVid.src = source; lbVid.classList.remove('hidden'); lbVid.load(); lbVid.play();
+                lbCaption.innerText = element.getAttribute('alt') || "Interaction Study";
             }
-            lbCaption.innerText = element.getAttribute('alt') || "Detail View";
-        }
-
-        function changeSlide(direction) {
-            currentIndex += direction;
-            if (currentIndex >= galleryItems.length) currentIndex = 0;
-            if (currentIndex < 0) currentIndex = galleryItems.length - 1;
-            renderLightboxContent();
-        }
-
-        function handleKeyPress(e) {
-            if (e.key === "ArrowRight") changeSlide(1);
-            if (e.key === "ArrowLeft") changeSlide(-1);
-            if (e.key === "Escape") closeLightbox();
+            modal.classList.remove('hidden'); document.body.style.overflow = 'hidden'; 
         }
 
         function closeLightbox() {
             const modal = document.getElementById('lightboxModal');
-            document.getElementById('lightboxContent').innerHTML = ''; 
-            modal.classList.add('hidden');
-            document.body.style.overflow = 'auto';
-            document.removeEventListener('keydown', handleKeyPress);
+            document.getElementById('lightboxVideo').pause();
+            modal.classList.add('hidden'); document.body.style.overflow = 'auto';
         }
-    </script>
 
+        document.addEventListener('keydown', (e) => { if (e.key === 'Escape') closeLightbox(); });
+    </script>
 </body>
 </html>
