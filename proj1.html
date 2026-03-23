@@ -1,0 +1,308 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Project Title | Jared Bunch</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;800&family=Playfair+Display:wght@700;900&display=swap" rel="stylesheet">
+    <style>
+        body { font-family: 'Inter', sans-serif; scroll-behavior: smooth; }
+        h1, h2, h3 { font-family: 'Playfair Display', serif; }
+        .zoom-cursor { cursor: zoom-in; }
+        .nav-link { position: relative; transition: all 0.3s ease; }
+        .nav-link.active { color: #000; font-weight: 800; }
+        .nav-link.active::before {
+            content: ""; position: absolute; left: -1.5rem; top: 0; bottom: 0; width: 3px;
+            background-color: #10b981; border-radius: 0 4px 4px 0;
+        }
+    </style>
+</head>
+<body class="bg-white text-slate-900 leading-relaxed">
+
+    <nav class="sticky top-0 z-50 bg-white/80 backdrop-blur-md border-b border-slate-100 p-4">
+        <div class="max-w-7xl mx-auto flex justify-between items-center">
+            <a href="index.html" class="text-xs font-black uppercase tracking-widest text-slate-400 hover:text-black transition">← Back to Portfolio</a>
+            <a href="https://www.linkedin.com/in/jaredabunch" target="_blank" class="text-slate-400 hover:text-blue-600 transition">LinkedIn</a>
+        </div>
+    </nav>
+
+    <header class="max-w-4xl mx-auto px-6 pt-24 pb-16">
+        <span class="text-emerald-600 font-black tracking-widest uppercase text-xs">Product: Process Analysis</span>
+        <h1 class="text-5xl md:text-7xl font-black mt-6 mb-8 tracking-tight italic">Simulation Monitoring & Reporting</h1>
+        <p class="text-2xl text-slate-500 font-light text-balance">Providing real-time insights into simulation performance and generating actionable reports for stakeholders from Process Analysis.</p>
+    </header>
+
+    <div class="max-w-7xl mx-auto px-6 py-24 flex flex-col lg:flex-row gap-16">
+        <aside class="hidden lg:block w-64 flex-shrink-0">
+            <nav class="sticky top-32 self-start border-r border-slate-100 pr-8">
+                <h4 class="text-xs font-black uppercase tracking-widest text-slate-900 mb-8">Navigation</h4>
+                <ul class="space-y-6 text-sm font-medium">
+                    <li><a href="#overview" class="nav-link text-slate-400 hover:text-black block">Overview</a></li>
+                    <li><a href="#phase1" class="nav-link text-slate-400 hover:text-black block">Opportunity & Process</a></li>
+                    <li><a href="#solution" class="nav-link text-slate-400 hover:text-black block">Design Solution</a></li>
+                    <li><a href="#impact" class="nav-link text-slate-400 hover:text-black block">Impact</a></li>
+                </ul>
+            </nav>
+        </aside>
+        
+         <article class="flex-grow max-w-4xl space-y-24">
+            <section id="overview" class="space-y-12">
+                <header>
+                    <span class="text-emerald-600 font-bold uppercase text-xs tracking-widest">Overview</span>
+                    <h2 class="text-4xl font-bold mt-4 mb-8 text-balance">The Challenge</h2>
+                </header>
+                <div class="pt-8 pb-12 border-t border-slate-100">
+                    <p class="text-slate-600 text-lg mb-8">Explain the context here. What was the goal? Who was the user?</p>
+                    <div class="rounded-[2rem] bg-slate-100 aspect-video flex items-center justify-center overflow-hidden border border-slate-200">
+                        <img src="assets/pahero.png" alt="Process Analysis Simulation" class="object-cover w-full h-full zoom-cursor" onclick="openLightbox(this)">
+                    </div>
+                              <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+                <div onclick="openModal('blueprints')" class="p-8 bg-slate-50 rounded-3xl border border-slate-100 hover:border-slate-300 hover:shadow-lg transition-all cursor-pointer group">
+                    <div class="w-12 h-12 bg-white rounded-xl shadow-sm flex items-center justify-center mb-6 group-hover:scale-110 transition-transform">
+<svg class="w-6 h-6 text-slate-900" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M12 8v4l3 3m6-3a9 9 0 11-18 0 9 9 0 0118 0z"></path>
+</svg>
+                    </div>
+                    <h4 class="font-bold text-lg mb-3">Cycle Time</h4>
+                    <p class="text-sm text-slate-500 leading-relaxed">Identify potential issues or areas of improvement in the process.</p>
+                </div>
+
+                <div onclick="openModal('research')" class="p-8 bg-slate-50 rounded-3xl border border-slate-100 hover:border-slate-300 hover:shadow-lg transition-all cursor-pointer group">
+                    <div class="w-12 h-12 bg-white rounded-xl shadow-sm flex items-center justify-center mb-6 group-hover:scale-110 transition-transform">
+<svg class="w-6 h-6 text-slate-900" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M13 7h8m0 0v8m0-8l-8 8-4-4-6 6"></path>
+</svg>
+                    </div>
+                    <h4 class="font-bold text-lg mb-3">Line Efficiency</h4>
+                    <p class="text-sm text-slate-500 leading-relaxed">Get a detailed view of the models line efficiency.</p>
+                </div>
+
+                <div onclick="openModal('governance')" class="p-8 bg-slate-50 rounded-3xl border border-slate-100 hover:border-slate-300 hover:shadow-lg transition-all cursor-pointer group">
+                    <div class="w-12 h-12 bg-white rounded-xl shadow-sm flex items-center justify-center mb-6 group-hover:scale-110 transition-transform">
+<svg class="w-6 h-6 text-slate-900" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M9 3v2m6-2v2M9 19v2m6-2v2M5 9H3m2 6H3m18-6h-2m2 6h-2M7 19h10a2 2 0 002-2V7a2 2 0 00-2-2H7a2 2 0 00-2 2v10a2 2 0 002 2zM9 9h6v6H9V9z"></path>
+</svg>
+                    </div>
+                    <h4 class="font-bold text-lg mb-3">Monitor Simulation</h4>
+                    <p class="text-sm text-slate-500 leading-relaxed">Monitor the performance of the process design.</p>
+                </div>
+            </div>
+                </div>
+            </section>
+        <article class="flex-grow max-w-4xl space-y-24">
+            <section id="phase1" class="space-y-12">
+                <header>
+                    <span class="text-emerald-600 font-bold uppercase text-xs tracking-widest">Phase 1</span>
+                    <h2 class="text-4xl font-bold mt-4 mb-8 text-balance">The Opportunity & The Process</h2>
+                </header>
+                <div class="pt-8 pb-12 border-t border-slate-100">
+                    <p class="text-slate-600 text-lg mb-8">Explain the context here. What was the goal? Who was the user?</p>
+                    <div class="rounded-[2rem] bg-slate-100 aspect-video flex items-center justify-center overflow-hidden border border-slate-200">
+                        <img src="assets/pasimulationreportbrainstorm.png" alt="Brainstorm & Affinity Session" class="object-cover w-full h-full zoom-cursor" onclick="openLightbox(this)">
+                    </div>
+                </div>
+            </section>
+            <section id="solution" class="space-y-12 border-t border-slate-100 pt-16">
+                <header>
+                    <span class="text-emerald-600 font-bold uppercase text-xs tracking-widest">Phase 2</span>
+                    <h2 class="text-4xl font-bold mt-4 mb-8 text-balance">Execution</h2>
+                </header>
+                <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
+                    <div class="space-y-4">
+                        <div class="rounded-2xl bg-slate-50 aspect-square border border-slate-100 flex items-center justify-center">
+                             <p class="text-slate-300 text-xs">Artifact 1</p>
+                        </div>
+                        <p class="text-xs text-slate-500 italic">Caption for first artifact.</p>
+                    </div>
+                    <div class="space-y-4">
+                        <div class="rounded-2xl bg-slate-50 aspect-square border border-slate-100 flex items-center justify-center">
+                             <p class="text-slate-300 text-xs">Artifact 2</p>
+                        </div>
+                        <p class="text-xs text-slate-500 italic">Caption for second artifact.</p>
+                    </div>
+                </div>
+            </section>
+
+            <section id="impact" class="py-16 bg-slate-900 rounded-[3rem] px-12 text-white">
+                <h2 class="text-3xl font-bold mb-6 italic text-emerald-400">Result & Reflection</h2>
+                <p class="text-slate-400 leading-relaxed mb-8">What was the final outcome? Mention a metric or a specific piece of positive feedback here.</p>
+                <div class="grid grid-cols-1 md:grid-cols-2 gap-8 pt-8 border-t border-slate-800">
+                    <div>
+                        <h4 class="text-xs font-black uppercase tracking-widest text-slate-500 mb-2">Success Metric</h4>
+                        <p class="text-2xl font-bold italic">40% Efficiency Gain</p>
+                    </div>
+                    <div>
+                        <h4 class="text-xs font-black uppercase tracking-widest text-slate-500 mb-2">Key Learning</h4>
+                        <p class="text-sm text-slate-400 italic">"Trust is the primary currency in complex systems."</p>
+                    </div>
+                </div>
+            </section>
+        </article>
+    </div>
+
+    <footer class="bg-slate-900 text-white py-24 text-center border-t border-slate-800">
+        <h3 class="text-4xl font-bold mb-8 italic">Let's build clarity.</h3>
+        <a href="mailto:jared.bunch@outlook.com" class="text-2xl font-black border-b-4 border-slate-700 hover:border-emerald-500 transition pb-2">jared.bunch@outlook.com</a>
+    </footer>
+
+    <div id="lightboxModal" class="fixed inset-0 z-[100] hidden bg-slate-900/95 backdrop-blur-md flex items-center justify-center p-4" onclick="closeLightbox()">
+        <div class="relative max-w-6xl w-full h-full flex flex-col items-center justify-center">
+            <img id="lightboxImage" src="" alt="" class="hidden max-w-full max-h-[80vh] object-contain shadow-2xl rounded-lg">
+            <video id="lightboxVideo" controls autoplay loop muted class="hidden max-w-full max-h-[80vh] object-contain shadow-2xl rounded-lg">
+                <source src="" type="video/mp4">
+            </video>
+            <div id="lightboxCaption" class="mt-6 text-white text-lg font-medium text-center bg-slate-800/50 px-6 py-2 rounded-full"></div>
+            <button class="absolute top-0 right-0 text-white text-5xl font-light p-4">&times;</button>
+        </div>
+    </div>
+
+    <script>
+        window.addEventListener('DOMContentLoaded', () => {
+            const observerOptions = { root: null, rootMargin: '-20% 0% -70% 0%', threshold: 0 };
+            const observer = new IntersectionObserver((entries) => {
+                entries.forEach((entry) => {
+                    const id = entry.target.getAttribute('id');
+                    const navLink = document.querySelector(`.nav-link[href="#${id}"]`);
+                    if (entry.isIntersecting) {
+                        document.querySelectorAll('.nav-link').forEach(link => link.classList.remove('active'));
+                        navLink?.classList.add('active');
+                    }
+                });
+            }, observerOptions);
+            document.querySelectorAll('section[id]').forEach((s) => observer.observe(s));
+        });
+
+        function openLightbox(element) {
+            const modal = document.getElementById('lightboxModal');
+            const lbImg = document.getElementById('lightboxImage');
+            const lbVid = document.getElementById('lightboxVideo');
+            lbImg.classList.add('hidden'); lbVid.classList.add('hidden');
+            if (element.tagName === 'IMG') {
+                lbImg.src = element.src; lbImg.classList.remove('hidden');
+            } else if (element.tagName === 'VIDEO') {
+                lbVid.src = element.querySelector('source').src; lbVid.classList.remove('hidden'); lbVid.play();
+            }
+            document.getElementById('lightboxCaption').innerText = element.alt || "Design Detail";
+            modal.classList.remove('hidden'); document.body.style.overflow = 'hidden';
+        }
+
+        function closeLightbox() {
+            document.getElementById('lightboxModal').classList.add('hidden');
+            document.getElementById('lightboxVideo').pause();
+            document.body.style.overflow = 'auto';
+        }
+        // Toolbox Modal Logic
+function openModal(type) {
+    const modal = document.getElementById('toolboxModal');
+    const data = toolboxData[type];
+
+    if (data) {
+        document.getElementById('modalCategory').innerText = data.category;
+        document.getElementById('modalTitle').innerText = data.title;
+        document.getElementById('modalDescription').innerText = data.description;
+        document.getElementById('modalImpact').querySelector('p').innerText = data.impact;
+        
+        // Handle the dynamic bulleted list
+        const listContainer = document.getElementById('modalReportList');
+        listContainer.innerHTML = ''; // Clear previous list items
+        
+        if (data.reportItems && data.reportItems.length > 0) {
+            data.reportItems.forEach(item => {
+                const li = document.createElement('li');
+                li.className = 'text-xs text-slate-600 flex gap-2';
+                li.innerHTML = `<span class="text-emerald-500 font-bold">→</span> <span>${item}</span>`;
+                listContainer.appendChild(li);
+            });
+        }
+
+        const imageContainer = document.getElementById('modalImage');
+        imageContainer.innerHTML = `<img src="${data.image}" alt="${data.title}" class="w-full h-full object-contain">`;
+
+        modal.classList.remove('hidden');
+        document.body.style.overflow = 'hidden';
+    }
+}
+
+function closeModal() {
+    document.getElementById('toolboxModal').classList.add('hidden');
+    document.body.style.overflow = 'auto';
+}
+
+// Data Object (Usually in assets/toolbox.js)
+const toolboxData = {
+    blueprints: { // Triggered by openModal('blueprints')
+        category: "Metric",
+        title: "Cycle Time",
+        description: "The Cycle Time Report provides a picture of how the process model performs overall and helps to identify potential issues or areas for improvement from an in-depth view.",
+        impact: "Identified a 15% latency issue in the assembly sub-process.",
+        reportItems: [
+            "Simulation Summary",
+            "Production Summary",
+            "Blocked Time Summary",
+            "Idle Time Summary",
+            "Down Time Summary",
+            "Processor Cycle Time Charts"
+        ],
+        image: "assets/icon-cycle.png" 
+    },
+    research: { // Triggered by openModal('research')
+        category: "Metric",
+        title: "Line Efficiency",
+        description: "A line efficiency report shows how each source, operator, processor, buffer, and connection performed during the simulation.",
+        impact: "Improved resource allocation, leading to a 10% increase in daily throughput.",
+        reportItems: [
+            "Simulation Summary",
+            "Production Summary",
+            "Processor Efficiency Summary",
+            "Operator Utilization Summary",
+            "Connection Utilization Summary",
+            "Processor Efficiency Charts",
+            "Operator Utilization Charts",
+            "Connection Utilization Charts"
+        ],
+        image: "assets/icon-efficiency.png"
+    },
+    governance: { // Triggered by openModal('governance')
+        category: "Process",
+        title: "Simulation",
+        description: "Running complex 'what-if' scenarios within the digital twin to predict how changes in layout or staffing will impact the final results.",
+        impact: "Validated the new factory layout virtually before a single machine was moved.",
+        reportItems: [
+            "Station-by-station time logs",
+            "Idle time vs. active time analysis",
+            "Historical cycle comparisons"
+        ],
+        image: "assets/icon-simulation.png"
+    }
+};
+    </script>
+    <div id="toolboxModal" class="fixed inset-0 z-[100] hidden bg-slate-900/90 backdrop-blur-sm flex items-center justify-center p-6" onclick="closeModal()">
+    <div class="bg-white rounded-[2.5rem] max-w-4xl w-full max-h-[90vh] overflow-y-auto shadow-2xl" onclick="event.stopPropagation()">
+        <div class="p-8 md:p-12">
+            <div class="flex justify-between items-start mb-8">
+                <div>
+                    <span id="modalCategory" class="text-[10px] font-black px-3 py-1 bg-slate-100 rounded-full uppercase tracking-widest text-slate-500 mb-4 inline-block">Method</span>
+                    <h2 id="modalTitle" class="text-4xl font-bold italic">Artifact Title</h2>
+                </div>
+                <button onclick="closeModal()" class="text-slate-400 hover:text-black transition text-3xl">&times;</button>
+            </div>
+            <div class="grid grid-cols-1 md:grid-cols-2 gap-12">
+                <div class="space-y-6">
+                    <p id="modalDescription" class="text-lg text-slate-600 leading-relaxed font-light">Description goes here.</p>
+<div id="modalImpact" class="p-6 bg-slate-50 rounded-2xl border border-slate-100">
+    <h5 class="text-xs font-black uppercase tracking-widest text-slate-400 mb-2">Real Impact</h5>
+    <p class="text-sm font-bold italic text-slate-800 mb-6">Outcome detail goes here.</p>
+    
+    <h5 class="text-xs font-black uppercase tracking-widest text-slate-400 mb-3 border-t border-slate-200 pt-4">Report Details-Per End Product</h5>
+    <ul id="modalReportList" class="space-y-2">
+        </ul>
+</div>
+                </div>
+                <div id="modalImage" class="rounded-2xl bg-transparent aspect-square flex items-center justify-center overflow-hidden"></div>
+            </div>
+        </div>
+    </div>
+</div>
+</body>
+</html>
