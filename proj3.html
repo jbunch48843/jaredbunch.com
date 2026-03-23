@@ -1,0 +1,153 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Project Title | Jared Bunch</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;800&family=Playfair+Display:wght@700;900&display=swap" rel="stylesheet">
+    <style>
+        body { font-family: 'Inter', sans-serif; scroll-behavior: smooth; }
+        h1, h2, h3 { font-family: 'Playfair Display', serif; }
+        .zoom-cursor { cursor: zoom-in; }
+        .nav-link { position: relative; transition: all 0.3s ease; }
+        .nav-link.active { color: #000; font-weight: 800; }
+        .nav-link.active::before {
+            content: ""; position: absolute; left: -1.5rem; top: 0; bottom: 0; width: 3px;
+            background-color: #10b981; border-radius: 0 4px 4px 0;
+        }
+    </style>
+</head>
+<body class="bg-white text-slate-900 leading-relaxed">
+
+    <nav class="sticky top-0 z-50 bg-white/80 backdrop-blur-md border-b border-slate-100 p-4">
+        <div class="max-w-7xl mx-auto flex justify-between items-center">
+            <a href="index.html" class="text-xs font-black uppercase tracking-widest text-slate-400 hover:text-black transition">← Back to Portfolio</a>
+            <a href="https://www.linkedin.com/in/jaredabunch" target="_blank" class="text-slate-400 hover:text-blue-600 transition">LinkedIn</a>
+        </div>
+    </nav>
+
+    <header class="max-w-4xl mx-auto px-6 pt-24 pb-16">
+        <span class="text-emerald-600 font-black tracking-widest uppercase text-xs">Project Category</span>
+        <h1 class="text-5xl md:text-7xl font-black mt-6 mb-8 tracking-tight italic">Project Title</h1>
+        <p class="text-2xl text-slate-500 font-light text-balance">One sentence summary of the project impact or the specific problem you solved here.</p>
+    </header>
+
+    <div class="max-w-7xl mx-auto px-6 py-24 flex flex-col lg:flex-row gap-16">
+        <aside class="hidden lg:block w-64 flex-shrink-0">
+            <nav class="sticky top-32 self-start border-r border-slate-100 pr-8">
+                <h4 class="text-xs font-black uppercase tracking-widest text-slate-900 mb-8">Navigation</h4>
+                <ul class="space-y-6 text-sm font-medium">
+                    <li><a href="#overview" class="nav-link text-slate-400 hover:text-black block">Overview</a></li>
+                    <li><a href="#solution" class="nav-link text-slate-400 hover:text-black block">Design Solution</a></li>
+                    <li><a href="#impact" class="nav-link text-slate-400 hover:text-black block">Impact</a></li>
+                </ul>
+            </nav>
+        </aside>
+        
+        <article class="flex-grow max-w-4xl space-y-24">
+            <section id="overview" class="space-y-12">
+                <header>
+                    <span class="text-emerald-600 font-bold uppercase text-xs tracking-widest">Phase 1</span>
+                    <h2 class="text-4xl font-bold mt-4 mb-8 text-balance">The Challenge</h2>
+                </header>
+                <div class="pt-8 pb-12 border-t border-slate-100">
+                    <p class="text-slate-600 text-lg mb-8">Explain the context here. What was the goal? Who was the user?</p>
+                    <div class="rounded-[2rem] bg-slate-100 aspect-video flex items-center justify-center overflow-hidden border border-slate-200">
+                        <p class="text-slate-400 italic text-sm text-center px-6">Replace this with a Hero Image or Video showing the project in context.</p>
+                    </div>
+                </div>
+            </section>
+
+            <section id="solution" class="space-y-12 border-t border-slate-100 pt-16">
+                <header>
+                    <span class="text-emerald-600 font-bold uppercase text-xs tracking-widest">Phase 2</span>
+                    <h2 class="text-4xl font-bold mt-4 mb-8 text-balance">Execution</h2>
+                </header>
+                <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
+                    <div class="space-y-4">
+                        <div class="rounded-2xl bg-slate-50 aspect-square border border-slate-100 flex items-center justify-center">
+                             <p class="text-slate-300 text-xs">Artifact 1</p>
+                        </div>
+                        <p class="text-xs text-slate-500 italic">Caption for first artifact.</p>
+                    </div>
+                    <div class="space-y-4">
+                        <div class="rounded-2xl bg-slate-50 aspect-square border border-slate-100 flex items-center justify-center">
+                             <p class="text-slate-300 text-xs">Artifact 2</p>
+                        </div>
+                        <p class="text-xs text-slate-500 italic">Caption for second artifact.</p>
+                    </div>
+                </div>
+            </section>
+
+            <section id="impact" class="py-16 bg-slate-900 rounded-[3rem] px-12 text-white">
+                <h2 class="text-3xl font-bold mb-6 italic text-emerald-400">Result & Reflection</h2>
+                <p class="text-slate-400 leading-relaxed mb-8">What was the final outcome? Mention a metric or a specific piece of positive feedback here.</p>
+                <div class="grid grid-cols-1 md:grid-cols-2 gap-8 pt-8 border-t border-slate-800">
+                    <div>
+                        <h4 class="text-xs font-black uppercase tracking-widest text-slate-500 mb-2">Success Metric</h4>
+                        <p class="text-2xl font-bold italic">40% Efficiency Gain</p>
+                    </div>
+                    <div>
+                        <h4 class="text-xs font-black uppercase tracking-widest text-slate-500 mb-2">Key Learning</h4>
+                        <p class="text-sm text-slate-400 italic">"Trust is the primary currency in complex systems."</p>
+                    </div>
+                </div>
+            </section>
+        </article>
+    </div>
+
+    <footer class="bg-slate-900 text-white py-24 text-center border-t border-slate-800">
+        <h3 class="text-4xl font-bold mb-8 italic">Let's build clarity.</h3>
+        <a href="mailto:jared.bunch@outlook.com" class="text-2xl font-black border-b-4 border-slate-700 hover:border-emerald-500 transition pb-2">jared.bunch@outlook.com</a>
+    </footer>
+
+    <div id="lightboxModal" class="fixed inset-0 z-[100] hidden bg-slate-900/95 backdrop-blur-md flex items-center justify-center p-4" onclick="closeLightbox()">
+        <div class="relative max-w-6xl w-full h-full flex flex-col items-center justify-center">
+            <img id="lightboxImage" src="" alt="" class="hidden max-w-full max-h-[80vh] object-contain shadow-2xl rounded-lg">
+            <video id="lightboxVideo" controls autoplay loop muted class="hidden max-w-full max-h-[80vh] object-contain shadow-2xl rounded-lg">
+                <source src="" type="video/mp4">
+            </video>
+            <div id="lightboxCaption" class="mt-6 text-white text-lg font-medium text-center bg-slate-800/50 px-6 py-2 rounded-full"></div>
+            <button class="absolute top-0 right-0 text-white text-5xl font-light p-4">&times;</button>
+        </div>
+    </div>
+
+    <script>
+        window.addEventListener('DOMContentLoaded', () => {
+            const observerOptions = { root: null, rootMargin: '-20% 0% -70% 0%', threshold: 0 };
+            const observer = new IntersectionObserver((entries) => {
+                entries.forEach((entry) => {
+                    const id = entry.target.getAttribute('id');
+                    const navLink = document.querySelector(`.nav-link[href="#${id}"]`);
+                    if (entry.isIntersecting) {
+                        document.querySelectorAll('.nav-link').forEach(link => link.classList.remove('active'));
+                        navLink?.classList.add('active');
+                    }
+                });
+            }, observerOptions);
+            document.querySelectorAll('section[id]').forEach((s) => observer.observe(s));
+        });
+
+        function openLightbox(element) {
+            const modal = document.getElementById('lightboxModal');
+            const lbImg = document.getElementById('lightboxImage');
+            const lbVid = document.getElementById('lightboxVideo');
+            lbImg.classList.add('hidden'); lbVid.classList.add('hidden');
+            if (element.tagName === 'IMG') {
+                lbImg.src = element.src; lbImg.classList.remove('hidden');
+            } else if (element.tagName === 'VIDEO') {
+                lbVid.src = element.querySelector('source').src; lbVid.classList.remove('hidden'); lbVid.play();
+            }
+            document.getElementById('lightboxCaption').innerText = element.alt || "Design Detail";
+            modal.classList.remove('hidden'); document.body.style.overflow = 'hidden';
+        }
+
+        function closeLightbox() {
+            document.getElementById('lightboxModal').classList.add('hidden');
+            document.getElementById('lightboxVideo').pause();
+            document.body.style.overflow = 'auto';
+        }
+    </script>
+</body>
+</html>
