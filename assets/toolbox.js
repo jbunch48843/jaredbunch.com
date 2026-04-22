@@ -1,7 +1,7 @@
 const toolboxData = {
     'blueprints': {
         category: 'Method',
-        title: 'Service Blueprints',
+        title: 'Journey Mapping',
         description: 'In industrial software, the user experience starts long before someone clicks a button. I map out the entire ecosystem: including the handoffs between people, internal processes, and the tech stack. This helps me see where the real friction lives.',
         impact: 'Identifying a data silo issue that was causing a 65% delay in factory planning cycles.',
         shape: 'blueprints'
