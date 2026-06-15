@@ -5,6 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Jared Bunch | Principal UX Designer</title>
     <link rel="icon" type="image/png" href="assets/favicon.png">
+    <script src="assets/testimonials.js"></script>
     <script src="https://cdn.tailwindcss.com"></script>
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;800&family=Playfair+Display:wght@700;900&display=swap" rel="stylesheet">
     <style>
@@ -21,6 +22,8 @@
             <div class="hidden md:flex space-x-10 text-sm font-bold uppercase tracking-widest text-slate-500">
                 <a href="index.html" class="hover:text-black transition text-xs">Home</a>
                 <a href="mystory.html" class="hover:text-black transition text-xs">About Me</a>
+                <a href="notes.html" class="hover:text-black transition text-xs">Notes</a>
+                <a href="index.html#testimonials" class="hover:text-black transition text-xs">Testimonials</a>
                 <a href="mailto:jared.bunch@outlook.com" class="text-black border-b-2 border-black pb-1 text-xs">Get in Touch</a>
                 <a href="assets/jaredbunch_resume.pdf" target="_blank" class="font-bold uppercase tracking-widest text-xs hover:text-black transition">Resume (PDF)</a>
             </div>
@@ -34,10 +37,25 @@
         <p class="text-xl md:text-2xl text-slate-500 max-w-2xl mb-12">
        I am a Principal UX Designer with over 12 years of experience building digital tools that run complex global businesses.
         </p>
-        <div class="flex flex-col md:flex-row gap-6">
-            <a href="#work" class="px-8 py-4 bg-black text-white font-bold rounded-full hover:bg-slate-800 transition text-center text-sm uppercase tracking-widest">See my work</a>
-            <a href="https://www.linkedin.com/in/jaredabunch" target="_blank" class="px-8 py-4 border-2 border-slate-200 font-bold rounded-full hover:border-black transition text-center text-sm uppercase tracking-widest">Connect on LinkedIn</a>
-        </div>
+<div class="flex flex-col md:flex-row items-center gap-6">
+    <a href="#work" class="px-8 py-4 bg-black text-white font-bold rounded-full hover:bg-slate-800 transition text-center text-sm uppercase tracking-widest">
+        See my work
+    </a>
+    
+    <a href="notes.html" class="px-8 py-4 bg-white text-black border-2 border-slate-200 font-bold rounded-full hover:border-black transition text-center text-sm uppercase tracking-widest flex items-center justify-center gap-2">
+        Read Latest Notes
+        <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
+    </a>
+
+    <a href="https://www.linkedin.com/in/jaredabunch" target="_blank" class="px-8 py-4 border-2 border-slate-200 font-bold rounded-full hover:border-black hover:text-blue-600 transition text-center text-sm uppercase tracking-widest">
+        Connect on LinkedIn
+    </a>
+</div>
+<div class="mt-12 flex items-center gap-2">
+    <a href="#testimonials" class="text-xs font-black uppercase tracking-[0.2em] text-slate-500 hover:text-black transition border-b border-slate-200 hover:border-black pb-1">
+        See what others are saying &rarr;
+    </a>
+</div>
     </header>
 
     <section class="bg-slate-900 text-white py-24">
@@ -78,34 +96,38 @@
             </a>
         </div>
     </main>
- <!-- <section class="bg-slate-50 py-24 border-t border-slate-100">
-        <div class="max-w-6xl mx-auto px-6">
-            <h2 class="text-3xl font-bold mb-12 italic">Additional Projects</h2>
-            <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
-                <a href="processanalysis.html" class="bg-white p-8 rounded-[2rem] border border-slate-200 hover:shadow-xl transition-all group">
-                    <div class="aspect-video bg-slate-100 rounded-2xl mb-6 overflow-hidden">
-                         <div class="w-full h-full flex items-center justify-center text-slate-300 text-xs">Project Image</div>
-                    </div>
-                    <h4 class="font-bold text-xl mb-2 group-hover:text-emerald-600 transition">Process Analysis</h4>
-                    <p class="text-sm text-slate-500">Monitor simulation in real-time and provide actionable insights.</p>
-                </a>
-                <a href="#" class="bg-white p-8 rounded-[2rem] border border-slate-200 hover:shadow-xl transition-all group">
-                    <div class="aspect-video bg-slate-100 rounded-2xl mb-6 overflow-hidden">
-                         <div class="w-full h-full flex items-center justify-center text-slate-300 text-xs">Project Image</div>
-                    </div>
-                    <h4 class="font-bold text-xl mb-2 group-hover:text-emerald-600 transition">Project 2 Title</h4>
-                    <p class="text-sm text-slate-500">Brief summary of the work done for this project.</p>
-                </a>
-                <a href="#" class="bg-white p-8 rounded-[2rem] border border-slate-200 hover:shadow-xl transition-all group">
-                    <div class="aspect-video bg-slate-100 rounded-2xl mb-6 overflow-hidden">
-                         <div class="w-full h-full flex items-center justify-center text-slate-300 text-xs">Project Image</div>
-                    </div>
-                    <h4 class="font-bold text-xl mb-2 group-hover:text-emerald-600 transition">Project 3 Title</h4>
-                    <p class="text-sm text-slate-500">Brief summary of the work done for this project.</p>
-                </a>
-            </div>
-        </div>
-    </section> -->
+<section id="additional-work" class="bg-slate-50 py-32 border-t border-slate-100">
+    <div class="max-w-6xl mx-auto px-6">
+        <h2 class="text-3xl font-bold mb-12 italic">Additional Work</h2>
+        
+        <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+            
+            <a href="processanalysis.html" class="bg-white p-8 rounded-[2rem] border border-slate-200 hover:shadow-xl transition-all group block">
+                <div class="aspect-video bg-slate-100 rounded-2xl mb-6 overflow-hidden">
+                    <img src="assets/project-1.png" alt="Process Analysis project overview" class="w-full h-full object-cover zoom-cursor" onclick="openLightbox(this)">
+                </div>
+                <h4 class="font-bold text-xl mb-2 group-hover:text-emerald-600 transition">Process Analysis</h4>
+                <p class="text-sm text-slate-500 leading-relaxed">Monitor simulation in real-time and provide actionable insights.</p>
+            </a>
+
+<!--             <a href="#" class="bg-white p-8 rounded-[2rem] border border-slate-200 hover:shadow-xl transition-all group block">
+                <div class="aspect-video bg-slate-100 rounded-2xl mb-6 overflow-hidden">
+                    <img src="assets/project-2.png" alt="Description of Project 2 image" class="w-full h-full object-cover zoom-cursor" onclick="openLightbox(this)">
+                </div>
+                <h4 class="font-bold text-xl mb-2 group-hover:text-emerald-600 transition">Project 2 Title</h4>
+                <p class="text-sm text-slate-500 leading-relaxed">Brief summary of the work done for this project.</p>
+            </a>
+
+            <a href="#" class="bg-white p-8 rounded-[2rem] border border-slate-200 hover:shadow-xl transition-all group block">
+                <div class="aspect-video bg-slate-100 rounded-2xl mb-6 overflow-hidden">
+                    <img src="assets/project-3.png" alt="Description of Project 3 image" class="w-full h-full object-cover zoom-cursor" onclick="openLightbox(this)">
+                </div>
+                <h4 class="font-bold text-xl mb-2 group-hover:text-emerald-600 transition">Project 3 Title</h4>
+                <p class="text-sm text-slate-500 leading-relaxed">Brief summary of the work done for this project.</p>
+            </a> -->
+
+        </div> </div>
+</section>
     <section class="bg-white pt-12 pb-24 border-t border-slate-100">
         <div class="max-w-6xl mx-auto px-6">
             <div class="flex flex-col md:flex-row justify-between items-start md:items-end mb-16 gap-6">
@@ -133,6 +155,30 @@
             </a>
         </div>
     </section>
+<section id="testimonials" class="bg-slate-50 py-32 border-t border-slate-200 overflow-hidden">
+    <div class="max-w-full"> <div class="max-w-6xl mx-auto px-6 mb-16">
+            <h2 class="text-5xl font-bold mb-6 text-slate-900 italic">What others have to say about me...</h2>
+            <p class="text-xl text-slate-500">Feedback from those I've had the pleasure of partnering with.</p>
+        </div>
+
+        <div class="relative flex overflow-hidden group">
+            <div id="testimonial-track" class="flex animate-glide whitespace-nowrap group-hover:[animation-play-state:paused]">
+                </div>
+        </div>
+    </div>
+</section>
+
+<style>
+    @keyframes glide {
+        0% { transform: translateX(0); }
+        100% { transform: translateX(-50%); } /* Scrolls through the first set to reach the second */
+    }
+    .animate-glide {
+        display: flex;
+        width: max-content;
+        animation: glide 20s linear infinite; /* Adjust 40s to change glide speed */
+    }
+</style>
     <footer class="bg-white py-32 px-6 border-t border-slate-100">
         <div class="max-w-6xl mx-auto flex flex-col md:flex-row justify-between items-center text-center md:text-left gap-12">
             <div>
