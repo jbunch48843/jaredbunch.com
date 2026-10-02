@@ -1,344 +1,216 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Process Analysis | Jared Bunch</title>
-    <script src="https://cdn.tailwindcss.com"></script>
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;800&family=Playfair+Display:wght@700;900&display=swap" rel="stylesheet">
-    <style>
-        body { font-family: 'Inter', sans-serif; scroll-behavior: smooth; }
-        h1, h2, h3 { font-family: 'Playfair Display', serif; }
-        .zoom-cursor { cursor: zoom-in; }
-        .nav-link { position: relative; transition: all 0.3s ease; }
-        .nav-link.active { color: #000; font-weight: 800; }
-        .nav-link.active::before {
-            content: ""; position: absolute; left: -1.5rem; top: 0; bottom: 0; width: 3px;
-            background-color: #10b981; border-radius: 0 4px 4px 0;
-        }
-    </style>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Process Analysis | Jared Bunch</title>
+  <meta name="description" content="Case study: real-time simulation monitoring and reporting for process planners.">
+  <meta property="og:type" content="website">
+  <meta property="og:title" content="Process Analysis | Jared Bunch">
+  <meta property="og:description" content="Case study: real-time simulation monitoring and reporting for process planners.">
+  <meta property="og:image" content="https://jaredbunch.com/assets/pahero.png">
+  <meta name="twitter:card" content="summary_large_image">
+  <link rel="icon" type="image/png" href="assets/favicon.png">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Geist:wght@400;500;600&family=Geist+Mono:wght@400;500&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="assets/css/site.css">
+  <script src="assets/js/site.js" defer></script>
 </head>
-<body class="bg-white text-slate-900 leading-relaxed">
+<body>
+  <a class="skip-link" href="#main">Skip to content</a>
+  <div class="progress-bar" aria-hidden="true"></div>
+  <nav class="site-nav" aria-label="Main">
+    <a class="nav-brand" href="index.html"><b>JB</b><span>Jared Bunch</span></a>
+    <a class="nav-link" href="work.html" aria-current="page">Work</a>
+    <a class="nav-link" href="mystory.html">About</a>
+    <a class="nav-link" href="notes.html">Notes</a>
+    <button class="nav-search" type="button" data-cmdk aria-label="Search the site">Search <kbd>⌘K</kbd></button>
+    <button class="nav-menu" type="button" data-cmdk>Menu</button>
+    <a class="nav-cta" href="mailto:jared.bunch@outlook.com">Contact</a>
+  </nav>
 
-    <nav class="sticky top-0 z-50 bg-white/80 backdrop-blur-md border-b border-slate-100 p-4">
-        <div class="max-w-7xl mx-auto flex justify-between items-center">
-            <a href="index.html" class="text-xs font-black uppercase tracking-widest text-slate-400 hover:text-black transition">← Back to Portfolio</a>
-            <a href="https://www.linkedin.com/in/jaredabunch" target="_blank" class="text-slate-400 hover:text-blue-600 transition">LinkedIn</a>
+  <main id="main">
+    <header class="page-head">
+      <div class="wrap">
+        <nav class="crumbs" aria-label="Breadcrumb"><a href="work.html">Work</a><span aria-hidden="true">/</span><span>Process Analysis</span></nav>
+        <div style="margin-top:28px"><span class="eyebrow">Case study · Autodesk · Process Analysis</span></div>
+        <h1>Simulation monitoring &amp; reporting</h1>
+        <p class="lede">Generating actionable reports for stakeholders and providing real-time insight into simulation performance during the design process.</p>
+        <div class="summary">
+          <div><h2>The problem</h2><p>Static reports forced planners to re-run simulations to see the effect of every design change.</p></div>
+          <div><h2>My role</h2><p>Lead Designer. I led SMEs and customers to map the process and rethink what reporting could be.</p></div>
+          <div><h2>The result</h2><p>Real-time simulation monitoring inside the design process, alongside static reports.</p></div>
         </div>
-    </nav>
-
-    <header class="max-w-4xl mx-auto px-6 pt-24 pb-16">
-        <span class="text-emerald-600 font-black tracking-widest uppercase text-xs">Product: Process Analysis</span>
-        <h1 class="text-5xl md:text-7xl font-black mt-6 mb-8 tracking-tight italic">Simulation Monitoring & Reporting</h1>
-        <p class="text-2xl text-slate-500 font-light text-balance">Generating actionable reports for stakeholders and providing real-time insights into simulation performance during the design process.</p>
+      </div>
     </header>
+    <div class="wrap">
+      <figure class="figure"><div class="figure-frame"><img src="assets/pahero.png" alt="Process Analysis simulation with live reporting" class="zoomable"></div></figure>
+    </div>
 
-    <div class="max-w-7xl mx-auto px-6 py-24 flex flex-col lg:flex-row gap-16">
-        <aside class="hidden lg:block w-64 flex-shrink-0">
-            <nav class="sticky top-32 self-start border-r border-slate-100 pr-8">
-                <h4 class="text-xs font-black uppercase tracking-widest text-slate-900 mb-8">Navigation</h4>
-                <ul class="space-y-6 text-sm font-medium">
-                    <li><a href="#overview" class="nav-link text-slate-400 hover:text-black block">The Problem</a></li>
-                    <li><a href="#approach" class="nav-link text-slate-400 hover:text-black block">My Role & Approach</a></li>
-                    <li><a href="#solution" class="nav-link text-slate-400 hover:text-black block">Design Solution</a></li>
-                    <li><a href="#impact" class="nav-link text-slate-400 hover:text-black block">Impact</a></li>
-                </ul>
-            </nav>
-        </aside>
-        
-         <article class="flex-grow max-w-4xl space-y-24">
-            <section id="overview" class="space-y-12">
-                <header>
-                    <span class="text-emerald-600 font-bold uppercase text-xs tracking-widest">Overview</span>
-                    <h2 class="text-4xl font-bold mt-4 mb-8 text-balance">The Problem</h2>
-                </header>
-                <div class="pt-8 pb-12 border-t border-slate-100">
-                    <p class="text-slate-600 text-lg mb-8">Users need reports of the simulations to share with stakeholders, but static reports would not provide real-time insights during the design process. If they wanted to make changes and see how those impacted the simulation, they would have to generate the report, adjust their design, and re-run the simulation to see the impact of those changes. This process wastes time and forces users to switch back and forth between the static report and the design, possibly many times.</p>
-                </div>
-            </section>
-
-            <section id="phase1" class="space-y-12">
-                <header>
-                    <span class="text-emerald-600 font-bold uppercase text-xs tracking-widest">Approach</span>
-                    <h2 class="text-4xl font-bold mt-4 mb-8 text-balance">My Role & Approach</h2>
-                </header>
-                <div class="pt-8 pb-12 border-t border-slate-100">
-                    <p class="text-slate-600 text-lg mb-8">As the lead designer, I led the team in an effort to identify how we might improve the user experience. With a mix of internal subject matter experts and customers, we mapped out the process, identified the details needed in reports, and brainstormed ideas of how we might deliver more that simple static reports. That solution was to integrate real-time simulation monitoring into the design process. This allowed users to adjust their designs while the simulation was running and immediately see the impact. Below is an image of our brainstorming session as well as a persona that represents our target user.</p>
-                    <div class="rounded-[2rem] bg-slate-100 aspect-video flex items-center justify-center overflow-hidden border border-slate-200">
-                        <img src="assets/pasimulationreportbrainstorm.png" alt="Brainstorm & Affinity Session" class="object-cover w-full h-full zoom-cursor" onclick="openLightbox(this)">
-                    </div>
-                </div>
-                <section class="bg-slate-900 rounded-[3rem] overflow-hidden text-white shadow-2xl font-sans border border-slate-800 my-20">
-    <div class="grid grid-cols-1 lg:grid-cols-12">
-        <div class="lg:col-span-4 bg-slate-800/50 p-10 flex flex-col items-center text-center border-r border-slate-800">
-            <div class="w-48 h-48 rounded-3xl bg-slate-700 mb-8 overflow-hidden shadow-inner group relative">
-                <img src="assets/sarah-persona.png" alt="Sarah - Persona" class="object-cover w-full h-full zoom-cursor transition duration-500 group-hover:scale-105" onclick="openLightbox(this)">
-            </div>
-            <div class="mb-8">
-                <h3 class="text-3xl font-black tracking-tight mb-1">Sarah, 42</h3>
-                <p class="text-emerald-400 text-xs font-black uppercase tracking-widest">Sr. Process Planner</p>
-                <p class="text-slate-400 text-sm mt-2">Industrial Manufacturing</p>
-            </div>
-            <blockquote class="text-slate-300 italic text-lg leading-relaxed pt-8 border-t border-slate-700">
-                "I need to see the line move, not just read about it in a cell."
-            </blockquote>
+    <div class="wrap workspace">
+      <aside class="sidebar" aria-label="Case study navigation">
+        <button class="sidebar-search" type="button" data-cmdk><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><circle cx="11" cy="11" r="7"/><path d="m20 20-3.5-3.5"/></svg><span>Jump to…</span><kbd>⌘K</kbd></button>
+        <div class="sidebar-group">
+          <h2>On this page</h2>
+          <ol class="toc">
+            <li><a href="#overview">The problem</a></li>
+            <li><a href="#approach">My role &amp; approach</a></li>
+            <li><a href="#solution">Design solution</a></li>
+            <li><a href="#impact">Impact</a></li>
+          </ol>
         </div>
-        <div class="lg:col-span-8 p-10 lg:p-12 space-y-8">
-            <section>
-                <h4 class="text-[10px] font-black uppercase tracking-widest text-slate-500 mb-4">The Spreadsheet Struggle</h4>
-                <p class="text-slate-300 text-lg leading-relaxed">Sarah represents our core user transitioning from manual planning. She currently manages entire factory layouts using disconnected spreadsheets, making it impossible to see real-time friction or predict how one station's delay affects the entire global ecosystem.</p>
-            </section>
-            
-            <div class="grid grid-cols-1 md:grid-cols-2 gap-12 border-t border-slate-800 pt-8">
+        <div class="sidebar-group">
+          <h2>Case studies</h2>
+          <ul class="project-list">
+            <li><a href="Drawing-Automation.html"><span class="n">01</span>Drawing Automation</a></li>
+            <li><a href="factory-design.html"><span class="n">02</span>Factory Design Vision</a></li>
+            <li><a href="processanalysis.html" aria-current="page"><span class="n">03</span>Process Analysis</a></li>
+            <li><a href="fairplayengine.html"><span class="n">04</span>Fair Play Lineup</a></li>
+          </ul>
+        </div>
+      </aside>
+
+      <article class="article">
+        <section class="phase" id="overview">
+          <div class="phase-head"><span class="eyebrow">Overview</span><h2>The problem</h2></div>
+          <div class="block">
+            <p>Users need reports of their simulations to share with stakeholders, but static reports don't provide real-time insight during the design process. To see how a change affected the simulation, they had to generate the report, adjust the design, and re-run the simulation. That wastes time and forces users to switch back and forth between the static report and the design, possibly many times.</p>
+          </div>
+        </section>
+
+        <section class="phase" id="approach">
+          <div class="phase-head"><span class="eyebrow">Approach</span><h2>My role &amp; approach</h2></div>
+          <div class="block">
+            <p>As the lead designer, I led the team in identifying how we might improve the user experience. With a mix of internal subject matter experts and customers, we mapped out the process, identified the details needed in reports, and brainstormed how we might deliver more than simple static reports. The answer was to integrate real-time simulation monitoring into the design process, so users could adjust their designs while the simulation was running and immediately see the impact.</p>
+            <figure class="figure"><div class="figure-frame"><img src="assets/pasimulationreportbrainstorm.png" alt="Brainstorm and affinity session" class="zoomable" loading="lazy"></div><figcaption>Our brainstorming and affinity mapping session.</figcaption></figure>
+          </div>
+          <div class="block">
+            <h3>Persona</h3>
+            <div class="persona">
+              <div class="persona-id">
+                <img src="assets/sarah-persona.png" alt="Sarah, persona portrait" class="zoomable" loading="lazy">
+                <h4>Sarah, 42</h4>
+                <span class="eyebrow">Sr. Process Planner</span>
+                <p class="muted small">Industrial manufacturing</p>
+                <blockquote>“I need to see the line move, not just read about it in a cell.”</blockquote>
+              </div>
+              <div class="persona-detail">
                 <section>
-                    <h4 class="text-xs font-black uppercase tracking-widest text-slate-500 mb-4">Core Motivations</h4>
-                    <ul class="space-y-3 text-slate-300 font-medium">
-                        <li class="flex gap-2"><span class="text-emerald-400 font-bold">+</span> <span>Reducing simulation setup time.</span></li>
-                        <li class="flex gap-2"><span class="text-emerald-400 font-bold">+</span> <span>Automating cycle time reporting.</span></li>
-                        <li class="flex gap-2"><span class="text-emerald-400 font-bold">+</span> <span>Visualizing 'Blocked' vs 'Idle' time.</span></li>
-                    </ul>
+                  <h5>The spreadsheet struggle</h5>
+                  <p>Sarah represents our core user transitioning from manual planning. She manages entire factory layouts in disconnected spreadsheets, which makes it impossible to see real-time friction or predict how one station's delay affects the entire global ecosystem.</p>
                 </section>
-                <section>
-                    <h4 class="text-xs font-black uppercase tracking-widest text-slate-500 mb-4">Current Friction</h4>
-                    <ul class="space-y-3 text-slate-300 font-medium">
-                        <li class="flex gap-2"><span class="text-red-400 font-bold">&times;</span> <span>Static data hides line bottlenecks.</span></li>
-                        <li class="flex gap-2"><span class="text-red-400 font-bold">&times;</span> <span>Manual entry leads to human error.</span></li>
-                        <li class="flex gap-2"><span class="text-red-400 font-bold">&times;</span> <span>No real-time feedback loop.</span></li>
-                    </ul>
+                <section class="grid grid-2" style="gap:32px">
+                  <div><h5>Core motivations</h5><ul class="list list--plus" style="margin:0"><li>Reducing simulation setup time</li><li>Automating cycle time reporting</li><li>Visualizing “blocked” vs. “idle” time</li></ul></div>
+                  <div><h5>Current friction</h5><ul class="list list--minus" style="margin:0"><li>Static data hides line bottlenecks</li><li>Manual entry leads to human error</li><li>No real-time feedback loop</li></ul></div>
                 </section>
+              </div>
             </div>
-        </div>
-    </div>
-</section>
-            </section>
+          </div>
+        </section>
 
-            <section id="solution" class="space-y-12 border-t border-slate-100 pt-16">
-                 <header>
-                    <span class="text-emerald-600 font-bold uppercase text-xs tracking-widest">Phase 2</span>
-                     <h2 class="text-4xl font-bold mt-4 mb-8 text-balance">Execution</h2>
-                </header>
-                <div class="pt-8 pb-12 border-t border-slate-100 space-y-12">
-                    <p class="text-slate-600 text-lg">As we built out the static reports, we explored what a real-time simulation dashboard could look like.</p> 
-                    
-                    <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
-                        <div class="space-y-4">
-                            <div class="rounded-2xl bg-slate-50 aspect-square border border-slate-100 flex items-center justify-center overflow-hidden">
-                                <img src="assets/wireframe-pa-1.png" alt="Real-time Monitoring Interface" class="w-full h-full object-cover zoom-cursor" onclick="openLightbox(this)">
-                            </div>
-                            <p class="text-xs text-slate-500 italic">Early exploration of the real-time simulation dashboard.</p>
-                        </div>
-                        <div class="space-y-4">
-                            <div class="rounded-2xl bg-slate-50 aspect-square border border-slate-100 flex items-center justify-center overflow-hidden">
-                                <img src="assets/wireframe-pa-2.png" alt="Simulation Reporting Dashboard" class="w-full h-full object-cover zoom-cursor" onclick="openLightbox(this)">
-                            </div>
-                            <p class="text-xs text-slate-500 italic">Early exploration of the real-time simulation dashboard.</p>
-                        </div>
-                        <div class="space-y-4">
-                            <div class="rounded-2xl bg-slate-50 aspect-square border border-slate-100 flex items-center justify-center overflow-hidden">
-                                <img src="assets/wireframe-pareport-1.png" alt="Simulation Reporting Dashboard" class="w-full h-full object-cover zoom-cursor" onclick="openLightbox(this)">
-                            </div>
-                            <p class="text-xs text-slate-500 italic">The reporting output showing actionable insights.</p>
-                        </div>
-                    </div>
-
-                    <div class="my-16 max-w-5xl mx-auto">
-                        <div class="rounded-[2rem] bg-slate-100 aspect-video flex items-center justify-center overflow-hidden border border-slate-200 shadow-xl zoom-cursor" onclick="openLightbox(this.querySelector('video'))">
-                            <video autoplay loop muted playsinline class="object-cover w-full h-full">
-                                <source src="assets/processanalysis.mov" type="video/quicktime">
-                                Your browser does not support the video tag.
-                            </video>
-                        </div>
-<p class="text-center text-sm text-slate-500 italic mt-6">
-    Real-time Simulation: Video credit to 
-    <a href="https://www.youtube.com/watch?v=3PYwW7EDyRI" target="_blank" class="text-emerald-600 hover:text-emerald-500 transition-colors underline decoration-slate-300 underline-offset-4">
-        Acad Systems Sdn Bhd
-    </a>
-</p>
-                    </div>
-
-                    <p class="text-slate-600 text-lg mb-8">We enabled users to adjust their designs while the simulation was running which allowed them to immediately see the impact. This coupled with our static reporting capabilities provided a comprehensive view of the simulation results.</p>
-
-                    <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
-                        <div onclick="openModal('blueprints')" class="p-8 bg-slate-50 rounded-3xl border border-slate-100 hover:border-slate-300 hover:shadow-lg transition-all cursor-pointer group">
-                            <div class="w-12 h-12 bg-white rounded-xl shadow-sm flex items-center justify-center mb-6 group-hover:scale-110 transition-transform">
-                                <svg class="w-6 h-6 text-slate-900" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M12 8v4l3 3m6-3a9 9 0 11-18 0 9 9 0 0118 0z"></path>
-                                </svg>
-                            </div>
-                            <h4 class="font-bold text-lg mb-3">Cycle Time Report</h4>
-                            <p class="text-sm text-slate-500 leading-relaxed">Identify potential issues or areas of improvement in the process.</p>
-                        </div>
-
-                        <div onclick="openModal('research')" class="p-8 bg-slate-50 rounded-3xl border border-slate-100 hover:border-slate-300 hover:shadow-lg transition-all cursor-pointer group">
-                            <div class="w-12 h-12 bg-white rounded-xl shadow-sm flex items-center justify-center mb-6 group-hover:scale-110 transition-transform">
-                                <svg class="w-6 h-6 text-slate-900" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M13 7h8m0 0v8m0-8l-8 8-4-4-6 6"></path>
-                                </svg>
-                            </div>
-                            <h4 class="font-bold text-lg mb-3">Line Efficiency Report</h4>
-                            <p class="text-sm text-slate-500 leading-relaxed">Get a detailed view of the models line efficiency.</p>
-                        </div>
-
-                        <div onclick="openModal('governance')" class="p-8 bg-slate-50 rounded-3xl border border-slate-100 hover:border-slate-300 hover:shadow-lg transition-all cursor-pointer group">
-                            <div class="w-12 h-12 bg-white rounded-xl shadow-sm flex items-center justify-center mb-6 group-hover:scale-110 transition-transform">
-                                <svg class="w-6 h-6 text-slate-900" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M9 3v2m6-2v2M9 19v2m6-2v2M5 9H3m2 6H3m18-6h-2m2 6h-2M7 19h10a2 2 0 002-2V7a2 2 0 00-2-2H7a2 2 0 00-2 2v10a2 2 0 002 2zM9 9h6v6H9V9z"></path>
-                                </svg>
-                            </div>
-                            <h4 class="font-bold text-lg mb-3">Monitor Simulation</h4>
-                            <p class="text-sm text-slate-500 leading-relaxed">Monitor the performance of the process design.</p>
-                        </div>
-                    </div>
-                </div>
-            </section>
-
-            <section id="impact" class="py-16 bg-slate-900 rounded-[3rem] px-12 text-white">
-                <h2 class="text-3xl font-bold mb-6 italic text-emerald-400">Result & Reflection</h2>
-                <p class="text-slate-400 leading-relaxed mb-8">We helped process planners move away from spredsheets towards a more dynamic, real-time approach to process analysis.</p>
-                <div class="grid grid-cols-1 md:grid-cols-2 gap-8 pt-8 border-t border-slate-800">
-                    <div>
-                        <h4 class="text-xs font-black uppercase tracking-widest text-slate-500 mb-2">Success Metric</h4>
-                        <p class="text-2xl font-bold italic">40% Efficiency Gain</p>
-                    </div>
-                </div>
-            </section>
-        </article>
-    </div>
-
-    <footer class="bg-slate-900 text-white py-24 text-center border-t border-slate-800">
-        <h3 class="text-4xl font-bold mb-8 italic">Let's build clarity.</h3>
-        <a href="mailto:jared.bunch@outlook.com" class="text-2xl font-black border-b-4 border-slate-700 hover:border-emerald-500 transition pb-2">jared.bunch@outlook.com</a>
-    </footer>
-
-    <div id="lightboxModal" class="fixed inset-0 z-[100] hidden bg-slate-900/95 backdrop-blur-md flex items-center justify-center p-4" onclick="closeLightbox()">
-        <div class="relative max-w-6xl w-full h-full flex flex-col items-center justify-center">
-            <img id="lightboxImage" src="" alt="" class="hidden max-w-full max-h-[80vh] object-contain shadow-2xl rounded-lg">
-            <video id="lightboxVideo" controls autoplay loop muted class="hidden max-w-full max-h-[80vh] object-contain shadow-2xl rounded-lg">
-                <source src="" type="video/mp4">
-            </video>
-            <div id="lightboxCaption" class="mt-6 text-white text-lg font-medium text-center bg-slate-800/50 px-6 py-2 rounded-full"></div>
-            <button class="absolute top-0 right-0 text-white text-5xl font-light p-4">&times;</button>
-        </div>
-    </div>
-
-    <div id="toolboxModal" class="fixed inset-0 z-[100] hidden bg-slate-900/90 backdrop-blur-sm flex items-center justify-center p-6" onclick="closeModal()">
-        <div class="bg-white rounded-[2.5rem] max-w-4xl w-full max-h-[90vh] overflow-y-auto shadow-2xl" onclick="event.stopPropagation()">
-            <div class="p-8 md:p-12">
-                <div class="flex justify-between items-start mb-8">
-                    <div>
-                        <span id="modalCategory" class="text-[10px] font-black px-3 py-1 bg-slate-100 rounded-full uppercase tracking-widest text-slate-500 mb-4 inline-block">Method</span>
-                        <h2 id="modalTitle" class="text-4xl font-bold italic">Artifact Title</h2>
-                    </div>
-                    <button onclick="closeModal()" class="text-slate-400 hover:text-black transition text-3xl">&times;</button>
-                </div>
-                <div class="grid grid-cols-1 md:grid-cols-2 gap-12">
-                    <div class="space-y-6">
-                        <p id="modalDescription" class="text-lg text-slate-600 leading-relaxed font-light">Description goes here.</p>
-                        <div id="modalImpact" class="p-6 bg-slate-50 rounded-2xl border border-slate-100">
-                            <h5 class="text-xs font-black uppercase tracking-widest text-slate-400 mb-2">Real Impact</h5>
-                            <p class="text-sm font-bold italic text-slate-800 mb-6">Outcome detail goes here.</p>
-                            <h5 class="text-xs font-black uppercase tracking-widest text-slate-400 mb-3 border-t border-slate-200 pt-4">Report Details-Per End Product</h5>
-                            <ul id="modalReportList" class="space-y-2"></ul>
-                        </div>
-                    </div>
-                    <div id="modalImage" class="rounded-2xl bg-transparent aspect-square flex items-center justify-center overflow-hidden"></div>
-                </div>
+        <section class="phase" id="solution">
+          <div class="phase-head"><span class="eyebrow">Execution</span><h2>Design solution</h2></div>
+          <div class="block">
+            <p>As we built out the static reports, we explored what a real-time simulation dashboard could look like.</p>
+            <div class="grid grid-3">
+              <figure class="figure"><div class="figure-frame"><img src="assets/wireframe-pa-1.png" alt="Real-time monitoring interface" class="zoomable" loading="lazy"></div><figcaption>Early exploration of the real-time simulation dashboard.</figcaption></figure>
+              <figure class="figure"><div class="figure-frame"><img src="assets/wireframe-pa-2.png" alt="Simulation reporting dashboard" class="zoomable" loading="lazy"></div><figcaption>Early exploration of the real-time simulation dashboard.</figcaption></figure>
+              <figure class="figure"><div class="figure-frame"><img src="assets/wireframe-pareport-1.png" alt="Simulation report output" class="zoomable" loading="lazy"></div><figcaption>The reporting output showing actionable insights.</figcaption></figure>
             </div>
-        </div>
+          </div>
+          <div class="block">
+            <figure class="figure"><div class="figure-frame"><video class="zoomable" autoplay loop muted playsinline preload="metadata" aria-label="Real-time simulation"><source src="assets/processanalysis.mov"></video></div><figcaption>Real-time simulation. Video credit: <a href="https://www.youtube.com/watch?v=3PYwW7EDyRI" target="_blank" rel="noopener">Acad Systems Sdn Bhd</a></figcaption></figure>
+          </div>
+          <div class="block">
+            <h3>Reports &amp; monitoring</h3>
+            <p>We let users adjust their designs while the simulation was running, so they could immediately see the impact. Combined with our static reporting, this gave a comprehensive view of the simulation results.</p>
+            <div class="vtabs" data-tabs>
+              <div class="tabs" role="tablist" aria-label="Report types" aria-orientation="vertical">
+              <button type="button" role="tab" aria-selected="false"><span class="mono">01</span>Cycle Time</button>
+              <button type="button" role="tab" aria-selected="false"><span class="mono">02</span>Line Efficiency</button>
+              <button type="button" role="tab" aria-selected="false"><span class="mono">03</span>Monitor Simulation</button>
+              </div>
+              <div>
+            <div class="tabpanel" role="tabpanel">
+              <span class="eyebrow">Metric</span>
+              <h3>Cycle Time</h3>
+              <p>The Cycle Time Report provides a picture of how the process model performs overall, and helps identify potential issues or areas for improvement from an in-depth view.</p>
+              <div class="impact"><span class="mono">Real impact</span><p>Identified a 15% latency issue in the assembly sub-process.</p></div>
+              <div class="split" style="align-items:start;gap:24px;margin-top:22px">
+                <div>
+                  <h5 class="mono" style="margin:0 0 4px;color:var(--muted);font-weight:500">Report details, per end product</h5>
+                  <ul class="list list--arrow"><li>Simulation summary</li><li>Production summary</li><li>Blocked time summary</li><li>Idle time summary</li><li>Down time summary</li><li>Processor cycle time charts</li></ul>
+                </div>
+                <img src="assets/icon-cycle.png" alt="" loading="lazy" style="border-radius:8px;border:1px solid var(--line)">
+              </div>
+            </div>
+            <div class="tabpanel" role="tabpanel">
+              <span class="eyebrow">Metric</span>
+              <h3>Line Efficiency</h3>
+              <p>A line efficiency report shows how each source, operator, processor, buffer, and connection performed during the simulation.</p>
+              <div class="impact"><span class="mono">Real impact</span><p>Improved resource allocation, leading to a 10% increase in daily throughput.</p></div>
+              <div class="split" style="align-items:start;gap:24px;margin-top:22px">
+                <div>
+                  <h5 class="mono" style="margin:0 0 4px;color:var(--muted);font-weight:500">Report details, per end product</h5>
+                  <ul class="list list--arrow"><li>Simulation summary</li><li>Production summary</li><li>Processor efficiency summary</li><li>Operator utilization summary</li><li>Connection utilization summary</li><li>Processor efficiency charts</li><li>Operator utilization charts</li><li>Connection utilization charts</li></ul>
+                </div>
+                <img src="assets/icon-efficiency.png" alt="" loading="lazy" style="border-radius:8px;border:1px solid var(--line)">
+              </div>
+            </div>
+            <div class="tabpanel" role="tabpanel">
+              <span class="eyebrow">Process</span>
+              <h3>Monitor Simulation</h3>
+              <p>Running complex “what-if” scenarios within the digital twin to predict how changes in layout or staffing will affect the final results.</p>
+              <div class="impact"><span class="mono">Real impact</span><p>Validated the new factory layout virtually before a single machine was moved.</p></div>
+              <div class="split" style="align-items:start;gap:24px;margin-top:22px">
+                <div>
+                  <h5 class="mono" style="margin:0 0 4px;color:var(--muted);font-weight:500">Report details, per end product</h5>
+                  <ul class="list list--arrow"><li>Station-by-station time logs</li><li>Idle time vs. active time analysis</li><li>Historical cycle comparisons</li></ul>
+                </div>
+                <img src="assets/icon-simulation.png" alt="" loading="lazy" style="border-radius:8px;border:1px solid var(--line)">
+              </div>
+            </div>
+              </div>
+            </div>
+          </div>
+        </section>
+
+        <section class="phase" id="impact">
+          <div class="phase-head"><span class="eyebrow">Impact</span><h2>Result &amp; reflection</h2></div>
+          <div class="card-dark">
+            <p style="font-size:1.125rem">We helped process planners move away from spreadsheets toward a more dynamic, real-time approach to process analysis.</p>
+            <div style="border-top:1px solid var(--band-line);margin-top:24px;padding-top:20px">
+              <span class="eyebrow">Success metric</span>
+              <p style="color:#fff;font-size:2rem;font-weight:600;letter-spacing:-.03em;margin-top:6px">40% efficiency gain</p>
+            </div>
+          </div>
+        </section>
+
+        <nav class="pager" aria-label="More case studies">
+          <a class="prev" href="factory-design.html"><span class="mono">← Previous</span><h3>Factory Design Vision</h3></a>
+          <a class="next" href="fairplayengine.html"><span class="mono">Next →</span><h3>Fair Play Lineup</h3></a>
+        </nav>
+      </article>
     </div>
+  </main>
 
-    <script>
-        window.addEventListener('DOMContentLoaded', () => {
-            const observerOptions = { root: null, rootMargin: '-20% 0% -70% 0%', threshold: 0 };
-            const observer = new IntersectionObserver((entries) => {
-                entries.forEach((entry) => {
-                    const id = entry.target.getAttribute('id');
-                    const navLink = document.querySelector(`.nav-link[href="#${id}"]`);
-                    if (entry.isIntersecting) {
-                        document.querySelectorAll('.nav-link').forEach(link => link.classList.remove('active'));
-                        navLink?.classList.add('active');
-                    }
-                });
-            }, observerOptions);
-            document.querySelectorAll('section[id]').forEach((s) => observer.observe(s));
-        });
-
-        function openLightbox(element) {
-            const modal = document.getElementById('lightboxModal');
-            const lbImg = document.getElementById('lightboxImage');
-            const lbVid = document.getElementById('lightboxVideo');
-            lbImg.classList.add('hidden'); lbVid.classList.add('hidden');
-            if (element.tagName === 'IMG') {
-                lbImg.src = element.src; lbImg.classList.remove('hidden');
-            } else if (element.tagName === 'VIDEO') {
-                lbVid.src = element.querySelector('source').src; lbVid.classList.remove('hidden'); lbVid.play();
-            }
-            document.getElementById('lightboxCaption').innerText = element.alt || "Design Detail";
-            modal.classList.remove('hidden'); document.body.style.overflow = 'hidden';
-        }
-
-        function closeLightbox() {
-            document.getElementById('lightboxModal').classList.add('hidden');
-            document.getElementById('lightboxVideo').pause();
-            document.body.style.overflow = 'auto';
-        }
-
-        function openModal(type) {
-            const modal = document.getElementById('toolboxModal');
-            const data = toolboxData[type];
-            if (data) {
-                document.getElementById('modalCategory').innerText = data.category;
-                document.getElementById('modalTitle').innerText = data.title;
-                document.getElementById('modalDescription').innerText = data.description;
-                document.getElementById('modalImpact').querySelector('p').innerText = data.impact;
-                const listContainer = document.getElementById('modalReportList');
-                listContainer.innerHTML = '';
-                if (data.reportItems && data.reportItems.length > 0) {
-                    data.reportItems.forEach(item => {
-                        const li = document.createElement('li');
-                        li.className = 'text-xs text-slate-600 flex gap-2';
-                        li.innerHTML = `<span class="text-emerald-500 font-bold">→</span> <span>${item}</span>`;
-                        listContainer.appendChild(li);
-                    });
-                }
-                const imageContainer = document.getElementById('modalImage');
-                imageContainer.innerHTML = `<img src="${data.image}" alt="${data.title}" class="w-full h-full object-contain">`;
-                modal.classList.remove('hidden');
-                document.body.style.overflow = 'hidden';
-            }
-        }
-
-        function closeModal() {
-            document.getElementById('toolboxModal').classList.add('hidden');
-            document.body.style.overflow = 'auto';
-        }
-
-        const toolboxData = {
-            blueprints: {
-                category: "Metric",
-                title: "Cycle Time",
-                description: "The Cycle Time Report provides a picture of how the process model performs overall and helps to identify potential issues or areas for improvement from an in-depth view.",
-                impact: "Identified a 15% latency issue in the assembly sub-process.",
-                reportItems: ["Simulation Summary", "Production Summary", "Blocked Time Summary", "Idle Time Summary", "Down Time Summary", "Processor Cycle Time Charts"],
-                image: "assets/icon-cycle.png" 
-            },
-            research: {
-                category: "Metric",
-                title: "Line Efficiency",
-                description: "A line efficiency report shows how each source, operator, processor, buffer, and connection performed during the simulation.",
-                impact: "Improved resource allocation, leading to a 10% increase in daily throughput.",
-                reportItems: ["Simulation Summary", "Production Summary", "Processor Efficiency Summary", "Operator Utilization Summary", "Connection Utilization Summary", "Processor Efficiency Charts", "Operator Utilization Charts", "Connection Utilization Charts"],
-                image: "assets/icon-efficiency.png"
-            },
-            governance: {
-                category: "Process",
-                title: "Simulation",
-                description: "Running complex 'what-if' scenarios within the digital twin to predict how changes in layout or staffing will impact the final results.",
-                impact: "Validated the new factory layout virtually before a single machine was moved.",
-                reportItems: ["Station-by-station time logs", "Idle time vs. active time analysis", "Historical cycle comparisons"],
-                image: "assets/icon-simulation.png"
-            }
-        };
-    </script>
+  <footer class="site-footer">
+    <div class="wrap">
+      <span class="eyebrow">Next chapter</span>
+      <h2>Let's build<br>clarity.</h2>
+      <a class="footer-email" href="mailto:jared.bunch@outlook.com">jared.bunch@outlook.com</a>
+      <div class="footer-meta">
+        <span>© 2026 Jared Bunch · Howell, Michigan</span>
+        <nav aria-label="Footer">
+          <a href="work.html">Work</a>
+          <a href="mystory.html">About</a>
+          <a href="notes.html">Notes</a>
+          <a href="https://www.linkedin.com/in/jaredabunch" target="_blank" rel="noopener">LinkedIn</a>
+          <a href="assets/jaredbunch_resume.pdf" target="_blank" rel="noopener">Resume</a>
+        </nav>
+      </div>
+    </div>
+  </footer>
 </body>
 </html>

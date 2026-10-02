@@ -1,3 +1,4 @@
+// Testimonials shown on the home page. Rendered by assets/js/site.js.
 const testimonialData = [
     {
         quote: "Jared consistently demonstrated a strong customer-first mindset, always ensuring that decisions and solutions aligned with real user needs. What sets him apart is his ability to not just execute, but to think creatively-he brings fresh, thoughtful ideas to the table that elevate the overall quality of work.",
@@ -42,31 +43,3 @@ const testimonialData = [
         image: "assets/ref-6.png"
     }
 ];
-
-function initTestimonials() {
-    const track = document.getElementById('testimonial-track');
-    if (!track) return;
-
-    // Create the HTML for one full set of cards
-    const cardHtml = testimonialData.map(item => `
-        <div class="inline-block w-[400px] px-4 whitespace-normal">
-            <div class="bg-white p-10 rounded-[2.5rem] border border-slate-100 shadow-sm h-full flex flex-col justify-between hover:shadow-md transition-all">
-                <p class="text-xl text-slate-800 font-medium italic mb-8 leading-relaxed">"${item.quote}"</p>
-                <div class="flex items-center gap-4">
-                    <div class="w-12 h-12 rounded-full bg-slate-200 overflow-hidden border-2 border-white shadow-sm">
-                        <img src="${item.image}" alt="${item.name}" class="w-full h-full object-cover">
-                    </div>
-                    <div>
-                        <h4 class="font-black text-xs uppercase tracking-widest text-slate-900">${item.name}</h4>
-                        <p class="text-[10px] font-bold text-slate-400 uppercase tracking-wider leading-tight">${item.title} • ${item.company}</p>
-                    </div>
-                </div>
-            </div>
-        </div>
-    `).join('');
-
-    // Inject the cards twice to create a seamless infinite loop
-    track.innerHTML = cardHtml + cardHtml;
-}
-
-document.addEventListener('DOMContentLoaded', initTestimonials);
