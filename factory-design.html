@@ -1,455 +1,240 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Factory Design Vision | Jared Bunch</title>
-    <script src="https://cdn.tailwindcss.com"></script>
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;800&family=Playfair+Display:wght@700;900&display=swap" rel="stylesheet">
-    <style>
-        body { font-family: 'Inter', sans-serif; scroll-behavior: smooth; }
-        h1, h2, h3 { font-family: 'Playfair Display', serif; }
-        .zoom-cursor { cursor: zoom-in; }
-        
-        .nav-link { position: relative; transition: all 0.3s ease; }
-        .nav-link.active { color: #000; font-weight: 800; }
-        .nav-link.active::before {
-            content: "";
-            position: absolute;
-            left: -1.5rem;
-            top: 0;
-            bottom: 0;
-            width: 3px;
-            background-color: #2563eb;
-            border-radius: 0 4px 4px 0;
-        }
-
-        @keyframes etherealReveal {
-            0% { opacity: 0; filter: blur(30px) brightness(1.5); transform: scale(0.95) translateY(10px); }
-            100% { opacity: 1; filter: blur(0) brightness(1); transform: scale(1) translateY(0); }
-        }
-        .animate-reveal { opacity: 0; transition: opacity 0.5s ease; }
-        .is-visible { animation: etherealReveal 2s cubic-bezier(0.22, 1, 0.36, 1) forwards; }
-    </style>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Factory Design Vision | Jared Bunch</title>
+  <meta name="description" content="Case study: defining the product vision for a connected, cloud-based way for global teams to plan factories.">
+  <meta property="og:type" content="website">
+  <meta property="og:title" content="Factory Design Vision | Jared Bunch">
+  <meta property="og:description" content="Case study: defining the product vision for a connected, cloud-based way for global teams to plan factories.">
+  <meta property="og:image" content="https://jaredbunch.com/assets/factorydesignvision-hero.jpg">
+  <meta name="twitter:card" content="summary_large_image">
+  <link rel="icon" type="image/png" href="assets/favicon.png">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Geist:wght@400;500;600&family=Geist+Mono:wght@400;500&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="assets/css/site.css">
+  <script src="assets/js/site.js" defer></script>
 </head>
-<body class="bg-white text-slate-900 leading-relaxed">
+<body>
+  <a class="skip-link" href="#main">Skip to content</a>
+  <div class="progress-bar" aria-hidden="true"></div>
+  <nav class="site-nav" aria-label="Main">
+    <a class="nav-brand" href="index.html"><b>JB</b><span>Jared Bunch</span></a>
+    <a class="nav-link" href="work.html" aria-current="page">Work</a>
+    <a class="nav-link" href="mystory.html">About</a>
+    <a class="nav-link" href="notes.html">Notes</a>
+    <button class="nav-search" type="button" data-cmdk aria-label="Search the site">Search <kbd>⌘K</kbd></button>
+    <button class="nav-menu" type="button" data-cmdk>Menu</button>
+    <a class="nav-cta" href="mailto:jared.bunch@outlook.com">Contact</a>
+  </nav>
 
-    <nav class="sticky top-0 z-50 bg-white/80 backdrop-blur-md border-b border-slate-100 p-4">
-        <div class="max-w-7xl mx-auto flex justify-between">
-            <a href="index.html" class="text-xs font-black uppercase tracking-widest text-slate-400 hover:text-black transition">← Back to Portfolio</a>
-            <a href="https://www.linkedin.com/in/jaredabunch" target="_blank" class="text-slate-400 hover:text-blue-600 transition">LinkedIn</a>
+  <main id="main">
+    <header class="page-head">
+      <div class="wrap">
+        <nav class="crumbs" aria-label="Breadcrumb"><a href="work.html">Work</a><span aria-hidden="true">/</span><span>Factory Design Vision</span></nav>
+        <div style="margin-top:28px"><span class="eyebrow">Case study · Autodesk · Product vision</span></div>
+        <h1>Factory Design Vision</h1>
+        <p class="lede">I led the vision for a new way to collaboratively plan large factories, focusing on speed and data accuracy.</p>
+        <div class="summary">
+          <div><h2>The problem</h2><p>Teams working in silos without shared data make expensive mistakes during factory construction.</p></div>
+          <div><h2>My role</h2><p>Principal Designer. I aligned global leaders and defined the product vision for a unified system.</p></div>
+          <div><h2>The result</h2><p>A plan to speed up planning, reduce mistakes, and connect each part of the customer process through a cloud-based single source of truth.</p></div>
         </div>
-    </nav>
-
-    <header class="max-w-4xl mx-auto px-6 pt-24 pb-16">
-        <span class="text-blue-600 font-black tracking-widest uppercase text-xs">Case Study</span>
-        <h1 class="text-5xl md:text-7xl font-black mt-6 mb-8 tracking-tight text-balance">Factory Design Vision</h1>
-        <p class="text-2xl text-slate-500 font-light text-balance">I led the vision for a new way to collaboratively plan large factories, focusing on speed and data accuracy.</p>
+      </div>
     </header>
-
-    <section class="bg-slate-50 py-16 border-y border-slate-100">
-        <div class="max-w-5xl mx-auto px-6 grid grid-cols-1 md:grid-cols-3 gap-12 text-sm">
-            <div>
-                <h4 class="font-black uppercase text-slate-400 mb-4">The Problem</h4>
-                <p class="text-slate-700 leading-relaxed">Teams working in silos without shared data lead to expensive mistakes during factory construction.</p>
-            </div>
-            <div>
-                <h4 class="font-black uppercase text-slate-400 mb-4">My Role</h4>
-                <p class="text-slate-700 leading-relaxed">As Principal Designer. I aligned global leaders and defined the product vision for a unified system.</p>
-            </div>
-            <div>
-                <h4 class="font-black uppercase text-slate-400 mb-4">The Result</h4>
-                <p class="text-slate-700 leading-relaxed">The goal is to speed up planning, reduce mistakes, and connect the different parts of the customer process by using a cloud-based system that serves as a single source of truth.</p>
-            </div>
-        </div>
-    </section>
-
-    <div class="max-w-7xl mx-auto px-6 py-24 flex flex-col lg:flex-row gap-16">
-        
-        <aside class="hidden lg:block w-64 flex-shrink-0">
-            <nav class="sticky top-32 self-start border-r border-slate-100 pr-8">
-                <h4 class="text-xs font-black uppercase tracking-widest text-slate-900 mb-8">Process</h4>
-                <ul class="space-y-6 text-sm font-medium">
-                    <li><a href="#current-state" class="nav-link text-slate-400 hover:text-black block">Phase 1: Discovery & Research</a></li>
-                    <li><a href="#vision" class="nav-link text-slate-400 hover:text-black block">Phase 2: Product Strategy</a></li>
-                    <li><a href="#deep-dive" class="nav-link text-slate-400 hover:text-black block">Phase 3: Design Execution</a></li>
-                    <li><a href="#final-thoughts" class="nav-link text-slate-400 hover:text-black block">Final Thoughts</a></li>
-                </ul>
-            </nav>
-        </aside>
-        
-        <article class="flex-grow max-w-4xl space-y-24">
-
-            <section id="current-state" class="space-y-12">
-                <header>
-                    <span class="text-blue-600 font-bold uppercase text-xs tracking-widest">Phase 1</span>
-                    <h2 class="text-4xl font-bold mt-4 mb-8 text-balance">Discovery & Research</h2>
-                </header>
-
-                <div class="pt-8 pb-12 border-t border-slate-100">
-                    <h3 class="text-2xl font-bold mb-4">Research & Synthesis</h3>
-                    <p class="text-slate-600 text-lg mb-8">I combined in-depth interviews with survey data to turn assumptions into a strategy.</p>
-                    <div class="grid grid-cols-1 md:grid-cols-3 gap-6">
-                        <div class="bg-slate-50 p-8 rounded-[2rem] border border-slate-100">
-                            <div class="w-10 h-10 rounded-xl bg-blue-500/10 flex items-center justify-center mb-4">
-                                <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="#2563eb" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M21 15a2 2 0 0 1-2 2H7l-4 4V5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2z"></path></svg>
-                            </div>
-                            <h4 class="text-sm font-black uppercase text-slate-900 mb-2">5 Interviews</h4>
-                            <p class="text-xs text-slate-500">In-depth sessions with <strong>Lighthouse Customers</strong> to find pain points they may not have shared yet.</p>
-                        </div>
-                        <div class="bg-slate-50 p-8 rounded-[2rem] border border-slate-100">
-                            <div class="w-10 h-10 rounded-xl bg-blue-500/10 flex items-center justify-center mb-4">
-                                <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="#2563eb" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M212 20V4a2 2 0 0 0-2-2H4a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h16a2 2 0 0 0 2-2zM8 12l3 3 5-5"></path></svg>
-                            </div>
-                            <h4 class="text-sm font-black uppercase text-slate-900 mb-2">115 Responses</h4>
-                            <p class="text-xs text-slate-500">Broad surveys with our users to find out where they most often run into problems.</p>
-                        </div>
-                        <div class="bg-slate-50 p-8 rounded-[2rem] border border-slate-100">
-                            <div class="w-10 h-10 rounded-xl bg-blue-500/10 flex items-center justify-center mb-4">
-                                <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="#2563eb" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"></circle><line x1="2" y1="12" x2="22" y2="12"></line><path d="M12 2a15.3 15.3 0 0 1 4 10 15.3 15.3 0 0 1-4 10 15.3 15.3 0 0 1-4-10 15.3 15.3 0 0 1 4-10z"></path></svg>
-                            </div>
-                            <h4 class="text-sm font-black uppercase text-slate-900 mb-2">Market Research</h4>
-                            <p class="text-xs text-slate-500">How factories are moving toward cloud-based systems for multi-user collaboration.</p>
-                        </div>
-                    </div>
-                </div>
-
-                <div class="bg-slate-50 p-8 rounded-3xl">
-                    <h4 class="text-xs font-black uppercase tracking-widest text-slate-400 mb-6">Current Issues & Solutions</h4>
-                    <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
-                        <div class="space-y-4">
-                            <p class="text-sm"><strong>Problem:</strong> Managing 2D & 3D representations independently.</p>
-                            <p class="text-sm text-blue-600"><strong>Solution:</strong> Automated sync between 2D layouts & 3D models.</p>
-                        </div>
-                        <div class="space-y-4">
-                            <p class="text-sm"><strong>Problem:</strong> Costly interference issues found during installation.</p>
-                            <p class="text-sm text-blue-600"><strong>Solution:</strong> Virtual aggregation for interference checks during design.</p>
-                        </div>
-                        <div class="space-y-4">
-                            <p class="text-sm"><strong>Problem:</strong> Overall Efficiency</p>
-                            <p class="text-sm text-blue-600"><strong>Solution:</strong> Layout & automation tools address many issues, but not all.</p>
-                        </div>
-                        <div class="space-y-4">
-                            <p class="text-sm"><strong>Problem:</strong> Data Management silos across factory layouts and assets.</p>
-                            <p class="text-sm text-blue-600"><strong>Solution:</strong> Vault integration addresses these needs with a centralized path.</p>
-                        </div>
-                        <div class="space-y-4">
-                            <p class="text-sm"><strong>Problem:</strong> Disconnected spreadsheets used for process planning.</p>
-                            <p class="text-sm text-blue-600"><strong>Solution:</strong> Process Analysis moves workflows into an integrated simulation environment.</p>
-                        </div>
-                    </div>
-                </div>
-
-                <div class="pt-16 border-t border-slate-100">
-                    <div class="mb-12">
-                        <h3 class="text-2xl font-bold mb-4">Key Opportunities</h3>
-                        <p class="text-slate-600 text-lg">Beyond technical fixes, research revealed three opportunities to fundamentally shift how teams collaborate.</p>
-                    </div>
-
-                    <div class="grid grid-cols-1 md:grid-cols-3 gap-6">
-                        <div class="bg-white p-8 rounded-[2rem] border border-slate-100 shadow-sm hover:shadow-md transition-all group">
-                            <div class="w-12 h-12 rounded-2xl bg-blue-50 flex items-center justify-center mb-6 border border-blue-100 group-hover:bg-blue-600 transition-colors">
-                                <svg xmlns="http://www.w3.org/2000/svg" width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="#2563eb" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="group-hover:stroke-white"><path d="M21 16V8a2 2 0 0 0-1-1.73l-7-4a2 2 0 0 0-2 0l-7 4A2 2 0 0 0 3 8v8a2 2 0 0 0 1 1.73l7 4a2 2 0 0 0 2 0l7-4A2 2 0 0 0 21 16z"></path><polyline points="3.27 6.96 12 12.01 20.73 6.96"></polyline><line x1="12" y1="22.08" x2="12" y2="12"></line></svg>
-                            </div>
-                            <h4 class="text-sm font-black uppercase tracking-widest text-slate-900 mb-3">Multi-User Workflows</h4>
-                            <p class="text-xs text-slate-500">Centralize technical data to facilitate true multi-user workflows.</p>
-                        </div>
-                        <div class="bg-white p-8 rounded-[2rem] border border-slate-100 shadow-sm hover:shadow-md transition-all group">
-                            <div class="w-12 h-12 rounded-2xl bg-blue-50 flex items-center justify-center mb-6 border border-blue-100 group-hover:bg-blue-600 transition-colors">
-                                <svg xmlns="http://www.w3.org/2000/svg" width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="#2563eb" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="group-hover:stroke-white"><polyline points="22 12 18 12 15 21 9 3 6 12 2 12"></polyline></svg>
-                            </div>
-                            <h4 class="text-sm font-black uppercase tracking-widest text-slate-900 mb-3">Real-Time Feedback</h4>
-                            <p class="text-xs text-slate-500">Ensure design changes are communicated instantly across global teams.</p>
-                        </div>
-                        <div class="bg-white p-8 rounded-[2rem] border border-slate-100 shadow-sm hover:shadow-md transition-all group">
-                            <div class="w-12 h-12 rounded-2xl bg-blue-50 flex items-center justify-center mb-6 border border-blue-100 group-hover:bg-blue-600 transition-colors">
-                                <svg xmlns="http://www.w3.org/2000/svg" width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="#2563eb" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="group-hover:stroke-white"><path d="m7 15 5 5 5-5"></path><path d="m7 9 5-5 5 5"></path></svg>
-                            </div>
-                            <h4 class="text-sm font-black uppercase tracking-widest text-slate-900 mb-3">Conflict Resolution</h4>
-                            <p class="text-xs text-slate-500">Manage concurrent edits without data loss through robust sync.</p>
-                        </div>
-                    </div> 
-                </div>
-
-                <div class="pt-16 border-t border-slate-100">
-                    <h3 class="text-2xl font-bold mb-8">Mapping the Users' Process</h3>
-                    <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
-                        <div class="space-y-4">
-                            <h4 class="text-xl font-bold italic">Overview</h4>
-                            <div class="rounded-3xl bg-slate-100 aspect-video overflow-hidden border border-slate-200">
-                                <img src="assets/factory-blueprint-overview.jpg" alt="High Level User Flow" class="object-cover w-full h-full zoom-cursor" onclick="openLightbox(this)">
-                            </div>
-                            <p class="text-xs text-slate-500">Simple view of the overall process.</p>
-                        </div>
-                        <div class="space-y-4">
-                            <h4 class="text-xl font-bold italic">Detailed</h4>
-                            <div class="rounded-3xl bg-slate-100 aspect-video overflow-hidden border border-slate-200">
-                                <img src="assets/factory-process-detailed.jpg" alt="Detailed User Flow" class="object-cover w-full h-full zoom-cursor" onclick="openLightbox(this)">
-                            </div>
-                            <p class="text-xs text-slate-500">Detailed view including tasks at each step.</p>
-                        </div>
-                    </div>
-                </div>
-            </section>
-
-            <section id="vision" class="space-y-12">
-                <header>
-                    <span class="text-blue-600 font-bold uppercase text-xs tracking-widest">Phase 2</span>
-                    <h2 class="text-4xl font-bold mt-4 mb-8 text-balance">Establishing the North Star</h2>
-                </header>
-
-                <div class="bg-slate-900 text-white p-12 md:p-16 rounded-[3rem] shadow-2xl">
-                    <div class="max-w-2xl space-y-6">
-                        <p class="text-xl text-slate-300">To keep focused on the "Why," we developed Problem Statements, below are what were selected to became our north star.</p>
-                        <div class="space-y-6 border-l-2 border-blue-500 pl-8">
-                            <p class="text-2xl font-light italic text-slate-100">"In what ways might we enable collaboration and better communication?"</p>
-                            <p class="text-2xl font-light italic text-slate-100">"In what ways might we help customer complete their projects faster, more efficiently, and with fewer errors?"</p>
-                            <p class="text-2xl font-light italic text-slate-100">"In what ways might we allow customer to reuse their data?"</p>
-                        </div>
-                    </div>
-                </div>
-
-                <div class="max-w-5xl mx-auto space-y-6">
-                    <div class="relative group rounded-[3rem] shadow-2xl aspect-video bg-slate-50 overflow-hidden border border-slate-200">
-                        <button onclick="changeVisionImage(-1)" class="absolute left-6 top-1/2 -translate-y-1/2 z-10 bg-white/90 hover:bg-white p-5 rounded-full shadow-xl opacity-0 group-hover:opacity-100 transition-all duration-300">
-                            <svg xmlns="http://www.w3.org/2000/svg" width="28" height="28" fill="none" stroke="#2563eb" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><path d="m15 18-6-6 6-6"/></svg>
-                        </button>
-                        <button onclick="changeVisionImage(1)" class="absolute right-6 top-1/2 -translate-y-1/2 z-10 bg-white/90 hover:bg-white p-5 rounded-full shadow-xl opacity-0 group-hover:opacity-100 transition-all duration-300">
-                            <svg xmlns="http://www.w3.org/2000/svg" width="28" height="28" fill="none" stroke="#2563eb" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><path d="m9 18 6-6-6-6"/></svg>
-                        </button>
-                        <div id="visionMainContainer" class="w-full h-full flex items-center justify-center">
-                            <img id="mainVisionImage" src="assets/storyboard-1.jpg" alt="Storyboard 1" class="w-full h-full object-contain zoom-cursor transition-all duration-700" onclick="openLightbox(this)">
-                            <video id="mainVisionVideo" class="hidden w-full h-full object-contain zoom-cursor" controls autoplay loop muted onclick="openLightbox(this)">
-                                <source src="" type="video/mp4">
-                            </video>
-                        </div>
-                    </div>
-
-                    <div id="visionThumbContainer" class="flex gap-4 overflow-x-auto pb-4 px-2 snap-x">
-                        <img src="assets/storyboard-1.jpg" alt="Storyboard 1" class="vision-thumb w-32 h-20 rounded-xl object-cover cursor-pointer border-2 border-blue-600 snap-start transition-all" onclick="updateVisionGallery(this)">
-                        <img src="assets/storyboard-2.jpg" alt="Storyboard 2" class="vision-thumb w-32 h-20 rounded-xl object-cover cursor-pointer border-2 border-transparent opacity-60 snap-start transition-all" onclick="updateVisionGallery(this)">
-                        <img src="assets/storyboard-3.jpg" alt="Storyboard 3" class="vision-thumb w-32 h-20 rounded-xl object-cover cursor-pointer border-2 border-transparent opacity-60 snap-start transition-all" onclick="updateVisionGallery(this)">
-                        <img src="assets/storyboard-4.jpg" alt="Storyboard 4" class="vision-thumb w-32 h-20 rounded-xl object-cover cursor-pointer border-2 border-transparent opacity-60 snap-start transition-all" onclick="updateVisionGallery(this)">
-                        <img src="assets/storyboard-5.jpg" alt="Storyboard 5" class="vision-thumb w-32 h-20 rounded-xl object-cover cursor-pointer border-2 border-transparent opacity-60 snap-start transition-all" onclick="updateVisionGallery(this)">
-                        <img src="assets/storyboard-6-poster.png" data-video="assets/factory-vision-video.mp4" alt="Storyboard Walkthrough" class="vision-thumb w-32 h-20 rounded-xl object-cover cursor-pointer border-2 border-transparent opacity-60 snap-start transition-all" onclick="updateVisionGallery(this)">
-                    </div>
-                </div>
-            </section>
-
-            <section id="deep-dive" class="space-y-12">
-                <header>
-                    <span class="text-blue-600 font-bold uppercase text-xs tracking-widest">Phase 3</span>
-                    <h2 class="text-4xl font-bold mt-4 mb-8 text-balance">Architecting the Solution</h2>
-                </header>
-
-                <div class="grid grid-cols-1 md:grid-cols-2 gap-12 items-center">
-                    <div>
-                        <h3 class="text-2xl font-bold mb-4">Feedback Loop</h3>
-                        <p class="text-slate-600">Iterative validation through Lighthouse Customers ensured the vision remained grounded in addressing real-world challenges.</p>
-                    </div>
-                    <div class="rounded-[2.5rem] bg-slate-50 aspect-video flex items-center justify-center border border-slate-100 relative group">
-                        <div class="relative w-32 h-32 flex items-center justify-center">
-                            <div class="absolute inset-0 border-4 border-dashed border-slate-200 rounded-full animate-[spin_20s_linear_infinite]"></div>
-                            <svg viewBox="0 0 100 100" class="w-full h-full transform -rotate-90">
-                                <circle cx="50" cy="50" r="40" fill="none" stroke="#f1f5f9" stroke-width="8"/>
-                                <circle cx="50" cy="50" r="40" fill="none" stroke="#2563eb" stroke-width="8" stroke-dasharray="251.2" stroke-dashoffset="60" class="transition-all duration-1000 group-hover:stroke-dashoffset-0"/>
-                            </svg>
-                        </div>
-                    </div>
-                </div>
-
-                <div class="grid grid-cols-1 md:grid-cols-2 gap-8 items-center border-t border-slate-100 pt-12">
-                    <div class="rounded-3xl bg-slate-100 aspect-square overflow-hidden">
-                        <img src="assets/interaction-detail-1.jpg" alt="Connections Architecture" class="object-cover w-full h-full zoom-cursor" onclick="openLightbox(this)">
-                    </div>
-                    <div>
-                        <h4 class="text-xl font-bold mb-2">Connections</h4>
-                        <p class="text-slate-600">The Factory Common Data Environment (FCDE) provides the central source of truth for everyone connected.</p>
-                    </div>
-                </div>
-
-                <div class="pt-16 border-t border-slate-100">
-                    <div class="mb-12">
-                        <h3 class="text-2xl font-bold mb-6">Real Time Design Change Alerts</h3>
-                        <p class="text-xl text-slate-600 max-w-3xl">
-                            With the FCDE as the single source of truth, we solved the "stale data" problem and can provide a notification system that alerts connected users the moment a layout change occurs.
-                        </p>
-                    </div>
-
-                    <div class="max-w-5xl mx-auto space-y-6">
-                        <div class="relative group rounded-[3rem] shadow-2xl aspect-video bg-slate-50 overflow-hidden border border-slate-200">
-                            <button onclick="changeAlertsImage(-1)" class="absolute left-6 top-1/2 -translate-y-1/2 z-10 bg-white/90 hover:bg-white p-5 rounded-full shadow-xl opacity-0 group-hover:opacity-100 transition-all duration-300">
-                                <svg xmlns="http://www.w3.org/2000/svg" width="28" height="28" fill="none" stroke="#2563eb" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><path d="m15 18-6-6 6-6"/></svg>
-                            </button>
-                            <button onclick="changeAlertsImage(1)" class="absolute right-6 top-1/2 -translate-y-1/2 z-10 bg-white/90 hover:bg-white p-5 rounded-full shadow-xl opacity-0 group-hover:opacity-100 transition-all duration-300">
-                                <svg xmlns="http://www.w3.org/2000/svg" width="28" height="28" fill="none" stroke="#2563eb" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><path d="m9 18 6-6-6-6"/></svg>
-                            </button>
-                            <div id="alertsMainContainer" class="w-full h-full flex items-center justify-center">
-                                <img id="mainAlertsImage" src="assets/interaction-detail-2a.jpg" alt="Real Time Alert Detail" class="w-full h-full object-contain zoom-cursor transition-all duration-700" onclick="openLightbox(this)">
-                            </div>
-                        </div>
-
-                        <div id="alertsThumbContainer" class="flex gap-4 overflow-x-auto pb-4 px-2 snap-x">
-                            <img src="assets/interaction-detail-2a.jpg" alt="Alert Detail A" class="alerts-thumb w-32 h-20 rounded-xl object-cover cursor-pointer border-2 border-blue-600 snap-start transition-all" onclick="updateAlertsGallery(this)">
-                            <img src="assets/interaction-detail-2b.jpg" alt="Alert Detail B" class="alerts-thumb w-32 h-20 rounded-xl object-cover cursor-pointer border-2 border-transparent opacity-60 snap-start transition-all" onclick="updateAlertsGallery(this)">
-                            <img src="assets/interaction-detail-2.gif" alt="Alert Mockup Walkthrough" class="alerts-thumb w-32 h-20 rounded-xl object-cover cursor-pointer border-2 border-transparent opacity-60 snap-start transition-all" onclick="updateAlertsGallery(this)">
-                        </div>
-                    </div>
-                     <div class="grid grid-cols-1 md:grid-cols-2 gap-12 items-center">
-                    <div>
-                        <h3 class="text-2xl font-bold mb-4">Conflict Resolution</h3>
-                        <p class="text-slate-600">While automatic resolution is the goal, user interaction is required when conflicts cannot be resolved automatically.</p>
-                    </div>
-                    <div class="rounded-[2.5rem] bg-slate-50 aspect-video flex items-center justify-center border border-slate-100 relative group">
-                    <div class="rounded-3xl bg-slate-100 aspect-square overflow-hidden">
-                        <img src="assets/interaction-detail-3.jpg" alt="Connections Architecture" class="object-contain w-full h-full zoom-cursor" onclick="openLightbox(this)">
-                    </div>
-                    </div>
-                </div>
-                <div class="pt-20 border-t border-slate-100">
-    <div class="grid grid-cols-1 md:grid-cols-3 gap-12 mb-20">
-        <div class="space-y-4">
-            <h4 class="font-black uppercase text-slate-400 text-xs tracking-widest">Stakeholder Alignment</h4>
-            <p class="text-slate-700 text-sm leading-relaxed">I successfully aligned global stakeholders and a division VP on a unified product strategy by grounding the vision in validated user needs.</p>
-        </div>
-        <div class="space-y-4">
-            <h4 class="font-black uppercase text-slate-400 text-xs tracking-widest">Foundation for Innovation</h4>
-            <p class="text-slate-700 text-sm leading-relaxed">This research and vision directly led to the development of the Factory Common Data Environment (FCDE), moving the product into a cloud-first era.</p>
-        </div>
-        <div class="space-y-4">
-            <h4 class="font-black uppercase text-slate-400 text-xs tracking-widest">Customer Centric Strategy</h4>
-            <p class="text-slate-700 text-sm leading-relaxed">By interviewing 5 lighthouse customers and surveying 115 users, I ensured the technical vision was grounded in actual customer requirements rather than assumptions.</p>
-        </div>
-    </div>
-</div>
-                </div>
-            </section>
-
-            <section id="final-thoughts" class="py-16 bg-slate-50 rounded-[3rem] px-12 border border-slate-100">
-                <header class="mb-8">
-                    <span class="text-blue-600 font-bold uppercase text-xs tracking-widest">Retrospective</span>
-                    <h2 class="text-4xl font-bold mt-4 italic">Final Thoughts</h2>
-                </header>
-                <div class="text-lg text-slate-600 space-y-6 max-w-2xl">
-                    <p>The work and ilustrations shared here are a sampling of the broader vision I developed for the Factory Design Utilities product.</p>
-                    <p>The value shown in this vision led directly to the delivery of the <strong>Factory Common Data Environment</strong> which would provide the foundation for everything else.</p>
-                    <p>While priorities shifted, the project remains a standard for how research and alignment can drive platform innovation.</p>
-                </div>
-            </section>
-
-        </article>
+    <div class="wrap">
+      <figure class="figure"><div class="figure-frame"><img src="assets/factorydesignvision-hero.jpg" alt="Factory Design Vision concept" class="zoomable"></div></figure>
     </div>
 
-    <footer class="bg-slate-900 text-white py-32 text-center">
-        <h3 class="text-4xl font-bold mb-8 italic">Let's build clarity.</h3>
-        <div class="flex flex-col md:flex-row justify-center items-center gap-12">
-            <a href="mailto:jared.bunch@outlook.com" class="text-2xl font-black border-b-4 border-slate-700 hover:border-blue-500 transition pb-2">jared.bunch@outlook.com</a>
-            <a href="https://www.linkedin.com/in/jaredabunch" target="_blank" class="text-2xl font-black border-b-4 border-slate-700 hover:border-blue-500 transition pb-2">LinkedIn</a>
+    <div class="wrap workspace">
+      <aside class="sidebar" aria-label="Case study navigation">
+        <button class="sidebar-search" type="button" data-cmdk><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><circle cx="11" cy="11" r="7"/><path d="m20 20-3.5-3.5"/></svg><span>Jump to…</span><kbd>⌘K</kbd></button>
+        <div class="sidebar-group">
+          <h2>On this page</h2>
+          <ol class="toc">
+            <li><a href="#current-state">1. Discovery &amp; research</a></li>
+            <li><a href="#vision">2. Product strategy</a></li>
+            <li><a href="#deep-dive">3. Design execution</a></li>
+            <li><a href="#final-thoughts">Final thoughts</a></li>
+          </ol>
         </div>
-    </footer>
+        <div class="sidebar-group">
+          <h2>Case studies</h2>
+          <ul class="project-list">
+            <li><a href="Drawing-Automation.html"><span class="n">01</span>Drawing Automation</a></li>
+            <li><a href="factory-design.html" aria-current="page"><span class="n">02</span>Factory Design Vision</a></li>
+            <li><a href="processanalysis.html"><span class="n">03</span>Process Analysis</a></li>
+            <li><a href="fairplayengine.html"><span class="n">04</span>Fair Play Lineup</a></li>
+          </ul>
+        </div>
+      </aside>
 
-    <div id="lightboxModal" class="fixed inset-0 z-[100] hidden bg-slate-900/95 backdrop-blur-md flex items-center justify-center p-4" onclick="closeLightbox()">
-        <div class="relative max-w-6xl w-full h-full flex flex-col items-center justify-center">
-            <img id="lightboxImage" src="" alt="" class="hidden max-w-full max-h-[80vh] object-contain shadow-2xl rounded-lg">
-            <video id="lightboxVideo" controls autoplay loop muted class="hidden max-w-full max-h-[80vh] object-contain shadow-2xl rounded-lg">
-                <source src="" type="video/mp4">
-            </video>
-            <div id="lightboxCaption" class="mt-6 text-white text-lg font-medium text-center bg-slate-800/50 px-6 py-2 rounded-full"></div>
-            <button class="absolute top-0 right-0 text-white text-5xl font-light p-4">&times;</button>
-        </div>
+      <article class="article">
+        <!-- Phase 1 -->
+        <section class="phase" id="current-state">
+          <div class="phase-head"><span class="eyebrow">Phase 1</span><h2>Discovery &amp; research</h2></div>
+
+          <div class="block">
+            <h3>Research &amp; synthesis</h3>
+            <p>I combined in-depth interviews with survey data to turn assumptions into a strategy.</p>
+            <div class="grid grid-3">
+              <div class="card card--flat"><span class="eyebrow">Qualitative</span><h4>5 interviews</h4><p>In-depth sessions with <strong>Lighthouse Customers</strong> to find pain points they may not have shared yet.</p></div>
+              <div class="card card--flat"><span class="eyebrow">Quantitative</span><h4>115 responses</h4><p>Broad surveys with our users to find out where they most often run into problems.</p></div>
+              <div class="card card--flat"><span class="eyebrow">Market</span><h4>Market research</h4><p>How factories are moving toward cloud-based systems for multi-user collaboration.</p></div>
+            </div>
+          </div>
+
+          <div class="block">
+            <h3>Current issues &amp; solutions</h3>
+            <div class="pairs" style="margin-top:20px">
+              <div class="pair"><div><span class="mono">Problem</span>Managing 2D &amp; 3D representations independently.</div><div><span class="mono">Solution</span>Automated sync between 2D layouts &amp; 3D models.</div></div>
+              <div class="pair"><div><span class="mono">Problem</span>Costly interference issues found during installation.</div><div><span class="mono">Solution</span>Virtual aggregation for interference checks during design.</div></div>
+              <div class="pair"><div><span class="mono">Problem</span>Overall efficiency.</div><div><span class="mono">Solution</span>Layout &amp; automation tools address many issues, but not all.</div></div>
+              <div class="pair"><div><span class="mono">Problem</span>Data management silos across factory layouts and assets.</div><div><span class="mono">Solution</span>Vault integration addresses these needs with a centralized path.</div></div>
+              <div class="pair"><div><span class="mono">Problem</span>Disconnected spreadsheets used for process planning.</div><div><span class="mono">Solution</span>Process Analysis moves workflows into an integrated simulation environment.</div></div>
+            </div>
+          </div>
+
+          <div class="block">
+            <h3>Key opportunities</h3>
+            <p>Beyond technical fixes, research revealed three opportunities to fundamentally shift how teams collaborate.</p>
+            <div class="grid grid-3">
+              <div class="card"><span class="eyebrow">01</span><h4>Multi-user workflows</h4><p>Centralize technical data to facilitate true multi-user workflows.</p></div>
+              <div class="card"><span class="eyebrow">02</span><h4>Real-time feedback</h4><p>Ensure design changes are communicated instantly across global teams.</p></div>
+              <div class="card"><span class="eyebrow">03</span><h4>Conflict resolution</h4><p>Manage concurrent edits without data loss through robust sync.</p></div>
+            </div>
+          </div>
+
+          <hr class="divider">
+          <div class="block">
+            <h3>Mapping the users' process</h3>
+            <div class="grid grid-2" style="margin-top:20px">
+              <div><h4 style="margin-bottom:10px">Overview</h4><figure class="figure"><div class="figure-frame"><img src="assets/factory-blueprint-overview.jpg" alt="High-level user flow" class="zoomable" loading="lazy"></div><figcaption>Simple view of the overall process.</figcaption></figure></div>
+              <div><h4 style="margin-bottom:10px">Detailed</h4><figure class="figure"><div class="figure-frame"><img src="assets/factory-process-detailed.jpg" alt="Detailed user flow" class="zoomable" loading="lazy"></div><figcaption>Detailed view including tasks at each step.</figcaption></figure></div>
+            </div>
+          </div>
+        </section>
+
+        <!-- Phase 2 -->
+        <section class="phase" id="vision">
+          <div class="phase-head"><span class="eyebrow">Phase 2 · Product strategy</span><h2>Establishing the north star</h2></div>
+          <div class="block">
+            <div class="card-dark">
+              <span class="eyebrow">Problem statements</span>
+              <p style="margin-top:12px">To keep us focused on the “why,” we developed problem statements. These are the ones selected to become our north star:</p>
+              <div class="statements">
+                <p>“In what ways might we enable collaboration and better communication?”</p>
+                <p>“In what ways might we help customers complete their projects faster, more efficiently, and with fewer errors?”</p>
+                <p>“In what ways might we allow customers to reuse their data?”</p>
+              </div>
+            </div>
+          </div>
+          <div class="block">
+            <h3>Storyboarding the vision</h3>
+            <div data-gallery>
+              <div class="gallery-stage">
+                <img src="assets/storyboard-1.jpg" alt="Storyboard 1" class="zoomable">
+                <video class="zoomable" hidden autoplay loop muted playsinline></video>
+                <button class="gallery-btn gallery-btn--prev" type="button" aria-label="Previous">‹</button>
+                <button class="gallery-btn gallery-btn--next" type="button" aria-label="Next">›</button>
+              </div>
+              <div class="gallery-caption"><span></span><span class="mono"></span></div>
+              <div class="gallery-thumbs">
+                <button type="button"><img src="assets/storyboard-1.jpg" alt="Storyboard 1" loading="lazy"></button>
+                <button type="button"><img src="assets/storyboard-2.jpg" alt="Storyboard 2" loading="lazy"></button>
+                <button type="button"><img src="assets/storyboard-3.jpg" alt="Storyboard 3" loading="lazy"></button>
+                <button type="button"><img src="assets/storyboard-4.jpg" alt="Storyboard 4" loading="lazy"></button>
+                <button type="button"><img src="assets/storyboard-5.jpg" alt="Storyboard 5" loading="lazy"></button>
+                <button type="button" data-video="assets/factory-vision-video.mp4"><img src="assets/storyboard-6-poster.png" alt="Storyboard walkthrough (video)" loading="lazy"><span class="play" aria-hidden="true">▶</span></button>
+              </div>
+            </div>
+          </div>
+        </section>
+
+        <!-- Phase 3 -->
+        <section class="phase" id="deep-dive">
+          <div class="phase-head"><span class="eyebrow">Phase 3 · Design execution</span><h2>Architecting the solution</h2></div>
+
+          <div class="block">
+            <h3>Feedback loop</h3>
+            <p>Iterative validation through Lighthouse Customers kept the vision grounded in real-world challenges.</p>
+          </div>
+
+          <div class="block split">
+            <div><h3>Connections</h3><p>The Factory Common Data Environment (FCDE) provides the central source of truth for everyone connected.</p></div>
+            <figure class="figure"><div class="figure-frame"><img src="assets/interaction-detail-1.jpg" alt="Connections architecture" class="zoomable" loading="lazy"></div></figure>
+          </div>
+
+          <div class="block">
+            <h3>Real-time design change alerts</h3>
+            <p>With the FCDE as the single source of truth, we solved the “stale data” problem and could provide a notification system that alerts connected users the moment a layout change occurs.</p>
+            <div data-gallery>
+              <div class="gallery-stage">
+                <img src="assets/interaction-detail-2a.jpg" alt="Real-time alert detail A" class="zoomable">
+                <button class="gallery-btn gallery-btn--prev" type="button" aria-label="Previous">‹</button>
+                <button class="gallery-btn gallery-btn--next" type="button" aria-label="Next">›</button>
+              </div>
+              <div class="gallery-caption"><span></span><span class="mono"></span></div>
+              <div class="gallery-thumbs">
+                <button type="button"><img src="assets/interaction-detail-2a.jpg" alt="Real-time alert detail A" loading="lazy"></button>
+                <button type="button"><img src="assets/interaction-detail-2b.jpg" alt="Real-time alert detail B" loading="lazy"></button>
+                <button type="button"><img src="assets/interaction-detail-2.gif" alt="Alert mockup walkthrough" loading="lazy"></button>
+              </div>
+            </div>
+          </div>
+
+          <div class="block split split--flip">
+            <div><h3>Conflict resolution</h3><p>While automatic resolution is the goal, user interaction is required when conflicts can't be resolved automatically.</p></div>
+            <figure class="figure"><div class="figure-frame"><img src="assets/interaction-detail-3.jpg" alt="Conflict resolution interaction" class="zoomable" loading="lazy"></div></figure>
+          </div>
+
+          <hr class="divider">
+          <div class="block">
+            <h3>Outcomes</h3>
+            <div class="grid grid-3" style="margin-top:20px">
+              <div class="card"><span class="eyebrow">Stakeholder alignment</span><p>I aligned global stakeholders and a division VP on a unified product strategy by grounding the vision in validated user needs.</p></div>
+              <div class="card"><span class="eyebrow">Foundation for innovation</span><p>This research and vision directly led to the development of the Factory Common Data Environment (FCDE), moving the product into a cloud-first era.</p></div>
+              <div class="card"><span class="eyebrow">Customer-centric strategy</span><p>By interviewing 5 Lighthouse Customers and surveying 115 users, I made sure the technical vision was grounded in actual customer requirements rather than assumptions.</p></div>
+            </div>
+          </div>
+        </section>
+
+        <!-- Final thoughts -->
+        <section class="phase" id="final-thoughts">
+          <div class="phase-head"><span class="eyebrow">Retrospective</span><h2>Final thoughts</h2></div>
+          <div class="retro">
+            <p>The work and illustrations shared here are a sampling of the broader vision I developed for the Factory Design Utilities product.</p>
+            <p>The value shown in this vision led directly to the delivery of the <strong>Factory Common Data Environment</strong>, which would provide the foundation for everything else.</p>
+            <p>While priorities shifted, the project remains a standard for how research and alignment can drive platform innovation.</p>
+          </div>
+        </section>
+
+        <nav class="pager" aria-label="More case studies">
+          <a class="prev" href="Drawing-Automation.html"><span class="mono">← Previous</span><h3>Drawing Automation</h3></a>
+          <a class="next" href="processanalysis.html"><span class="mono">Next →</span><h3>Process Analysis</h3></a>
+        </nav>
+      </article>
     </div>
+  </main>
 
-<script>
-    window.addEventListener('DOMContentLoaded', () => {
-        const observerOptions = { root: null, rootMargin: '-20% 0% -70% 0%', threshold: 0 };
-        const observer = new IntersectionObserver((entries) => {
-            entries.forEach((entry) => {
-                const id = entry.target.getAttribute('id');
-                const navLink = document.querySelector(`.nav-link[href="#${id}"]`);
-                if (entry.isIntersecting) {
-                    document.querySelectorAll('.nav-link').forEach(link => link.classList.remove('active'));
-                    navLink?.classList.add('active');
-                }
-            });
-        }, observerOptions);
-        document.querySelectorAll('section[id]').forEach((s) => observer.observe(s));
-    });
-
-    // Vision Carousel Logic
-    let currentVisionIndex = 0;
-    function updateVisionGallery(thumbnail) {
-        const allThumbs = Array.from(document.querySelectorAll('.vision-thumb'));
-        currentVisionIndex = allThumbs.indexOf(thumbnail);
-        renderVisionFrame(thumbnail.getAttribute('data-video') || thumbnail.src, thumbnail.alt);
-    }
-    function changeVisionImage(direction) {
-        const allThumbs = Array.from(document.querySelectorAll('.vision-thumb'));
-        currentVisionIndex = (currentVisionIndex + direction + allThumbs.length) % allThumbs.length;
-        const active = allThumbs[currentVisionIndex];
-        renderVisionFrame(active.getAttribute('data-video') || active.src, active.alt);
-    }
-    function renderVisionFrame(src, alt) {
-        const mainImg = document.getElementById('mainVisionImage');
-        const mainVid = document.getElementById('mainVisionVideo');
-        const isVideo = src.toLowerCase().endsWith('.mp4');
-        if (isVideo) {
-            mainImg.classList.add('hidden'); mainVid.classList.remove('hidden');
-            mainVid.querySelector('source').src = src; mainVid.load(); mainVid.play();
-        } else {
-            mainVid.classList.add('hidden'); mainVid.pause(); mainImg.classList.remove('hidden');
-            mainImg.src = src; mainImg.alt = alt;
-        }
-        document.querySelectorAll('.vision-thumb').forEach((t, i) => {
-            t.classList.toggle('border-blue-600', i === currentVisionIndex);
-            t.classList.toggle('opacity-100', i === currentVisionIndex);
-            t.classList.toggle('opacity-60', i !== currentVisionIndex);
-        });
-    }
-
-    // Alerts Carousel Logic
-    let currentAlertsIndex = 0;
-    function updateAlertsGallery(thumbnail) {
-        const allThumbs = Array.from(document.querySelectorAll('.alerts-thumb'));
-        currentAlertsIndex = allThumbs.indexOf(thumbnail);
-        renderAlertsFrame(thumbnail.src, thumbnail.alt);
-    }
-    function changeAlertsImage(direction) {
-        const allThumbs = Array.from(document.querySelectorAll('.alerts-thumb'));
-        currentAlertsIndex = (currentAlertsIndex + direction + allThumbs.length) % allThumbs.length;
-        renderAlertsFrame(allThumbs[currentAlertsIndex].src, allThumbs[currentAlertsIndex].alt);
-    }
-    function renderAlertsFrame(src, alt) {
-        const mainImg = document.getElementById('mainAlertsImage');
-        mainImg.src = src; mainImg.alt = alt;
-        document.querySelectorAll('.alerts-thumb').forEach((t, i) => {
-            t.classList.toggle('border-blue-600', i === currentAlertsIndex);
-            t.classList.toggle('opacity-100', i === currentAlertsIndex);
-            t.classList.toggle('opacity-60', i !== currentAlertsIndex);
-        });
-    }
-
-    // Lightbox Logic
-    function openLightbox(element) {
-        const modal = document.getElementById('lightboxModal');
-        const lbImg = document.getElementById('lightboxImage');
-        const lbVid = document.getElementById('lightboxVideo');
-        lbImg.classList.add('hidden'); lbVid.classList.add('hidden'); lbVid.pause();
-        let source = element.tagName === 'VIDEO' ? element.querySelector('source').src : (element.getAttribute('data-video') || element.src);
-        const isVideo = source && source.toLowerCase().endsWith('.mp4');
-        if (isVideo) {
-            lbVid.querySelector('source').src = source; lbVid.classList.remove('hidden'); lbVid.load(); lbVid.play();
-        } else {
-            lbImg.src = source; lbImg.classList.remove('hidden');
-        }
-        document.getElementById('lightboxCaption').innerText = element.alt || "Design Detail";
-        modal.classList.remove('hidden'); document.body.style.overflow = 'hidden';
-    }
-    function closeLightbox() {
-        document.getElementById('lightboxModal').classList.add('hidden');
-        document.getElementById('lightboxVideo').pause();
-        document.body.style.overflow = 'auto';
-    }
-    document.addEventListener('keydown', (e) => { if (e.key === 'Escape') closeLightbox(); });
-</script>
+  <footer class="site-footer">
+    <div class="wrap">
+      <span class="eyebrow">Next chapter</span>
+      <h2>Let's build<br>clarity.</h2>
+      <a class="footer-email" href="mailto:jared.bunch@outlook.com">jared.bunch@outlook.com</a>
+      <div class="footer-meta">
+        <span>© 2026 Jared Bunch · Howell, Michigan</span>
+        <nav aria-label="Footer">
+          <a href="work.html">Work</a>
+          <a href="mystory.html">About</a>
+          <a href="notes.html">Notes</a>
+          <a href="https://www.linkedin.com/in/jaredabunch" target="_blank" rel="noopener">LinkedIn</a>
+          <a href="assets/jaredbunch_resume.pdf" target="_blank" rel="noopener">Resume</a>
+        </nav>
+      </div>
+    </div>
+  </footer>
 </body>
 </html>

@@ -1,110 +1,80 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Notes | Jared Bunch</title>
-    <link rel="icon" type="image/png" href="assets/favicon.png">
-    <script src="https://cdn.tailwindcss.com"></script>
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;800&family=Playfair+Display:wght@700;900&display=swap" rel="stylesheet">
-    <style>
-        body { font-family: 'Inter', sans-serif; scroll-behavior: smooth; }
-        h1, h2, h3 { font-family: 'Playfair Display', serif; }
-        .nav-blur { background: rgba(255, 255, 255, 0.9); backdrop-filter: blur(10px); }
-    </style>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Notes | Jared Bunch</title>
+  <meta name="description" content="Short-form notes from Jared Bunch on design leadership, AI partnership, and finding the signal in the noise.">
+  <meta property="og:type" content="website">
+  <meta property="og:title" content="Notes | Jared Bunch">
+  <meta property="og:description" content="Short-form notes from Jared Bunch on design leadership, AI partnership, and finding the signal in the noise.">
+  <meta property="og:image" content="https://jaredbunch.com/assets/drawingautomation-hero.jpg">
+  <meta name="twitter:card" content="summary_large_image">
+  <link rel="icon" type="image/png" href="assets/favicon.png">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Geist:wght@400;500;600&family=Geist+Mono:wght@400;500&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="assets/css/site.css">
+  <script src="assets/js/site.js" defer></script>
 </head>
-<body class="bg-white text-slate-900">
+<body>
+  <a class="skip-link" href="#main">Skip to content</a>
+  <div class="progress-bar" aria-hidden="true"></div>
+  <nav class="site-nav" aria-label="Main">
+    <a class="nav-brand" href="index.html"><b>JB</b><span>Jared Bunch</span></a>
+    <a class="nav-link" href="work.html">Work</a>
+    <a class="nav-link" href="mystory.html">About</a>
+    <a class="nav-link" href="notes.html" aria-current="page">Notes</a>
+    <button class="nav-search" type="button" data-cmdk aria-label="Search the site">Search <kbd>⌘K</kbd></button>
+    <button class="nav-menu" type="button" data-cmdk>Menu</button>
+    <a class="nav-cta" href="mailto:jared.bunch@outlook.com">Contact</a>
+  </nav>
 
-    <nav class="sticky top-0 z-50 nav-blur border-b border-slate-100">
-        <div class="max-w-6xl mx-auto px-6 py-4 flex justify-between items-center">
-            <a href="index.html" class="font-black tracking-tighter text-2xl">JB</a>
-            <div class="hidden md:flex space-x-10 text-sm font-bold uppercase tracking-widest text-slate-500">
-                <a href="index.html" class="hover:text-black transition text-xs">Home</a>
-                <a href="mystory.html" class="hover:text-black transition text-xs">About Me</a>
-                <a href="notes.html" class="text-black border-b-2 border-black pb-1 text-xs">Notes</a>
-                <a href="index.html#testimonials" class="hover:text-black transition text-xs">Testimonials</a>
-                <a href="mailto:jared.bunch@outlook.com" class="hover:text-black transition text-xs">Get in Touch</a>
-                <a href="assets/jaredbunch_resume.pdf" target="_blank" class="font-bold uppercase tracking-widest text-xs hover:text-black transition">Resume (PDF)</a>
-            </div>
-        </div>
-    </nav>
-
-    <header class="max-w-6xl mx-auto px-6 pt-24 pb-16">
-        <span class="text-slate-400 font-black tracking-widest uppercase text-xs">Active Thinking</span>
-        <h1 class="text-6xl md:text-8xl font-black mt-6 mb-8 leading-[1.1] tracking-tight">
-            Notes on <span class="text-slate-400 italic font-medium">Clarity.</span>
-        </h1>
-        <p class="text-xl md:text-2xl text-slate-500 max-w-2xl">
-            Short-form thoughts on design leadership, AI partnership, and finding the signal in the noise.
-        </p>
+  <main id="main">
+    <header class="page-head">
+      <div class="wrap">
+        <span class="eyebrow">Notes</span>
+        <h1>Notes on clarity.</h1>
+        <p class="lede">Short-form thoughts on design leadership, AI partnership, and finding the signal in the noise.</p>
+      </div>
     </header>
+    <section class="wrap" style="padding-bottom:clamp(80px,10vw,120px)">
+      <div class="filters" data-filter-group=".note" role="group" aria-label="Filter notes">
+        <button type="button" data-filter="all" aria-pressed="true">All</button>
+        <button type="button" data-filter="leadership" aria-pressed="false">Leadership &amp; sports</button>
+        <button type="button" data-filter="ai" aria-pressed="false">Design &amp; AI</button>
+      </div>
+        <article class="note" data-tags="leadership">
+          <div><span class="eyebrow">Leadership &amp; sports</span><time datetime="2026-06-22">June 22, 2026</time></div>
+          <div><h2>Managing output vs. coaching outcomes.</h2><p>These days, you can't just give your product team a strict set of rules and measure their success by how many features they deliver. Real leadership is more like coaching right alongside them. You need to help your team stay aware of what's happening so they can adjust quickly when things change, and keep everyone focused on the end goal instead of just following a script.</p></div>
+        </article>
+        <article class="note" data-tags="ai">
+          <div><span class="eyebrow">Design &amp; AI</span><time datetime="2026-06-15">June 15, 2026</time></div>
+          <div><h2>Leveraging the “engine”.</h2><p>Using tools like Figma Make isn't about skipping the work; it's about shifting the focus. I use AI to handle the UI scaffolding so I can dedicate my time to the high-level logic and information architecture.</p></div>
+        </article>
+        <article class="note" data-tags="leadership">
+          <div><span class="eyebrow">Leadership &amp; sports</span><time datetime="2026-06-01">June 1, 2026</time></div>
+          <div><h2>Chemistry is a design problem.</h2><p>I treat team chemistry like I treat softball coaching. You don't just “hope” it happens. You design the environment for it by clearing the hurdles so the team can perform at their best.</p></div>
+        </article>
+    </section>
+  </main>
 
-    <main class="max-w-6xl mx-auto px-6 pb-32">
-        <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
-            
-            <!-- Note 1: June 22, 2026 -->
-            <div class="p-10 bg-slate-50 rounded-[2.5rem] border border-slate-100 flex flex-col justify-between hover:shadow-xl transition-all group">
-                <div>
-                    <span class="text-[10px] font-black uppercase tracking-widest text-emerald-600 mb-4 block">Leadership & Sports</span>
-                    <h3 class="text-2xl font-bold mb-4">Managing output vs. coaching outcomes.</h3>
-                    <p class="text-slate-600 leading-relaxed text-lg">
-            These days, you can’t just give your product team a strict set of rules and measure their success by how many features they deliver. Real leadership is more like coaching right alongside them. You need to help your team stay aware of what’s happening so they can adjust quickly when things change, and keep everyone focused on the end goal instead of just following a script.
-                    </p>
-                </div>
-                <div class="mt-8 pt-6 border-t border-slate-200 text-[10px] font-bold text-slate-400 uppercase tracking-widest">
-                    June 22, 2026
-                </div>
-            </div>
-
-            <!-- Note 2: June 15, 2026 -->
-            <div class="p-10 bg-slate-50 rounded-[2.5rem] border border-slate-100 flex flex-col justify-between hover:shadow-xl transition-all">
-                <div>
-                    <span class="text-[10px] font-black uppercase tracking-widest text-blue-600 mb-4 block">Design & AI</span>
-                    <h3 class="text-2xl font-bold mb-4">Leveraging the "Engine".</h3>
-                    <p class="text-slate-600 leading-relaxed text-lg">
-                        Using tools like Figma Make isn't about skipping the work, it's about shifting the focus. I use AI to handle the UI scaffolding so I can dedicate my time to the high-level logic and information architecture.
-                    </p>
-                </div>
-                <div class="mt-8 pt-6 border-t border-slate-200 text-[10px] font-bold text-slate-400 uppercase tracking-widest">
-                    June 15, 2026
-                </div>
-            </div>
-
-            <!-- Note 3: June 01, 2026 -->
-            <div class="p-10 bg-slate-50 rounded-[2.5rem] border border-slate-100 flex flex-col justify-between hover:shadow-xl transition-all group">
-                <div>
-                    <span class="text-[10px] font-black uppercase tracking-widest text-emerald-600 mb-4 block">Leadership & Sports</span>
-                    <h3 class="text-2xl font-bold mb-4">Chemistry is a design problem.</h3>
-                    <p class="text-slate-600 leading-relaxed text-lg">
-                        I treat team chemistry like I treat softball coaching. You don't just "hope" it happens. You design the environment for it by clearing the hurdles so the team can perform at their best.
-                    </p>
-                </div>
-                <div class="mt-8 pt-6 border-t border-slate-200 text-[10px] font-bold text-slate-400 uppercase tracking-widest">
-                    June 01, 2026
-                </div>
-            </div>
-
-        </div>
-    </main>
-
-    <footer class="bg-white py-32 px-6 border-t border-slate-100">
-        <div class="max-w-6xl mx-auto flex flex-col md:flex-row justify-between items-center text-center md:text-left gap-12">
-            <div>
-                <h2 class="text-5xl font-black mb-4 tracking-tighter">Let's build clarity.</h2>
-                <a href="mailto:jared.bunch@outlook.com" class="text-2xl md:text-3xl font-black text-black border-b-4 border-slate-100 hover:border-black transition duration-300 pb-2">
-                    jared.bunch@outlook.com
-                </a>
-            </div>
-            <div class="flex flex-col items-center md:items-end gap-8">
-                <div class="flex gap-10">
-                    <a href="https://www.linkedin.com/in/jaredabunch" target="_blank" class="font-bold uppercase tracking-widest text-xs flex items-center gap-2 hover:text-blue-600 transition">LinkedIn</a>
-                    <a href="assets/jaredbunch_resume.pdf" target="_blank" class="font-bold uppercase tracking-widest text-xs hover:text-black transition">Resume (PDF)</a>
-                </div>
-                <p class="text-[10px] font-black uppercase tracking-[0.3em] text-slate-300">
-                    &copy; 2026 Jared Bunch &bull; Principal UX Designer
-                </p>
-            </div>
-        </div>
-    </footer>
+  <footer class="site-footer">
+    <div class="wrap">
+      <span class="eyebrow">Next chapter</span>
+      <h2>Let's build<br>clarity.</h2>
+      <a class="footer-email" href="mailto:jared.bunch@outlook.com">jared.bunch@outlook.com</a>
+      <div class="footer-meta">
+        <span>© 2026 Jared Bunch · Howell, Michigan</span>
+        <nav aria-label="Footer">
+          <a href="work.html">Work</a>
+          <a href="mystory.html">About</a>
+          <a href="notes.html">Notes</a>
+          <a href="https://www.linkedin.com/in/jaredabunch" target="_blank" rel="noopener">LinkedIn</a>
+          <a href="assets/jaredbunch_resume.pdf" target="_blank" rel="noopener">Resume</a>
+        </nav>
+      </div>
+    </div>
+  </footer>
 </body>
 </html>

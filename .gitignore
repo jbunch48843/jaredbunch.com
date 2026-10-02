@@ -2,3 +2,8 @@
 node_modules/
 dist/
 *.log
+# Private work sources: encrypted into private/ by tools/encrypt-private.mjs, never committed
+private-src/
+
+# Local editor/assistant settings
+.claude/

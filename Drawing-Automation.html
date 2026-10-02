@@ -1,885 +1,450 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Drawing Automation | Jared Bunch</title>
-    <script src="https://cdn.tailwindcss.com"></script>
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;800&family=Playfair+Display:wght@700;900&display=swap" rel="stylesheet">
-    <style>
-        body { font-family: 'Inter', sans-serif; scroll-behavior: smooth; }
-        h1, h2, h3 { font-family: 'Playfair Display', serif; }
-        .zoom-cursor { cursor: zoom-in; }
-        
-        .nav-link { position: relative; transition: all 0.3s ease; }
-        .nav-link.active { color: #000; font-weight: 800; }
-        .nav-link.active::before {
-            content: "";
-            position: absolute;
-            left: -1.5rem;
-            top: 0;
-            bottom: 0;
-            width: 3px;
-            background-color: #10b981;
-            border-radius: 0 4px 4px 0;
-        }
-
-        /* Magic Reveal Animation Styles */
-        @keyframes etherealReveal {
-            0% {
-                opacity: 0;
-                filter: blur(30px) brightness(1.5);
-                transform: scale(0.95) translateY(10px);
-            }
-            100% {
-                opacity: 1;
-                filter: blur(0) brightness(1);
-                transform: scale(1) translateY(0);
-            }
-        }
-
-        .animate-reveal { opacity: 0; transition: opacity 0.5s ease; }
-        .is-visible { animation: etherealReveal 2s cubic-bezier(0.22, 1, 0.36, 1) forwards; }
-    </style>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Drawing Automation | Jared Bunch</title>
+  <meta name="description" content="Case study: automating technical drawings in Autodesk Fusion so engineers could spend their time on engineering.">
+  <meta property="og:type" content="website">
+  <meta property="og:title" content="Drawing Automation | Jared Bunch">
+  <meta property="og:description" content="Case study: automating technical drawings in Autodesk Fusion so engineers could spend their time on engineering.">
+  <meta property="og:image" content="https://jaredbunch.com/assets/drawingautomation-hero.jpg">
+  <meta name="twitter:card" content="summary_large_image">
+  <link rel="icon" type="image/png" href="assets/favicon.png">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Geist:wght@400;500;600&family=Geist+Mono:wght@400;500&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="assets/css/site.css">
+  <script src="assets/js/site.js" defer></script>
 </head>
-<body class="bg-white text-slate-900 leading-relaxed">
+<body>
+  <a class="skip-link" href="#main">Skip to content</a>
+  <div class="progress-bar" aria-hidden="true"></div>
+  <nav class="site-nav" aria-label="Main">
+    <a class="nav-brand" href="index.html"><b>JB</b><span>Jared Bunch</span></a>
+    <a class="nav-link" href="work.html" aria-current="page">Work</a>
+    <a class="nav-link" href="mystory.html">About</a>
+    <a class="nav-link" href="notes.html">Notes</a>
+    <button class="nav-search" type="button" data-cmdk aria-label="Search the site">Search <kbd>⌘K</kbd></button>
+    <button class="nav-menu" type="button" data-cmdk>Menu</button>
+    <a class="nav-cta" href="mailto:jared.bunch@outlook.com">Contact</a>
+  </nav>
 
-    <nav class="sticky top-0 z-50 bg-white/80 backdrop-blur-md border-b border-slate-100 p-4">
-        <div class="max-w-7xl mx-auto flex justify-between">
-            <a href="index.html" class="text-xs font-black uppercase tracking-widest text-slate-400 hover:text-black transition">← Back to Portfolio</a>
-            <a href="https://www.linkedin.com/in/jaredabunch" target="_blank" class="text-slate-400 hover:text-blue-600 transition">LinkedIn</a>
+  <main id="main">
+    <header class="page-head">
+      <div class="wrap">
+        <nav class="crumbs" aria-label="Breadcrumb"><a href="work.html">Work</a><span aria-hidden="true">/</span><span>Drawing Automation</span></nav>
+        <div style="margin-top:28px"><span class="eyebrow">Case study · Autodesk Fusion</span></div>
+        <h1>Drawing Automation</h1>
+        <p class="lede">I helped engineers save time by automating the creation of technical drawings and paperwork.</p>
+        <div class="summary">
+          <div><h2>The challenge</h2><p>Engineers were spending almost half their time on manual drafting tasks. It was a huge bottleneck and left a lot of room for mistakes.</p></div>
+          <div><h2>My role</h2><p>UX Lead. When I joined, the team had already been working for six months. I helped them refocus on user needs to deliver capabilities within the next six months.</p></div>
+          <div><h2>The result</h2><p>Drawing Automation saved engineers about 40% of their time so they could focus on more important work.</p></div>
         </div>
-    </nav>
-
-    <header class="max-w-4xl mx-auto px-6 pt-24 pb-16">
-        <span class="text-emerald-600 font-black tracking-widest uppercase text-xs">Case Study</span>
-        <h1 class="text-5xl md:text-7xl font-black mt-6 mb-8 tracking-tight text-balance">Drawing Automation</h1>
-        <p class="text-2xl text-slate-500 font-light text-balance">I helped engineers save time by automating the creation of technical drawings and paperwork.</p>
+      </div>
     </header>
+    <div class="wrap">
+      <figure class="figure"><div class="figure-frame"><img src="assets/project-hero.png" alt="Automated drawing transformation" class="zoomable"></div></figure>
+      <div style="margin-top:48px">
+        <span class="eyebrow">One year later</span>
+        <h2 style="margin:10px 0 24px;font-size:clamp(1.75rem,3vw,2.5rem)">The impact</h2>
+        <div class="metrics">
+          <div class="metric metric--lead"><div class="metric-value">356,000</div><div class="metric-label">2D drawings generated, containing:</div></div>
+          <div class="metric"><div class="metric-value">1.46M</div><div class="metric-label">Sheets</div></div>
+          <div class="metric"><div class="metric-value">3.40M</div><div class="metric-label">Views</div></div>
+          <div class="metric"><div class="metric-value">10.84M</div><div class="metric-label">Dimensions</div></div>
+        </div>
+      </div>
+    </div>
 
-    <section class="bg-slate-50 py-20 border-y border-slate-100">
-        <div class="max-w-5xl mx-auto px-6 grid grid-cols-1 md:grid-cols-3 gap-12 text-sm">
+    <div class="wrap workspace">
+      <aside class="sidebar" aria-label="Case study navigation">
+        <button class="sidebar-search" type="button" data-cmdk><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><circle cx="11" cy="11" r="7"/><path d="m20 20-3.5-3.5"/></svg><span>Jump to…</span><kbd>⌘K</kbd></button>
+        <div class="sidebar-group">
+          <h2>On this page</h2>
+          <ol class="toc">
+            <li><a href="#context">1. Context</a></li>
+            <li><a href="#requirements">2. Requirements</a></li>
+            <li><a href="#solutions">3. Design solutions</a></li>
+            <li><a href="#evaluation">4. Evaluation</a></li>
+            <li><a href="#hurdles">Hurdles cleared</a></li>
+            <li><a href="#final-thoughts">Final thoughts</a></li>
+          </ol>
+        </div>
+        <div class="sidebar-group">
+          <h2>Case studies</h2>
+          <ul class="project-list">
+            <li><a href="Drawing-Automation.html" aria-current="page"><span class="n">01</span>Drawing Automation</a></li>
+            <li><a href="factory-design.html"><span class="n">02</span>Factory Design Vision</a></li>
+            <li><a href="processanalysis.html"><span class="n">03</span>Process Analysis</a></li>
+            <li><a href="fairplayengine.html"><span class="n">04</span>Fair Play Lineup</a></li>
+          </ul>
+        </div>
+      </aside>
+
+      <article class="article">
+
+        <!-- Phase 1 -->
+        <section class="phase" id="context">
+          <div class="phase-head">
+            <span class="eyebrow">Phase 1</span>
+            <h2>Context</h2>
+          </div>
+
+          <div class="block" style="margin-top:0">
+            <h3>Research synthesis</h3>
+            <p>I used both in-depth interviews and large-scale surveys. By bringing together direct interviews, broad surveys, and market trends, we turned our assumptions into a user profile supported by data.</p>
+            <div class="grid grid-3">
+              <div class="card card--flat">
+                <span class="eyebrow">Qualitative</span>
+                <h4>5 interviews</h4>
+                <p>Deep-dive sessions with <strong>Lighthouse Customers</strong> to uncover unarticulated pain points in the drafting workflow.</p>
+              </div>
+              <div class="card card--flat">
+                <span class="eyebrow">Quantitative</span>
+                <h4>50+ responses</h4>
+                <p>Broad <strong>Fusion user surveys</strong> identifying high-frequency friction points and automation expectations across the user base.</p>
+              </div>
+              <div class="card card--flat">
+                <span class="eyebrow">Market</span>
+                <h4>Market research</h4>
+                <p>Analysis of industry shifts toward <strong>model-based definition</strong> and the competitive landscape of CAD automation.</p>
+              </div>
+            </div>
+          </div>
+
+          <div class="block">
+            <h3>Persona</h3>
+            <div class="persona">
+              <div class="persona-id">
+                <img src="assets/jon-placeholder.png" alt="Jon, persona portrait" class="zoomable">
+                <h4>Jon, 34</h4>
+                <span class="eyebrow">Lead Mechanical Engineer</span>
+                <p class="muted small">Automotive supplier</p>
+                <blockquote>“I don't only need the software to be ‘smart.’ I need it to be fast, predictable, and transparent.”</blockquote>
+              </div>
+              <div class="persona-detail">
+                <section>
+                  <h5>Professional bio</h5>
+                  <p>Jon connects the finished 3D model to the shop floor. In the automotive supply chain, he creates the detailed 2D technical drawings that guide CNC machines. He often works under tight deadlines and spends hours adding dimensions by hand, which can lead to mistakes and slowdowns from repetitive drafting work.</p>
+                </section>
+                <section class="grid grid-2" style="gap:32px">
+                  <div>
+                    <h5>Key goals</h5>
+                    <ul class="list list--plus" style="margin:0">
+                      <li>Zero downtime on the shop floor</li>
+                      <li>High process repeatability</li>
+                      <li>Fewer errors in drawing creation</li>
+                    </ul>
+                  </div>
+                  <div>
+                    <h5>Pain points</h5>
+                    <ul class="list list--minus" style="margin:0">
+                      <li>Fear of “black box” errors</li>
+                      <li>Severe click fatigue</li>
+                      <li>Inconsistent automation results</li>
+                    </ul>
+                  </div>
+                </section>
+                <section>
+                  <h5>Production priorities</h5>
+                  <div class="spectrums">
+                    <div><div class="spectrum-name">Output velocity</div><div class="spectrum-track"><span style="left:90%"></span></div><div class="spectrum-ends"><span>Quality</span><span>Volume</span></div></div>
+                    <div><div class="spectrum-name">Tolerance standards</div><div class="spectrum-track"><span style="left:95%"></span></div><div class="spectrum-ends"><span>Commercial</span><span>Aero / Med</span></div></div>
+                    <div><div class="spectrum-name">Process rigidity</div><div class="spectrum-track"><span style="left:85%"></span></div><div class="spectrum-ends"><span>Adaptive</span><span>Strict SOP</span></div></div>
+                    <div><div class="spectrum-name">Decision trust</div><div class="spectrum-track"><span style="left:15%"></span></div><div class="spectrum-ends"><span>Manual</span><span>System</span></div></div>
+                  </div>
+                </section>
+                <section>
+                  <h5>Interaction profile</h5>
+                  <div class="spectrums">
+                    <div><div class="spectrum-name">Interaction fidelity</div><div class="spectrum-track"><span style="left:88%"></span></div><div class="spectrum-ends"><span>Visual / UI</span><span>Tactile</span></div></div>
+                    <div><div class="spectrum-name">Logic transparency</div><div class="spectrum-track"><span style="left:95%"></span></div><div class="spectrum-ends"><span>Black box</span><span>Open logic</span></div></div>
+                    <div><div class="spectrum-name">Feedback granularity</div><div class="spectrum-track"><span style="left:90%"></span></div><div class="spectrum-ends"><span>Summary</span><span>Line-item</span></div></div>
+                    <div><div class="spectrum-name">Hardware complexity</div><div class="spectrum-track"><span style="left:82%"></span></div><div class="spectrum-ends"><span>Standard</span><span>Specialized</span></div></div>
+                  </div>
+                </section>
+              </div>
+            </div>
+          </div>
+
+          <div class="block split">
             <div>
-                <h4 class="font-black uppercase text-slate-400 mb-4">The Challenge</h4>
-                <p class="text-slate-700 leading-relaxed">Engineers were spending almost half their time on manual drafting tasks. It was a huge bottleneck and left a lot of room for mistakes.</p>
+              <h3>The scope: automating the mundane</h3>
+              <p>Target the most repetitive, time-consuming parts of creating 2D documentation:</p>
+              <ul class="list">
+                <li>Dimensioning and annotation placement</li>
+                <li>View creation, rotation, and placement</li>
+                <li>BOM generation and placement</li>
+              </ul>
             </div>
+            <figure class="figure"><div class="figure-frame"><img src="assets/product-scope.png" alt="Product scope: automating the mundane" class="zoomable" loading="lazy"></div></figure>
+          </div>
+
+          <div class="block split split--flip">
             <div>
-                <h4 class="font-black uppercase text-slate-400 mb-4">My Role</h4>
-                <p class="text-slate-700 leading-relaxed">I was the UX Lead. When I joined the project, the team had already been working for six months. I helped them refocus on the user needs to deliver capabilities within the next 6 months.</p>
+              <h3>The business case: scaling through efficiency</h3>
+              <p>The investment in Drawing Automation wasn't just about saving time; it was a strategic move to enable our customers to scale. Automating 2D documentation directly impacts ROI by increasing shop-floor capacity and reducing error-related production costs.</p>
             </div>
+            <figure class="figure"><div class="figure-frame"><img src="assets/project-rationale.png" alt="Business rationale for drawing automation" class="zoomable" loading="lazy"></div></figure>
+          </div>
+
+          <hr class="divider">
+          <div class="block">
+            <h3>Strategic alignment: stakeholder mapping</h3>
+            <p>I organized our stakeholders by how much influence and interest they had in the project. Instead of just making a list, I used this as a guide to see where I should focus on building trust to improve user transparency.</p>
+            <div class="matrix-wrap">
+              <div class="matrix-axis matrix-axis--y">Power →</div>
+              <div class="matrix">
+                <div><div class="q-label">Keep satisfied</div><div class="chips"><span class="chip">Dev Architect</span></div></div>
+                <div class="q-key"><div class="q-label">Manage closely</div><div class="chips"><span class="chip">Dev Team</span><span class="chip">Product Manager</span></div></div>
+                <div><div class="q-label">Monitor</div><div class="chips"><span class="chip">Marketing</span><span class="chip">Sales</span></div></div>
+                <div><div class="q-label">Keep informed</div><div class="chips"><span class="chip">Division VP</span><span class="chip">Business Group</span></div></div>
+              </div>
+              <div class="matrix-axis matrix-axis--x">Interest →</div>
+            </div>
+            <div class="grid grid-4" style="margin-top:24px">
+              <div class="card"><span class="eyebrow">Manage closely</span><p>The engine room. I worked daily with the <strong>Dev Team</strong> and <strong>Product Manager</strong> to align on logic transparency.</p></div>
+              <div class="card"><span class="eyebrow eyebrow--muted">Keep satisfied</span><p>The <strong>Dev Architect</strong> was key to managing technical debt and making sure UI decisions were feasible.</p></div>
+              <div class="card"><span class="eyebrow eyebrow--muted">Keep informed</span><p>Leadership roles like the <strong>VP</strong>, who needed high-level proof that UX was driving ROI.</p></div>
+              <div class="card"><span class="eyebrow eyebrow--muted">Monitor</span><p><strong>Sales</strong> and <strong>Marketing</strong> were kept in the loop for future market evangelism.</p></div>
+            </div>
+          </div>
+        </section>
+
+        <!-- Phase 2 -->
+        <section class="phase" id="requirements">
+          <div class="phase-head">
+            <span class="eyebrow">Phase 2</span>
+            <h2>Requirements</h2>
+          </div>
+
+          <div class="block split" style="margin-top:0">
             <div>
-                <h4 class="font-black uppercase text-slate-400 mb-4">The Result</h4>
-                <p class="text-slate-700 leading-relaxed">Drawing Automation saved engineers about 40% of their time so they could focus on more important work.</p>
+              <h3>Goals &amp; tasks</h3>
+              <p>Users wanted us to focus on the high-friction moments, with the goal of turning a lengthy manual process into a five-minute automated one.</p>
             </div>
-        </div>
-    </section>
+            <figure class="figure"><div class="figure-frame"><img src="assets/tasks.png" alt="Technical task mapping" class="zoomable" loading="lazy"></div></figure>
+          </div>
 
-    <section class="py-12 bg-white overflow-hidden">
-        <div class="max-w-6xl mx-auto px-6">
-            <div class="relative group">
-                <div id="magicImage" class="animate-reveal rounded-[3rem] shadow-2xl overflow-hidden aspect-[21/9] bg-slate-200">
-                    <img src="assets/project-hero.png" 
-                         alt="Automated drawing transformation" 
-                         class="w-full h-full object-cover object-top transition-transform duration-700 group-hover:scale-105">
-                    <div class="absolute inset-0 bg-gradient-to-tr from-emerald-500/10 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-700"></div>
-                </div>
+          <div class="block split split--flip">
+            <div>
+              <h3>Opportunities</h3>
+              <p>Beyond speed, we found chances to fundamentally change how the team worked.</p>
             </div>
-        </div>
-    </section>
+            <figure class="figure"><div class="figure-frame"><img src="assets/opportunities.png" alt="Strategic workflow opportunities" class="zoomable" loading="lazy"></div></figure>
+          </div>
 
-    <section id="impact" class="py-16 border-b border-slate-100">
-        <div class="max-w-5xl mx-auto px-6">
-            <header class="mb-8">
-                <span class="text-emerald-600 font-bold uppercase text-xs tracking-widest">Results</span>
-                <h2 class="text-4xl font-bold mt-4 italic">One year later: The impact</h2>
-            </header>
-            
-            <div class="grid grid-cols-1 gap-8 text-center mb-8">
-                <div class="bg-black text-white p-12 rounded-[2rem] shadow-2xl">
-                    <span class="text-6xl font-black italic text-emerald-400">356,000</span>
-                    <p class="mt-4 uppercase tracking-[0.2em] font-bold text-xs opacity-70">2D drawings generated containing:</p>
-                </div>
+          <div class="block split">
+            <div>
+              <h3>Functional &amp; usability requirements</h3>
+              <p>Users wanted full visibility and control over what was being created during the automation process.</p>
             </div>
-            
-            <div class="grid grid-cols-1 md:grid-cols-3 gap-8 text-center">
-                <div class="bg-slate-50 p-12 rounded-[2rem]">
-                    <span class="text-4xl font-black italic text-slate-900">1.46M</span>
-                    <p class="mt-4 uppercase tracking-[0.2em] font-bold text-xs text-slate-500">Sheets</p>
-                </div>
-                <div class="bg-slate-50 p-12 rounded-[2rem]">
-                    <span class="text-4xl font-black italic text-slate-900">3.40M</span>
-                    <p class="mt-4 uppercase tracking-[0.2em] font-bold text-xs text-slate-500">Views</p>
-                </div>
-                <div class="bg-slate-50 p-12 rounded-[2rem]">
-                    <span class="text-4xl font-black italic text-slate-900">10.84M</span>
-                    <p class="mt-4 uppercase tracking-[0.2em] font-bold text-xs text-slate-500">Dimensions</p>
-                </div>
+            <figure class="figure"><div class="figure-frame"><img src="assets/requirements.png" alt="Functional and usability requirement mapping" class="zoomable" loading="lazy"></div></figure>
+          </div>
+
+          <div class="block split split--flip">
+            <div>
+              <h3>Success criteria</h3>
+              <p>We didn't just want to build a tool; we wanted to solve a bottleneck.</p>
             </div>
-        </div>
-    </section>
+            <figure class="figure"><div class="figure-frame"><img src="assets/success.png" alt="Success metrics and validation targets" class="zoomable" loading="lazy"></div></figure>
+          </div>
+        </section>
 
-    <div class="max-w-7xl mx-auto px-6 py-32 flex flex-col lg:flex-row gap-16">
-        
-        <aside class="hidden lg:block w-64 flex-shrink-0">
-            <nav class="sticky top-32 self-start border-r border-slate-100 pr-8">
-                <h4 class="text-xs font-black uppercase tracking-widest text-slate-900 mb-8">Process</h4>
-                <ul class="space-y-6 text-sm font-medium">
-                    <li><a href="#context" class="nav-link text-slate-400 hover:text-black block">Phase 1: Context</a></li>
-                    <li><a href="#requirements" class="nav-link text-slate-400 hover:text-black block">Phase 2: Requirements</a></li>
-                    <li><a href="#solutions" class="nav-link text-slate-400 hover:text-black block">Phase 3: Prototyping the Solution</a></li>
-                    <li><a href="#evaluation" class="nav-link text-slate-400 hover:text-black block">Phase 4: Evaluation</a></li>
-                    <li><a href="#hurdles" class="nav-link text-slate-400 hover:text-black block">Hurdles Cleared</a></li>
-                    <li><a href="#final-thoughts" class="nav-link text-slate-400 hover:text-black block">Final Thoughts</a></li>
-                </ul>
-            </nav>
-        </aside>
-        
-        <article class="flex-grow max-w-4xl space-y-20">
+        <!-- Phase 3 -->
+        <section class="phase" id="solutions">
+          <div class="phase-head">
+            <span class="eyebrow">Phase 3</span>
+            <h2>Design solutions</h2>
+          </div>
 
-            <section id="context" class="space-y-12">
-                <header>
-                    <span class="text-emerald-600 font-bold uppercase text-xs tracking-widest">Phase 1</span>
-                    <h2 class="text-4xl font-bold mt-4 mb-8 text-balance">Context</h2>
-                </header>
-                <div class="pt-8 py-16 border-t border-slate-100">
-    <h3 class="text-2xl font-bold mb-4">Research Synthesis</h3>
-    <p class="text-slate-600 text-lg mb-12">I used both in-depth interviews and large-scale surveys. By bringing together direct interviews, broad surveys, and market trends, we turned our assumptions into a user profile supported by data.</p>
-
-    <div class="grid grid-cols-1 md:grid-cols-3 gap-8 relative">
-        
-        <div class="bg-slate-50 p-8 rounded-[2rem] border border-slate-100 relative z-10">
-            <div class="w-10 h-10 rounded-xl bg-emerald-500/10 flex items-center justify-center mb-6">
-                <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="#10b981" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M21 15a2 2 0 0 1-2 2H7l-4 4V5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2z"></path></svg>
+          <div class="block split" style="margin-top:0">
+            <div>
+              <h3>Stakeholder alignment</h3>
+              <p>Joining a project mid-stream required building trust quickly. I focused on aligning leadership's vision with users' actual readiness, moving us from a “black box” approach to a transparent, phased rollout.</p>
             </div>
-            <h4 class="text-sm font-black uppercase tracking-widest text-slate-900 mb-2">5 Interviews</h4>
-            <p class="text-xs text-slate-500 leading-relaxed">Deep-dive sessions with <strong>Lighthouse Customers</strong> to uncover unarticulated pain points in the drafting workflow.</p>
-        </div>
+            <figure class="figure"><div class="figure-frame"><img src="assets/alignment.png" alt="Stakeholder alignment and workshop artifacts" class="zoomable" loading="lazy"></div></figure>
+          </div>
 
-        <div class="bg-slate-50 p-8 rounded-[2rem] border border-slate-100 relative z-10">
-            <div class="w-10 h-10 rounded-xl bg-emerald-500/10 flex items-center justify-center mb-6">
-                <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="#10b981" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M212 20V4a2 2 0 0 0-2-2H4a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h16a2 2 0 0 0 2-2zM8 12l3 3 5-5"></path></svg>
+          <div class="block">
+            <h3>Wireframes</h3>
+            <p>I started with rough wireframes to explore options for command access and for the user's control and visibility, while keeping the process streamlined and asking for user input only when it was truly needed or wanted.</p>
+            <div data-gallery>
+              <div class="gallery-stage">
+                <img src="assets/iteration1-simple.png" alt="" class="zoomable">
+                <button class="gallery-btn gallery-btn--prev" type="button" aria-label="Previous image">‹</button>
+                <button class="gallery-btn gallery-btn--next" type="button" aria-label="Next image">›</button>
+              </div>
+              <div class="gallery-caption"><span></span><span class="mono"></span></div>
+              <div class="gallery-thumbs">
+                <button type="button"><img src="assets/iteration1-simple.png" alt="1st iteration: access point, simple automation" loading="lazy"></button>
+                <button type="button"><img src="assets/iteration2-morecontrol.png" alt="2nd iteration: access point, more user control" loading="lazy"></button>
+                <button type="button"><img src="assets/iteration3-onelocation.png" alt="3rd iteration: single location, full control" loading="lazy"></button>
+                <button type="button"><img src="assets/wireframe-4.png" alt="Dimensioning options, iteration 1" loading="lazy"></button>
+                <button type="button"><img src="assets/wireframe-5.png" alt="Dimensioning options, iteration 2" loading="lazy"></button>
+              </div>
             </div>
-            <h4 class="text-sm font-black uppercase tracking-widest text-slate-900 mb-2">50+ Responses</h4>
-            <p class="text-xs text-slate-500 leading-relaxed">Broad <strong>Fusion User Surveys</strong> identifying high-frequency friction points and automation expectations across the user base.</p>
-        </div>
+          </div>
 
-        <div class="bg-slate-50 p-8 rounded-[2rem] border border-slate-100 relative z-10">
-            <div class="w-10 h-10 rounded-xl bg-emerald-500/10 flex items-center justify-center mb-6">
-                <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="#10b981" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"></circle><line x1="2" y1="12" x2="22" y2="12"></line><path d="M12 2a15.3 15.3 0 0 1 4 10 15.3 15.3 0 0 1-4 10 15.3 15.3 0 0 1-4-10 15.3 15.3 0 0 1 4-10z"></path></svg>
+          <div class="block">
+            <h3>Prototyping the solution</h3>
+            <p>I built an interactive prototype to demonstrate the workflow and gather further feedback from users and stakeholders.</p>
+            <figure class="figure">
+              <div class="figure-frame figure-frame--dark"><img src="assets/drawing-automation-prototype.gif" alt="Interactive prototype showing the automated drawing workflow" class="zoomable" loading="lazy"></div>
+              <figcaption>Interactive concept prototype</figcaption>
+            </figure>
+          </div>
+        </section>
+
+        <!-- Phase 4 -->
+        <section class="phase" id="evaluation">
+          <div class="phase-head">
+            <span class="eyebrow">Phase 4</span>
+            <h2>Evaluation</h2>
+          </div>
+
+          <div class="block" style="margin-top:0">
+            <h3>Feedback loop: validation through iteration</h3>
+            <p>I tested the ideas rather than relying on guesses. By bringing in Lighthouse Customers early, I put our wireframes and prototypes to the test. This helped maintain a high “trust score” throughout the process, across multiple design sprints.</p>
+            <ul class="list">
+              <li>Weekly design critiques with the Dev Architect and Product Manager</li>
+              <li>Bi-weekly usability sessions with lead engineers</li>
+              <li>Real-time feedback through dedicated Slack channels</li>
+            </ul>
+          </div>
+
+          <hr class="divider">
+          <div class="block" id="audit">
+            <h3>The heuristic audit</h3>
+            <p>I started with a deep-dive audit to understand what the team had done before I joined, and to identify issues that needed to be addressed before the first public release.</p>
+          </div>
+
+          <div class="block">
+            <span class="eyebrow">Issue 1</span>
+            <h3 style="margin:8px 0 12px">Cognitive load</h3>
+            <p style="max-width:42em">The original settings interface was cluttered with too many inputs. For engineers working quickly, this made things difficult. I redesigned it to show only the information users actually need to control.</p>
+            <div class="compare" style="margin-top:28px">
+              <figure class="figure"><span class="label label--before">Before: the friction</span><div class="figure-frame"><img src="assets/audit-issue-1-before.jpg" alt="Original, complex settings interface" class="zoomable" loading="lazy"></div></figure>
+              <figure class="figure"><span class="label label--after">After: the solution</span><div class="figure-frame"><img src="assets/audit-issue-1-after.jpg" alt="Simplified settings focusing on primary tasks" class="zoomable" loading="lazy"></div></figure>
             </div>
-            <h4 class="text-sm font-black uppercase tracking-widest text-slate-900 mb-2">Market Research</h4>
-            <p class="text-xs text-slate-500 leading-relaxed">Analysis of industry shifts toward <strong>model-based definition</strong> and the competitive landscape of CAD automation.</p>
-        </div>
+          </div>
 
-        <div class="hidden md:block absolute left-1/2 top-full -translate-x-1/2 w-px h-12 bg-gradient-to-b from-slate-200 to-transparent"></div>
+          <div class="block split">
+            <div>
+              <span class="eyebrow">Issue 2</span>
+              <h3 style="margin-top:8px">Transparency</h3>
+              <p>Jon was most worried about not knowing what the machine was doing. To address this, we added a live sheet count. Now engineers can see exactly what will happen before they click “Generate.”</p>
+            </div>
+            <figure class="figure"><div class="figure-frame"><img src="assets/audit-issue-2.jpg" alt="UI showing sheet count settings and what the automation will produce" class="zoomable" loading="lazy"></div></figure>
+          </div>
+
+          <div class="block split split--flip">
+            <div>
+              <span class="eyebrow">Issue 3</span>
+              <h3 style="margin-top:8px">Accuracy</h3>
+              <p>Automation only helps if it works correctly. I found that the system was hitting a set limit and missing important dimensions. I teamed up with others to fix these settings and, just as important, made sure users could adjust the limits, so Jon would never feel the system was letting him down.</p>
+            </div>
+            <figure class="figure"><div class="figure-frame"><img src="assets/audit-issue-3.jpg" alt="Adjusting dimension limits for better accuracy" class="zoomable" loading="lazy"></div></figure>
+          </div>
+
+          <hr class="divider">
+          <div class="block">
+            <h3>The engagement plan</h3>
+            <p>I didn't just want to build for users; I wanted to build with them. I set up a structured engagement plan to turn our most vocal critics into our most valuable collaborators.</p>
+            <div class="grid grid-2">
+              <div class="card">
+                <span class="eyebrow">User recruitment</span>
+                <ol class="steps">
+                  <li><span class="n">01</span><div><h4>Lighthouse Customers</h4><p>Key users committed to testing and giving honest, weekly feedback.</p></div></li>
+                  <li><span class="n">02</span><div><h4>Beta forums &amp; surveys</h4><p>The Beta Forum and Qualtrics collected feedback from a wide audience to confirm findings at scale.</p></div></li>
+                </ol>
+              </div>
+              <div class="card">
+                <span class="eyebrow">Direct feedback loops</span>
+                <ol class="steps">
+                  <li><span class="n">03</span><div><h4>Private Slack channel</h4><p>Internal designers, developers and experts worked together in real time to solve problems quickly.</p></div></li>
+                  <li><span class="n">04</span><div><h4>Guided testing data</h4><p>I provided curated data sets so users could see the benefits of automation right away.</p></div></li>
+                </ol>
+              </div>
+            </div>
+          </div>
+
+          <div class="block">
+            <h3>User sentiment &amp; validation</h3>
+            <div class="grid grid-4" style="margin-top:20px">
+              <div class="voice"><p>“That's really awesome news; we were waiting for something like this for a long time.”</p><span>Lighthouse user</span></div>
+              <div class="voice"><p>“I am irrationally excited for this. Way to go team!”</p><span>Beta community</span></div>
+              <div class="voice"><p>“Hey there, I did a test run on the features. The thing looks quite promising!”</p><span>Lighthouse user</span></div>
+              <div class="voice"><p>“I can't wait! This is FANTABULOUS features!!”</p><span>Beta community</span></div>
+            </div>
+            <div class="card card--flat" style="margin-top:24px">
+              <span class="eyebrow">The next sprint</span>
+              <p style="margin-bottom:8px">While initial excitement was high, the engagement plan revealed specific technical hurdles:</p>
+              <div class="grid grid-2" style="gap:16px 32px">
+                <p><strong>Performance benchmarks.</strong> Users reported lag on massive assemblies, leading us to optimize engine speed.</p>
+                <p><strong>Documentation gaps.</strong> We found edge cases where complex sheets were skipped during batch runs.</p>
+                <p><strong>Recipe customization.</strong> Requests to pre-select dimensioning styles based on sheet classification.</p>
+                <p><strong>Model readiness.</strong> Requests for pre-flight checks to make sure 3D models are ready for automation.</p>
+              </div>
+            </div>
+          </div>
+        </section>
+
+        <!-- Hurdles -->
+        <section class="phase" id="hurdles">
+          <div class="phase-head">
+            <span class="eyebrow">Leadership</span>
+            <h2>Hurdles cleared along the way</h2>
+          </div>
+          <div class="grid grid-2" style="gap:24px">
+            <div class="card"><h4>Technical debt</h4><p>Building on a legacy system meant every decision had to be weighed against performance. I worked with the architects to make the automation feel fast, even with complex data sets.</p></div>
+            <div class="card"><h4>Expectation management</h4><p>Leadership wanted “push-button” magic; users wanted a tool they could trust. I navigated this disagree-and-commit situation by showing that trust is earned through transparency.</p></div>
+            <div class="card"><h4>Team alignment</h4><p>Joining 26 weeks late was challenging. I built trust with the team through the heuristic audit, so they could see I was there to help them finish, not to hold them back.</p></div>
+            <div class="card"><h4>Complex compliance</h4><p>Technical drawings have zero margin for error. I made sure our automation logic honored the strict legal and standards requirements of manufacturing.</p></div>
+          </div>
+        </section>
+
+        <!-- Final thoughts -->
+        <section class="phase" id="final-thoughts">
+          <div class="phase-head">
+            <span class="eyebrow">Retrospective</span>
+            <h2>Final thoughts</h2>
+          </div>
+          <div class="stack" style="font-size:1.125rem">
+            <p>This project was a masterclass in <strong>leading from within</strong>. Joining 26 weeks into a development cycle meant there was no time for a slow ramp-up. I had to prove the value of UX through immediate, actionable insights like the heuristic audit and the engagement plan.</p>
+            <p>It reinforced a core belief of mine: even in the most technical, automation-heavy environments, <strong>trust is the primary currency</strong>. If the user doesn't trust the logic, the speed of the engine doesn't matter.</p>
+          </div>
+          <div class="retro" style="margin-top:40px">
+            <h3>Bridging the trust gap</h3>
+            <p>The biggest hurdle was the gap between business desires and customer readiness. Leadership wanted a “black box” that did the work for them; users like <strong>Jon</strong> wanted a tool that helped them work faster.</p>
+            <p>By advocating for transparency (exposing sheet counts, allowing manual overrides, and showing the intended logic before execution) we didn't just build a tool. We built a system engineers were actually <strong>irrationally excited</strong> to use.</p>
+          </div>
+        </section>
+        <nav class="pager" aria-label="More case studies">
+          <a class="next" href="factory-design.html"><span class="mono">Next →</span><h3>Factory Design Vision</h3></a>
+        </nav>
+      </article>
     </div>
-</div>
-                <h3 class="text-2xl font-bold mb-4">Persona</h3>
-                <div class="bg-slate-900 rounded-[3rem] overflow-hidden text-white shadow-2xl font-sans border border-slate-800">
-                    <div class="grid grid-cols-1 lg:grid-cols-12">
-                        <div class="lg:col-span-4 bg-slate-800/50 p-10 flex flex-col items-center text-center border-r border-slate-800">
-                            <div class="w-48 h-48 rounded-3xl bg-slate-700 mb-8 overflow-hidden shadow-inner group relative">
-                                <img src="assets/jon-placeholder.png" alt="Jon - Persona" class="object-cover w-full h-98% zoom-cursor transition duration-500 group-hover:scale-105" onclick="openLightbox(this)">
-                            </div>
-                            <div class="mb-8">
-                                <h3 class="text-3xl font-black tracking-tight mb-1">Jon, 34</h3>
-                                <p class="text-emerald-400 text-xs font-black uppercase tracking-widest">Lead Mechanical Engineer</p>
-                                <p class="text-slate-400 text-sm mt-2">Automotive Supplier</p>
-                            </div>
-                            <blockquote class="text-slate-300 italic text-lg leading-relaxed pt-8 border-t border-slate-700">
-                                "I don't only need the software to be 'smart.' I need it to be fast, predictable, and transparent."
-                            </blockquote>
-                        </div>
-                        <div class="lg:col-span-8 p-10 lg:p-12 space-y-8">
-                            <section>
-                                <h4 class="text-[10px] font-black uppercase tracking-widest text-slate-500 mb-4">Professional Bio</h4>
-                                <p class="text-slate-300 text-lg leading-relaxed">Jon connects the finished 3D model to the shop floor. In the automotive supply chain, he creates the detailed 2D technical drawings that guide CNC machines. He often works under tight deadlines and spends hours adding dimensions by hand, which can lead to mistakes and slowdowns from repetitive drafting work.</p>
-                            </section>
-                            
-                            <div class="grid grid-cols-1 md:grid-cols-2 gap-12 border-b border-slate-800 pb-12">
-                                <section>
-                                    <h4 class="text-xs font-black uppercase tracking-widest text-slate-500 mb-4">Key Goals</h4>
-                                    <ul class="space-y-3 text-slate-300 font-medium">
-                                        <li class="flex gap-2"><span class="text-emerald-400 font-bold">+</span> <span>Zero downtime on shop floor.</span></li>
-                                        <li class="flex gap-2"><span class="text-emerald-400 font-bold">+</span> <span>High process repeatability.</span></li>
-                                        <li class="flex gap-2"><span class="text-emerald-400 font-bold">+</span> <span>Error reduction in creation.</span></li>
-                                    </ul>
-                                </section>
-                                <section>
-                                    <h4 class="text-xs font-black uppercase tracking-widest text-slate-500 mb-4">Pain Points</h4>
-                                    <ul class="space-y-3 text-slate-300 font-medium">
-                                        <li class="flex gap-2"><span class="text-red-400 font-bold">&times;</span> <span>Fear of "Black Box" errors.</span></li>
-                                        <li class="flex gap-2"><span class="text-red-400 font-bold">&times;</span> <span>Severe click fatigue.</span></li>
-                                        <li class="flex gap-2"><span class="text-red-400 font-bold">&times;</span> <span>Inconsistent automation results.</span></li>
-                                    </ul>
-                                </section>
-                            </div>
-                            
-                            <div>
-                                <h4 class="text-xs font-black uppercase tracking-widest text-slate-500 mb-8">Production Priorities</h4>
-                                <div class="grid grid-cols-1 md:grid-cols-2 gap-x-16 gap-y-10 mb-12">
-                                    <div class="space-y-3">
-                                        <div class="flex justify-between text-[10px] uppercase font-bold text-slate-500"><span>Quality</span><span class="text-emerald-400">Volume</span></div>
-                                        <div class="relative h-1 bg-slate-800 rounded-full"><div class="absolute right-[10%] -top-1.5 w-4 h-4 bg-white rounded-full border-2 border-emerald-500"></div></div>
-                                        <label class="block text-[10px] font-black uppercase tracking-widest text-slate-500">Output Velocity</label>
-                                    </div>
-                                    <div class="space-y-3">
-                                        <div class="flex justify-between text-[10px] uppercase font-bold text-slate-500"><span>Commercial</span><span class="text-emerald-400">Aero/Med</span></div>
-                                        <div class="relative h-1 bg-slate-800 rounded-full"><div class="absolute right-[5%] -top-1.5 w-4 h-4 bg-white rounded-full border-2 border-emerald-500"></div></div>
-                                        <label class="block text-[10px] font-black uppercase tracking-widest text-slate-500">Tolerance Standards</label>
-                                    </div>
-                                    <div class="space-y-3">
-                                        <div class="flex justify-between text-[10px] uppercase font-bold text-slate-500"><span>Adaptive</span><span class="text-emerald-400">Strict SOP</span></div>
-                                        <div class="relative h-1 bg-slate-800 rounded-full"><div class="absolute right-[15%] -top-1.5 w-4 h-4 bg-white rounded-full border-2 border-emerald-500"></div></div>
-                                        <label class="block text-[10px] font-black uppercase tracking-widest text-slate-500">Process Rigidity</label>
-                                    </div>
-                                    <div class="space-y-3">
-                                        <div class="flex justify-between text-[10px] uppercase font-bold text-slate-500"><span class="text-emerald-400">Manual</span><span>System</span></div>
-                                        <div class="relative h-1 bg-slate-800 rounded-full"><div class="absolute left-[15%] -top-1.5 w-4 h-4 bg-white rounded-full border-2 border-emerald-500"></div></div>
-                                        <label class="block text-[10px] font-black uppercase tracking-widest text-slate-500">Decision Trust</label>
-                                    </div>
-                                </div>
-                            </div>
+  </main>
 
-                            <div class="pt-8 border-t border-slate-800">
-                                <h4 class="text-xs font-black uppercase tracking-widest text-slate-500 mb-8">Interaction Profile</h4>
-                                <div class="grid grid-cols-1 md:grid-cols-2 gap-x-16 gap-y-10">
-                                    <div class="space-y-3">
-                                        <div class="flex justify-between text-[10px] uppercase font-bold text-slate-500"><span>Visual/UI</span><span class="text-emerald-400">Tactile</span></div>
-                                        <div class="relative h-1 bg-slate-800 rounded-full"><div class="absolute right-[12%] -top-1.5 w-4 h-4 bg-white rounded-full border-2 border-emerald-500"></div></div>
-                                        <label class="block text-[10px] font-black uppercase tracking-widest text-slate-500">Interaction Fidelity</label>
-                                    </div>
-                                    <div class="space-y-3">
-                                        <div class="flex justify-between text-[10px] uppercase font-bold text-slate-500"><span>Black Box</span><span class="text-emerald-400">Open Logic</span></div>
-                                        <div class="relative h-1 bg-slate-800 rounded-full"><div class="absolute right-[5%] -top-1.5 w-4 h-4 bg-white rounded-full border-2 border-emerald-500"></div></div>
-                                        <label class="block text-[10px] font-black uppercase tracking-widest text-slate-500">Logic Transparency</label>
-                                    </div>
-                                    <div class="space-y-3">
-                                        <div class="flex justify-between text-[10px] uppercase font-bold text-slate-500"><span>Summary</span><span class="text-emerald-400">Line-Item</span></div>
-                                        <div class="relative h-1 bg-slate-800 rounded-full"><div class="absolute right-[10%] -top-1.5 w-4 h-4 bg-white rounded-full border-2 border-emerald-500"></div></div>
-                                        <label class="block text-[10px] font-black uppercase tracking-widest text-slate-500">Feedback Granularity</label>
-                                    </div>
-                                    <div class="space-y-3">
-                                        <div class="flex justify-between text-[10px] uppercase font-bold text-slate-500"><span>Standard</span><span class="text-emerald-400">Specialized</span></div>
-                                        <div class="relative h-1 bg-slate-800 rounded-full"><div class="absolute right-[18%] -top-1.5 w-4 h-4 bg-white rounded-full border-2 border-emerald-500"></div></div>
-                                        <label class="block text-[10px] font-black uppercase tracking-widest text-slate-500">Hardware Complexity</label>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-
-                <div class="grid grid-cols-1 md:grid-cols-2 gap-12 items-center">
-                    <div class="order-2 md:order-1 rounded-3xl overflow-hidden shadow-lg aspect-video bg-slate-100">
-                        <img src="assets/product-scope.png" alt="Automating the Mundane" class="object-cover w-full h-full zoom-cursor" onclick="openLightbox(this)">
-                    </div>
-                    <div class="order-1 md:order-2">
-                        <h3 class="text-2xl font-bold mb-4">The Scope: Automating the Mundane</h3>
-                        <p class="text-slate-600 text-lg">Target the most repetitive, time-consuming parts of creating 2D documentation:.</p>
-                        <ul style="list-style-type: square;">
-                            <li>Dimensioning and Annotation Placement</li>
-                            <li>View Creation, Rotation, and Placement</li>
-                            <li>BOM Generation and Placement</li>
-                        </ul>
-                    </div>
-                </div>
-
-                <div class="grid grid-cols-1 md:grid-cols-2 gap-12 items-center">
-                    <div>
-                        <h3 class="text-2xl font-bold mb-4">The Business Case: Scaling through Efficiency</h3>
-                        <p class="text-slate-600 text-lg">The investment in Drawing Automation wasn't just about saving time; it was a strategic move to enable our customers to scale. This shift to automate 2D documentation directly impacts ROI by increasing shop floor capacity and reducing error-related production costs.</p>
-                    </div>
-                    <div class="rounded-3xl overflow-hidden shadow-lg aspect-video bg-slate-100">
-                        <img src="assets/project-rationale.png" alt="Business Rationale" class="object-contain w-full h-full zoom-cursor" onclick="openLightbox(this)">
-                    </div>
-                </div>
-
-                <div class="pt-20 border-t border-slate-100">
-                    <h3 class="text-3xl font-bold mb-8 italic">Strategic Alignment: Stakeholder Mapping</h3>
-                    <p class="text-xl text-slate-600 mb-12">I organized our stakeholders based on how much influence and interest they have in the project. Instead of just making a list, I used this as a guide to see where I should focus on building trust to improve user transparency.</p>
-                    
-                    <div class="relative bg-slate-50 rounded-[3rem] p-8 md:p-16 border border-slate-200 shadow-inner overflow-hidden mb-12">
-                        <div class="absolute left-6 top-1/2 -rotate-90 origin-left text-[10px] font-black uppercase tracking-[0.3em] text-slate-400">Power</div>
-                        <div class="absolute bottom-6 left-1/2 -translate-x-1/2 text-[10px] font-black uppercase tracking-[0.3em] text-slate-400">Interest</div>
-
-                        <div class="grid grid-cols-2 grid-rows-2 gap-4 aspect-square md:aspect-video border-l-2 border-b-2 border-slate-300 relative">
-                            <div class="border-b border-r border-slate-200/50 p-6 flex flex-col justify-center">
-                                <div class="flex flex-wrap gap-2">
-                                    <span class="bg-white border border-slate-200 px-3 py-1 rounded-full text-[10px] font-bold shadow-sm flex items-center gap-2">
-                                        <span class="text-blue-500">🛡️</span> Dev Architect
-                                    </span>
-                                </div>
-                            </div>
-
-                            <div class="border-b border-slate-200/50 p-6 bg-emerald-50/30">
-                                <div class="flex flex-wrap gap-2">
-                                    <span class="bg-emerald-500 text-white px-3 py-1 rounded-full text-[10px] font-bold shadow-md flex items-center gap-2">
-                                        <span>🎯</span> Dev Team
-                                    </span>
-                                    <span class="bg-emerald-500 text-white px-3 py-1 rounded-full text-[10px] font-bold shadow-md flex items-center gap-2">
-                                        <span>🎯</span> Product Manager
-                                    </span>
-                                </div>
-                            </div>
-
-                            <div class="border-r border-slate-200/50 p-6 flex items-end">
-                                <div class="flex flex-wrap gap-2">
-                                    <span class="bg-white border border-slate-200 px-3 py-1 rounded-full text-[9px] text-slate-500 flex items-center gap-2">
-                                        <span class="grayscale">📢</span> Marketing
-                                    </span>
-                                    <span class="bg-white border border-slate-200 px-3 py-1 rounded-full text-[9px] text-slate-500 flex items-center gap-2">
-                                        <span class="grayscale">📢</span> Sales
-                                    </span>
-                                </div>
-                            </div>
-
-                            <div class="p-6 flex flex-col justify-center">
-                                <div class="flex flex-wrap gap-2">
-                                    <span class="bg-white border border-slate-200 px-3 py-1 rounded-full text-[10px] font-bold shadow-sm flex items-center gap-2">
-                                        <span class="text-amber-500">👁️</span> Div. VP
-                                    </span>
-                                    <span class="bg-white border border-slate-200 px-3 py-1 rounded-full text-[10px] font-bold shadow-sm flex items-center gap-2">
-                                        <span class="text-amber-500">👁️</span> Business Group
-                                    </span>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-
-                    <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
-                        <div class="bg-white p-8 rounded-[2rem] border-t-4 border-emerald-500 shadow-sm flex flex-col">
-                            <div class="text-2xl mb-4">🎯</div>
-                            <h4 class="text-xs font-black uppercase tracking-widest text-emerald-600 mb-2">Manage Closely</h4>
-                            <p class="text-xs text-slate-500 leading-relaxed">The engine room. I worked daily with the <strong>Dev Team</strong> and <strong>Product Manager</strong> to align on logic transparency.</p>
-                        </div>
-
-                        <div class="bg-white p-8 rounded-[2rem] border-t-4 border-blue-400 shadow-sm flex flex-col">
-                            <div class="text-2xl mb-4">🛡️</div>
-                            <h4 class="text-xs font-black uppercase tracking-widest text-slate-400 mb-2">Keep Satisfied</h4>
-                            <p class="text-xs text-slate-500 leading-relaxed">The <strong>Dev Architect</strong> was key to managing technical debt and ensuring UI decisions were feasible.</p>
-                        </div>
-
-                        <div class="bg-white p-8 rounded-[2rem] border-t-4 border-amber-400 shadow-sm flex flex-col">
-                            <div class="text-2xl mb-4">👁️</div>
-                            <h4 class="text-xs font-black uppercase tracking-widest text-slate-400 mb-2">Keep Informed</h4>
-                            <p class="text-xs text-slate-500 leading-relaxed">Leadership roles like the <strong>VP</strong> who needed high-level proof that UX was driving ROI.</p>
-                        </div>
-
-                        <div class="bg-white p-8 rounded-[2rem] border-t-4 border-slate-200 shadow-sm flex flex-col">
-                            <div class="text-2xl mb-4">📢</div>
-                            <h4 class="text-xs font-black uppercase tracking-widest text-slate-400 mb-2">Monitor</h4>
-                            <p class="text-xs text-slate-500 leading-relaxed"><strong>Sales</strong> and <strong>Marketing</strong> were kept in the loop for future market evangelism.</p>
-                        </div>
-                    </div>
-                </div>
-            </section>
-
-            <section id="requirements" class="space-y-24">
-                <header>
-                    <span class="text-emerald-600 font-bold uppercase text-xs tracking-widest">Phase 2</span>
-                    <h2 class="text-4xl font-bold mt-4 mb-8 text-balance">Requirements</h2>
-                </header>
-
-                <div class="grid grid-cols-1 md:grid-cols-2 gap-12 items-center">
-                    <div>
-                        <div class="flex gap-6 mb-4">
-                            <h3 class="text-2xl font-bold">Goals & Tasks</h3>
-                        </div>
-                        <p class="text-slate-600 text-lg">Users wanted us to focus on the high-friction moments with the goal to turn a lengthy, manual process, into a 5-minute automated one.</p>
-                    </div>
-                    <div class="rounded-3xl shadow-lg aspect-video bg-slate-100">
-                        <img src="assets/tasks.png" alt="Technical task mapping" class="object-cover w-full h-full zoom-cursor" onclick="openLightbox(this)">
-                    </div>
-                </div>
-
-                <div class="grid grid-cols-1 md:grid-cols-2 gap-12 items-center">
-                    <div class="order-2 md:order-1 rounded-3xl shadow-lg aspect-video bg-slate-100">
-                        <img src="assets/opportunities.png" alt="Strategic workflow opportunities" class="object-cover w-full h-full zoom-cursor" onclick="openLightbox(this)">
-                    </div>
-                    <div class="order-1 md:order-2">
-                        <h3 class="text-2xl font-bold mb-4">Opportunities</h3>
-                        <p class="text-slate-600 text-lg">Beyond just speed, we found chances to fundamentally change how the team worked.</p>
-                    </div>
-                </div>
-
-                <div class="grid grid-cols-1 md:grid-cols-2 gap-12 items-center">
-                    <div>
-                        <h3 class="text-2xl font-bold mb-4">Functional & Usability Requirements</h3>
-                        <p class="text-slate-600 text-lg">User's wanted full visibility and control over what was being created during the automation process.</p>
-                    </div>
-                    <div class="rounded-3xl shadow-lg aspect-video bg-slate-100">
-                        <img src="assets/requirements.png" alt="Functional and usability requirement mapping" class="object-cover w-full h-full zoom-cursor" onclick="openLightbox(this)">
-                    </div>
-                </div>
-
-                <div class="grid grid-cols-1 md:grid-cols-2 gap-12 items-center">
-                    <div class="order-2 md:order-1 rounded-3xl shadow-lg aspect-video bg-slate-100">
-                        <img src="assets/success.png" alt="Success metrics and validation targets" class="object-cover w-full h-full zoom-cursor" onclick="openLightbox(this)">
-                    </div>
-                    <div class="order-1 md:order-2">
-                        <h3 class="text-2xl font-bold mb-4">Success Criteria</h3>
-                        <p class="text-slate-600 text-lg">We didn't just want to build a tool; we wanted to solve a bottleneck.</p>
-                    </div>
-                </div>
-            </section>
-
-            <section id="solutions" class="space-y-24">
-                <header>
-                    <span class="text-emerald-600 font-bold uppercase text-xs tracking-widest">Phase 3</span>
-                    <h2 class="text-4xl font-bold mt-4 mb-8 text-balance">Design Solutions</h2>
-                </header>
-
-                <div class="grid grid-cols-1 md:grid-cols-2 gap-12 items-center">
-                    <div class="order-2 md:order-1 rounded-3xl shadow-lg aspect-video bg-slate-100">
-                        <img src="assets/alignment.png" alt="Stakeholder alignment and workshop artifacts" class="object-cover w-full h-full zoom-cursor" onclick="openLightbox(this)">
-                    </div>
-                    <div class="order-1 md:order-2">
-                        <h3 class="text-2xl font-bold mb-4">Stakeholder Alignment</h3>
-                        <p class="text-slate-600 text-lg">Joining a project mid-stream required building trust quickly. I focused on aligning the leadership's vision with the users' actual readiness, moving us from a "black box" approach to a transparent, phased rollout.</p>
-                    </div>
-                </div>
-<div class="space-y-12">
-    <div>
-        <h3 class="text-2xl font-bold mb-4">Wireframes</h3>
-        <p class="text-slate-600 text-lg">I started with rough wireframes to explore various options related to command access and control/visibility for the user while keep the process streamlined and requiring limited user interaction, unless absolutely necessary or desired by the user.</p>
+  <footer class="site-footer">
+    <div class="wrap">
+      <span class="eyebrow">Next chapter</span>
+      <h2>Let's build<br>clarity.</h2>
+      <a class="footer-email" href="mailto:jared.bunch@outlook.com">jared.bunch@outlook.com</a>
+      <div class="footer-meta">
+        <span>© 2026 Jared Bunch · Howell, Michigan</span>
+        <nav aria-label="Footer">
+          <a href="work.html">Work</a>
+          <a href="mystory.html">About</a>
+          <a href="notes.html">Notes</a>
+          <a href="https://www.linkedin.com/in/jaredabunch" target="_blank" rel="noopener">LinkedIn</a>
+          <a href="assets/jaredbunch_resume.pdf" target="_blank" rel="noopener">Resume</a>
+        </nav>
+      </div>
     </div>
-    
-    <div class="max-w-4xl mx-auto space-y-4">
-        <div class="relative group rounded-[2.5rem] shadow-xl aspect-video bg-slate-100 overflow-hidden border border-slate-200">
-            
-            <button onclick="changeGalleryImage(-1)" class="absolute left-4 top-1/2 -translate-y-1/2 z-10 bg-white/80 hover:bg-white p-4 rounded-full shadow-lg opacity-0 group-hover:opacity-100 transition-all duration-300">
-                <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><path d="m15 18-6-6 6-6"/></svg>
-            </button>
-            
-            <button onclick="changeGalleryImage(1)" class="absolute right-4 top-1/2 -translate-y-1/2 z-10 bg-white/80 hover:bg-white p-4 rounded-full shadow-lg opacity-0 group-hover:opacity-100 transition-all duration-300">
-                <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><path d="m9 18 6-6-6-6"/></svg>
-            </button>
-
-            <img id="mainGalleryImage" 
-                 src="assets/iteration1-simple.png" 
-                 alt="1st Iteration - Accees Point - Simple Automation" 
-                 class="w-full h-full object-contain zoom-cursor transition-all duration-500"
-                 onclick="openLightbox(this)">
-        </div>
-
-        <div id="thumbContainer" class="flex gap-4 overflow-x-auto pb-2 px-1 snap-x">
-            <img src="assets/iteration1-simple.png" alt="1st Iteration - Accees Point - Simple Automation" 
-                 class="thumb-nav w-24 h-24 rounded-2xl object-cover cursor-pointer border-2 border-emerald-500 snap-start transition-all"
-                 onclick="updateGallery(this)">
-            
-            <img src="assets/iteration2-morecontrol.png" alt="2nd Iteration - Access Point - More User Control" 
-                 class="thumb-nav w-24 h-24 rounded-2xl object-cover cursor-pointer border-2 border-transparent hover:border-slate-300 snap-start transition-all opacity-60 hover:opacity-100"
-                 onclick="updateGallery(this)">
-            
-            <img src="assets/iteration3-onelocation.png" alt="3rd Iteration - Access Point - Single Location, Full Control" 
-                 class="thumb-nav w-24 h-24 rounded-2xl object-cover cursor-pointer border-2 border-transparent hover:border-slate-300 snap-start transition-all opacity-60 hover:opacity-100"
-                 onclick="updateGallery(this)">
-            
-            <img src="assets/wireframe-4.png" alt="Dimensioning Options - Iteration 1" 
-                 class="thumb-nav w-24 h-24 rounded-2xl object-cover cursor-pointer border-2 border-transparent hover:border-slate-300 snap-start transition-all opacity-60 hover:opacity-100"
-                 onclick="updateGallery(this)">
-            
-            <img src="assets/wireframe-5.png" alt="Dimensioning Options - Iteration 2" 
-                 class="thumb-nav w-24 h-24 rounded-2xl object-cover cursor-pointer border-2 border-transparent hover:border-slate-300 snap-start transition-all opacity-60 hover:opacity-100"
-                 onclick="updateGallery(this)">
-        </div>
-    </div>
-</div>
-                <div class="pt-20 border-t border-slate-100">
-                    <h3 class="text-3xl font-bold mb-8 italic">Prototyping the Solution</h3>
-                    <p class="text-xl text-slate-600 mb-12">I built an interactive prototype to demonstrate the workflow and gather further feedback from users and stakeholders.</p>
-                    
-                    <div class="rounded-[2.5rem] bg-slate-900 aspect-video flex items-center justify-center overflow-hidden group shadow-2xl relative">
-                        <img src="assets/drawing-automation-prototype.gif" alt="Interactive prototype showing the automated drawing workflow" class="object-contain w-full h-full zoom-cursor transition duration-500 group-hover:scale-105" onclick="openLightbox(this)">
-                        <div class="absolute bottom-6 right-6 bg-white/10 backdrop-blur px-4 py-2 rounded-full border border-white/20">
-                            <span class="text-[10px] font-black uppercase tracking-widest text-white/70">Interactive Concept</span>
-                        </div>
-                    </div>
-                </div>
-            </section>
-
-            <section id="evaluation" class="space-y-32">
-                <header>
-                    <span class="text-emerald-600 font-bold uppercase text-xs tracking-widest">Phase 4</span>
-                    <h2 class="text-4xl font-bold mt-4 mb-8 text-balance">Evaluation</h2>
-                </header>
-
-                <div class="grid grid-cols-1 md:grid-cols-2 gap-12 items-center">
-                    <div>
-                        <h3 class="text-2xl font-bold mb-4">Feedback Loop</h3>
-                        <p class="text-slate-600 text-lg italic">Validation through iteration.</p>
-                        <p class="text-slate-600 mt-4">I tested the ideas rather than relying on guesses. By bringing in Lighthouse Customers early, I put our wireframes and prototypes to the test. This helped to maintain a high "Trust Score" throughout the process.</p>
-                        <ul class="mt-4 space-y-2 text-slate-500">
-                            <li>• Weekly design critiques with the Dev Architect and Product Manager</li>
-                            <li>• Bi-weekly usability sessions with Lead Engineers</li>
-                            <li>• Real-time feedback via dedicated Slack channels</li>
-                        </ul>
-                    </div>
-<div class="rounded-[2.5rem] bg-slate-50 aspect-video flex items-center justify-center overflow-hidden border border-slate-100 relative group">
-    <div class="relative w-48 h-48 flex items-center justify-center">
-        
-        <div class="absolute inset-0 border-4 border-dashed border-slate-200 rounded-full animate-[spin_20s_linear_infinite]"></div>
-        
-        <svg viewBox="0 0 100 100" class="w-full h-full transform -rotate-90">
-            <circle cx="50" cy="50" r="40" fill="none" stroke="#f1f5f9" stroke-width="8"/>
-            <circle cx="50" cy="50" r="40" fill="none" stroke="#10b981" stroke-width="8" stroke-dasharray="251.2" stroke-dashoffset="60" class="transition-all duration-1000 group-hover:stroke-dashoffset-0"/>
-        </svg>
-
-        <div class="absolute inset-0 flex flex-col items-center justify-center text-center">
-            <span class="text-[10px] font-black uppercase tracking-widest text-emerald-600 mb-1">Iteration</span>
-            <span class="text-2xl font-bold text-slate-900">Multiple</span>
-            <span class="text-[9px] font-medium text-slate-400">Design Sprints</span>
-        </div>
-
-        <div class="absolute -top-2 left-1/2 -translate-x-1/2 bg-white shadow-sm border border-slate-100 px-3 py-1 rounded-full flex items-center gap-2">
-            <span class="w-1.5 h-1.5 rounded-full bg-emerald-500"></span>
-            <span class="text-[9px] font-black uppercase tracking-tighter text-slate-500">Lighthouse</span>
-        </div>
-        <div class="absolute -bottom-2 left-1/2 -translate-x-1/2 bg-white shadow-sm border border-slate-100 px-3 py-1 rounded-full flex items-center gap-2">
-            <span class="w-1.5 h-1.5 rounded-full bg-blue-500"></span>
-            <span class="text-[9px] font-black uppercase tracking-tighter text-slate-500">Architecture</span>
-        </div>
-    </div>
-    
-    <div class="absolute inset-0 opacity-[0.03] pointer-events-none" style="background-image: radial-gradient(#000 1px, transparent 1px); background-size: 20px 20px;"></div>
-</div>
-                </div>
-
-                <div id="audit" class="pt-20 border-t border-slate-100">
-                    <h3 class="text-3xl font-bold mb-8 italic">The Heuristic Audit</h3>
-                    <p class="text-xl text-slate-600 mb-12">I started with a deep-dive audit to understand what the team had done prior to my involvement and identify any issues that needed to be addressed prior to the first public release.</p>
-                    
-                    <div class="space-y-32">
-                        <div>
-                            <h4 class="text-2xl font-bold mb-8 italic">Issue 1: Cognitive Load</h4>
-                            <p class="text-xl text-slate-600 mb-12 max-w-2xl">The original settings interface was cluttered with too many inputs. For engineers working quickly, this made things difficult. I redesigned it to show only the most important information that users actually need to control.</p>
-                            <div class="grid grid-cols-1 md:grid-cols-2 gap-12">
-                                <div class="space-y-4">
-                                    <span class="text-xs font-black uppercase tracking-widest text-red-500">The Friction (Before)</span>
-                                    <div class="rounded-3xl shadow-lg aspect-square overflow-hidden bg-slate-50">
-                                        <img src="assets/audit-issue-1-before.jpg" alt="Original complex settings interface" class="object-contain w-full h-full zoom-cursor" onclick="openLightbox(this)">
-                                    </div>
-                                </div>
-                                <div class="space-y-4">
-                                    <span class="text-xs font-black uppercase tracking-widest text-emerald-600">The Solution (After)</span>
-                                    <div class="rounded-3xl shadow-lg aspect-square overflow-hidden bg-slate-50">
-                                        <img src="assets/audit-issue-1-after.jpg" alt="Simplified settings focusing on primary tasks" class="object-contain w-full h-full zoom-cursor" onclick="openLightbox(this)">
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-
-                        <div class="grid grid-cols-1 md:grid-cols-2 gap-12 items-center border-t border-slate-100 pt-20">
-                            <div>
-                                <h4 class="text-2xl font-bold mb-4 italic">Issue 2: Transparency</h4>
-                                <p class="text-slate-600 text-lg">Jon was most worried about not knowing what the machine was doing. To address this, we added a live sheet count. Now, engineers can see exactly what will happen before they click "Generate."</p>
-                            </div>
-                            <div class="rounded-3xl shadow-lg overflow-hidden aspect-square bg-slate-50">
-                                <img src="assets/audit-issue-2.jpg" alt="UI revealing sheet count settings and automation expectations" class="object-contain w-full h-full zoom-cursor" onclick="openLightbox(this)">
-                            </div>
-                        </div>
-
-                        <div class="grid grid-cols-1 md:grid-cols-2 gap-12 items-center border-t border-slate-100 pt-20">
-                            <div class="order-2 md:order-1 rounded-3xl shadow-lg overflow-hidden aspect-square bg-slate-50">
-                                <img src="assets/audit-issue-3.jpg" alt="Adjusting dimension limits for better accuracy" class="object-contain w-full h-full zoom-cursor" onclick="openLightbox(this)">
-                            </div>
-                            <div class="order-1 md:order-2">
-                                <h4 class="text-2xl font-bold mb-4 italic">Issue 3: Accuracy</h4>
-                                <p class="text-slate-600 text-lg">Automation only helps if it works correctly. I found that the system was reaching a set limit and missing important dimensions. I teamed up with others to fix these settings and, just as important, made sure the user could adjust the limits. This way, "Jon" would not feel like the system was letting him down.</p>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-
-                <div class="pt-20 border-t border-slate-100">
-                    <h3 class="text-3xl font-bold mb-8 italic">The Engagement Plan</h3>
-                    <p class="text-xl text-slate-600 mb-12">I didn't just want to build for the users; I wanted to build with them. I established a structured engagement plan to turn our most vocal critics into our most valuable collaborators throughout the process.</p>
-                    
-                    <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
-                        <div class="bg-slate-50 p-10 rounded-[2.5rem] border border-slate-100">
-                            <h4 class="text-xs font-black uppercase tracking-widest text-emerald-600 mb-6">User Recruitment</h4>
-                            <ul class="space-y-6">
-                                <li class="flex gap-4">
-                                    <span class="text-emerald-500 font-bold">01</span>
-                                    <div>
-                                        <p class="font-bold text-slate-900">Lighthouse Customers</p>
-                                        <p class="text-sm text-slate-500">Key users committed to testing and giving honest, weekly feedback cycles.</p>
-                                    </div>
-                                </li>
-                                <li class="flex gap-4">
-                                    <span class="text-emerald-500 font-bold">02</span>
-                                    <div>
-                                        <p class="font-bold text-slate-900">Beta Forums & Surveys</p>
-                                        <p class="text-sm text-slate-500">We will use the Beta Forum and Qualtrics to collect feedback from a wide audience and confirm our findings on a larger scale.</p>
-                                    </div>
-                                </li>
-                            </ul>
-                        </div>
-
-                        <div class="bg-slate-50 p-10 rounded-[2.5rem] border border-slate-100">
-                            <h4 class="text-xs font-black uppercase tracking-widest text-emerald-600 mb-6">Direct Feedback Loops</h4>
-                            <ul class="space-y-6">
-                                <li class="flex gap-4">
-                                    <span class="text-emerald-500 font-bold">03</span>
-                                    <div>
-                                        <p class="font-bold text-slate-900">Private Slack Channel</p>
-                                        <p class="text-sm text-slate-500">Internal designers/developers and Experts can work together in real time to quickly solve problems.</p>
-                                    </div>
-                                </li>
-                                <li class="flex gap-4">
-                                    <span class="text-emerald-500 font-bold">04</span>
-                                    <div>
-                                        <p class="font-bold text-slate-900">Guided Testing Data</p>
-                                        <p class="text-sm text-slate-500">I provided curated data sets so users could see the benefits of automation right away.</p>
-                                    </div>
-                                </li>
-                            </ul>
-                        </div>
-                    </div>
-                </div>
-
-                <div class="bg-slate-50 p-12 md:p-20 rounded-[3rem] border border-slate-100">
-                    <h3 class="text-3xl font-bold mb-12 italic">User Sentiment & Validation</h3>
-                    
-                    <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6 mb-8">
-                        <div class="bg-white p-6 rounded-3xl shadow-sm border border-slate-100">
-                            <p class="text-slate-600 italic text-sm mb-4">"That's really awesome news; we were waiting for something like this for a long time."</p>
-                            <div class="h-px bg-slate-100 w-8 mb-3"></div>
-                            <span class="text-[10px] font-black uppercase tracking-widest text-emerald-600">Lighthouse User</span>
-                        </div>
-                        <div class="bg-white p-6 rounded-3xl shadow-sm border border-slate-100">
-                            <p class="text-slate-600 italic text-sm mb-4">"I am irrationally excited for this. Way to go team!"</p>
-                            <div class="h-px bg-slate-100 w-8 mb-3"></div>
-                            <span class="text-[10px] font-black uppercase tracking-widest text-emerald-600">Beta Community</span>
-                        </div>
-                        <div class="bg-white p-6 rounded-3xl shadow-sm border border-slate-100">
-                            <p class="text-slate-600 italic text-sm mb-4">"Hey there, I did a test run on the features. The thing looks quite promising!"</p>
-                            <div class="h-px bg-slate-100 w-8 mb-3"></div>
-                            <span class="text-[10px] font-black uppercase tracking-widest text-emerald-600">Lighthouse User</span>
-                        </div>
-                        <div class="bg-white p-6 rounded-3xl shadow-sm border border-slate-100">
-                            <p class="text-slate-600 italic text-sm mb-4">"I can't wait! This is FANTABULOUS features!!"</p>
-                            <div class="h-px bg-slate-100 w-8 mb-3"></div>
-                            <span class="text-[10px] font-black uppercase tracking-widest text-emerald-600">Beta Community</span>
-                        </div>
-                    </div>
-
-                    <div class="grid grid-cols-1 lg:grid-cols-12 gap-12 items-start">
-                        <div class="lg:col-span-4">
-                            <h4 class="text-xs font-black uppercase tracking-widest text-slate-400 mb-4">The Next Sprint</h4>
-                            <p class="text-slate-600 leading-relaxed">While initial excitement was high, the engagement plan revealed specific technical hurdles.</p>
-                        </div>
-                        <div class="lg:col-span-8 grid grid-cols-1 md:grid-cols-2 gap-8">
-                            <div class="flex gap-4">
-                                <div class="w-1.5 h-1.5 rounded-full bg-emerald-500 mt-2 flex-shrink-0"></div>
-                                <p class="text-sm text-slate-500"><strong class="text-slate-900 block mb-1">Performance Benchmarks</strong> Users reported lag on massive assemblies, leading us to optimize engine speed.</p>
-                            </div>
-                            <div class="flex gap-4">
-                                <div class="w-1.5 h-1.5 rounded-full bg-emerald-500 mt-2 flex-shrink-0"></div>
-                                <p class="text-sm text-slate-500"><strong class="text-slate-900 block mb-1">Documentation Gaps</strong> Identified edge cases where complex sheets were being skipped during batch runs.</p>
-                            </div>
-                            <div class="flex gap-4">
-                                <div class="w-1.5 h-1.5 rounded-full bg-emerald-500 mt-2 flex-shrink-0"></div>
-                                <p class="text-sm text-slate-500"><strong class="text-slate-900 block mb-1">Recipe Customization</strong> Requests for pre-selecting dimensioning styles based on sheet classification.</p>
-                            </div>
-                            <div class="flex gap-4">
-                                <div class="w-1.5 h-1.5 rounded-full bg-emerald-500 mt-2 flex-shrink-0"></div>
-                                <p class="text-sm text-slate-500"><strong class="text-slate-900 block mb-1">Model Readiness</strong> Requests for pre-flight checks to ensure 3D models are ready for automation.</p>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </section>
-
-            <section id="hurdles" class="py-16 border-t border-slate-100">
-                <div class="max-w-5xl mx-auto px-6">
-                    <header class="mb-8">
-                        <span class="text-emerald-600 font-bold uppercase text-xs tracking-widest">Leadership</span>
-                        <h2 class="text-4xl font-bold mt-4 italic">Hurdles cleared along the way</h2>
-                    </header>
-
-                    <div class="grid grid-cols-1 md:grid-cols-2 gap-12">
-                        <div class="space-y-12">
-                            <div class="flex gap-6">
-                                <div class="flex-shrink-0 w-12 h-12 rounded-2xl bg-slate-50 flex items-center justify-center text-xl shadow-sm border border-slate-100">🏗️</div>
-                                <div>
-                                    <h4 class="font-bold text-lg text-slate-900 mb-2">Technical Debt</h4>
-                                    <p class="text-slate-600 leading-relaxed">Building on a legacy system meant every decision had to be weighed against performance. I worked with the Architects to ensure the automation felt fast, even with complex data sets.</p>
-                                </div>
-                            </div>
-
-                            <div class="flex gap-6">
-                                <div class="flex-shrink-0 w-12 h-12 rounded-2xl bg-slate-50 flex items-center justify-center text-xl shadow-sm border border-slate-100">🤝</div>
-                                <div>
-                                    <h4 class="font-bold text-lg text-slate-900 mb-2">Team Alignment</h4>
-                                    <p class="text-slate-600 leading-relaxed">Joining 26 weeks late was challenging. I worked on building trust with the team by using the Heuristic Audit. I wanted them to see that I was there to help them finish, not to hold them back.</p>
-                                </div>
-                            </div>
-                        </div>
-
-                        <div class="space-y-12">
-                            <div class="flex gap-6">
-                                <div class="flex-shrink-0 w-12 h-12 rounded-2xl bg-slate-50 flex items-center justify-center text-xl shadow-sm border border-slate-100">⚖️</div>
-                                <div>
-                                    <h4 class="font-bold text-lg text-slate-900 mb-2">Expectation Management</h4>
-                                    <p class="text-slate-600 leading-relaxed">Leadership wanted "push-button" magic; users wanted a tool they could trust. I navigated this "disagree and commit" scenario by proving that trust is earned through transparency.</p>
-                                </div>
-                            </div>
-
-                            <div class="flex gap-6">
-                                <div class="flex-shrink-0 w-12 h-12 rounded-2xl bg-slate-50 flex items-center justify-center text-xl shadow-sm border border-slate-100">📋</div>
-                                <div>
-                                    <h4 class="font-bold text-lg text-slate-900 mb-2">Complex Compliance</h4>
-                                    <p class="text-slate-600 leading-relaxed">Technical drawings have zero margin for error. I ensured our automation logic honored the strict legal and standard requirements necessary for manufacturing.</p>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </section>
-
-            <section id="final-thoughts" class="py-32 bg-slate-50 border-t border-slate-100">
-                <div class="max-w-4xl mx-auto px-6">
-                    <header class="mb-8">
-                        <span class="text-emerald-600 font-bold uppercase text-xs tracking-widest">Retrospective</span>
-                        <h2 class="text-4xl font-bold mt-4 italic">Final thoughts</h2>
-                    </header>
-
-                    <div class="space-y-12 text-xl text-slate-600 leading-relaxed">
-                        <p>This project was a masterclass in <strong>leading from within</strong>. Joining 26 weeks into a development cycle meant there was no time for a slow ramp-up. I had to prove the value of UX through immediate, actionable insights like the Heuristic Audit and the Engagement Plan.</p>
-                        
-                        <p>It reinforced a core belief of mine: even in the most technical, automation-heavy environments, <strong>trust is the primary currency</strong>. If the user doesn't trust the logic, the speed of the engine doesn't matter.</p>
-
-                        <div class="bg-white p-10 md:p-14 rounded-[3rem] shadow-sm border border-slate-200 mt-20">
-                            <h3 class="text-2xl font-bold text-slate-900 mb-6 italic">Bridging the trust gap</h3>
-                            <div class="space-y-6 text-lg">
-                                <p>The biggest hurdle was the gap between business desires and customer readiness. Leadership wanted a "black box" that did the work for them; users like <strong>Jon</strong> wanted a tool that helped them work faster.</p>
-                                <p>By advocating for transparency—exposing sheet counts, allowing manual overrides, and showing intended logic before execution—we didn't just build a tool. We built a system that engineers were actually <strong>irrationally excited</strong> to use.</p>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </section>
-
-        </article>
-    </div>
-
-    <footer class="bg-slate-900 text-white py-32 text-center">
-        <h3 class="text-4xl font-bold mb-8 italic">Let's build clarity.</h3>
-        <p class="text-slate-400 mb-12 max-w-lg mx-auto">I am available to discuss how I use these strategies to solve complex problems for large companies.</p>
-        <div class="flex flex-col md:flex-row justify-center items-center gap-12">
-            <a href="mailto:jared.bunch@outlook.com" class="text-2xl font-black border-b-4 border-slate-700 hover:border-emerald-500 transition pb-2">jared.bunch@outlook.com</a>
-            <a href="https://www.linkedin.com/in/jaredabunch" target="_blank" class="text-2xl font-black border-b-4 border-slate-700 hover:border-emerald-500 transition pb-2">LinkedIn</a>
-        </div>
-    </footer>
-
-    <div id="lightboxModal" class="fixed inset-0 z-[100] hidden bg-slate-900/95 backdrop-blur-md flex items-center justify-center p-4 md:p-12 cursor-pointer" onclick="closeLightbox()">
-        <div class="relative max-w-6xl w-full h-full flex flex-col items-center justify-center">
-            <img id="lightboxImage" src="" alt="" class="hidden max-w-full max-h-[80vh] object-contain shadow-2xl rounded-lg">
-            <video id="lightboxVideo" controls autoplay loop muted class="hidden max-w-full max-h-[80vh] object-contain shadow-2xl rounded-lg">
-                <source src="" type="video/mp4">
-            </video>
-            <div id="lightboxCaption" class="mt-6 text-white text-lg font-medium text-center max-w-2xl bg-slate-800/50 px-6 py-2 rounded-full backdrop-blur-sm"></div>
-            <button class="absolute top-0 right-0 text-white text-5xl font-light p-4">&times;</button>
-        </div>
-    </div>
-
-    <script>
-        // Core Process Navigation Observer
-        window.addEventListener('DOMContentLoaded', () => {
-            const observerOptions = { root: null, rootMargin: '-20% 0% -70% 0%', threshold: 0 };
-            const observer = new IntersectionObserver((entries) => {
-                entries.forEach((entry) => {
-                    const id = entry.target.getAttribute('id');
-                    const navLink = document.querySelector(`.nav-link[href="#${id}"]`);
-                    if (entry.isIntersecting) {
-                        document.querySelectorAll('.nav-link').forEach(link => link.classList.remove('active'));
-                        navLink?.classList.add('active');
-                    }
-                });
-            }, observerOptions);
-            document.querySelectorAll('section[id]').forEach((section) => { observer.observe(section); });
-        });
-
-        // Magic Reveal Transition Observer
-        const magicObserver = new IntersectionObserver((entries) => {
-            entries.forEach(entry => {
-                if (entry.isIntersecting) {
-                    entry.target.classList.add('is-visible');
-                }
-            });
-        }, { threshold: 0.2 });
-
-        const magicImg = document.getElementById('magicImage');
-        if (magicImg) magicObserver.observe(magicImg);
-
-        // Lightbox Functions
-        function openLightbox(element) {
-            const modal = document.getElementById('lightboxModal');
-            const lbImg = document.getElementById('lightboxImage');
-            const lbVideo = document.getElementById('lightboxVideo');
-            const lbCaption = document.getElementById('lightboxCaption');
-            lbImg.classList.add('hidden'); lbVideo.classList.add('hidden');
-            if (element.tagName === 'IMG') {
-                lbImg.src = element.src; lbImg.classList.remove('hidden');
-                lbCaption.innerText = element.alt || "Design Artifact";
-            } else if (element.tagName === 'VIDEO') {
-                lbVideo.src = element.querySelector('source').src; lbVideo.classList.remove('hidden'); lbVideo.play();
-                lbCaption.innerText = element.getAttribute('alt') || "Interaction Study";
-            }
-            modal.classList.remove('hidden'); document.body.style.overflow = 'hidden'; 
-        }
-
-        function closeLightbox() {
-            const modal = document.getElementById('lightboxModal');
-            const video = document.getElementById('lightboxVideo');
-            if (video) video.pause();
-            modal.classList.add('hidden'); document.body.style.overflow = 'auto';
-        }
-
-        document.addEventListener('keydown', (e) => {
-            if (e.key === 'Escape') closeLightbox();
-        });
-let currentGalleryIndex = 0;
-
-function updateGallery(thumbnail) {
-    const allThumbs = Array.from(document.querySelectorAll('.thumb-nav'));
-    currentGalleryIndex = allThumbs.indexOf(thumbnail);
-    
-    renderGalleryFrame(thumbnail.src, thumbnail.alt);
-}
-
-function changeGalleryImage(direction) {
-    const allThumbs = Array.from(document.querySelectorAll('.thumb-nav'));
-    currentGalleryIndex += direction;
-
-    // Loop back to start/end
-    if (currentGalleryIndex >= allThumbs.length) currentGalleryIndex = 0;
-    if (currentGalleryIndex < 0) currentGalleryIndex = allThumbs.length - 1;
-
-    const activeThumb = allThumbs[currentGalleryIndex];
-    renderGalleryFrame(activeThumb.src, activeThumb.alt);
-}
-
-function renderGalleryFrame(src, alt) {
-    const mainImg = document.getElementById('mainGalleryImage');
-    const allThumbs = document.querySelectorAll('.thumb-nav');
-    
-    mainImg.src = src;
-    mainImg.alt = alt;
-    
-    allThumbs.forEach((thumb, index) => {
-        if (index === currentGalleryIndex) {
-            thumb.classList.add('border-emerald-500', 'opacity-100');
-            thumb.classList.remove('border-transparent', 'opacity-60');
-            thumb.scrollIntoView({ behavior: 'smooth', block: 'nearest', inline: 'center' });
-        } else {
-            thumb.classList.remove('border-emerald-500', 'opacity-100');
-            thumb.classList.add('border-transparent', 'opacity-60');
-        }
-    });
-}
-    </script>
+  </footer>
 </body>
 </html>
